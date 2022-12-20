@@ -1,0 +1,42 @@
+version: 2.1
+
+orbs:
+  docker: circleci/docker@0.5.13
+
+jobs:
+  run_tests:
+    working_directory: ~/react-app
+    docker:
+      - image: circleci/node:10.16.3
+    steps:
+      - checkout
+      - run:
+          name: update-yarn
+          command: 'sudo yarn install -g yarn@latest'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: yarn-install
+          command: yarn install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: test
+          command: yarn test
+  
+workflows:
+  version: 2
+  build_deploy:
+    jobs:
+      - run_tests
+      - docker/publish:
+          image: gumshoe/$CIRCLE_PROJECT_REPONAME
+          dockerfile: dockerfile
+          requires:
+            - run_tests
+          filters:
+            branches:
+              only: 
+                - main
