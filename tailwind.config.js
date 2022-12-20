@@ -8,6 +8,9 @@ module.exports = {
           'light-blue': '#EAF8F9',
           'button-blue': '#2DD3E3'
       },
+      fontFamily: {
+          display: ['Poppins', 'sans-serif']
+      },
     },
   },
   plugins: [],
