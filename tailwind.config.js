@@ -11,7 +11,7 @@ module.exports = {
         'shadow-grey': '#B2ABAB'
       },
       fontFamily: {
-        display: ['Poppins', 'sans-serif'],
+       poppins: ['Poppins', 'sans-serif'],
       },
       width: {
         'box-width': '350px'
