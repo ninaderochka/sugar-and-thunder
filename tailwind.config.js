@@ -8,17 +8,17 @@ module.exports = {
         'light-blue': '#EAF8F9',
         'button-blue': '#2DD3E3',
         'border-grey': '#FBFBFB',
-        'shadow-grey': '#B2ABAB'
+        'shadow-grey': '#B2ABAB',
       },
       fontFamily: {
-       poppins: ['Poppins', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
       width: {
-        'box-width': '350px'
+        'box-width': '350px',
       },
       height: {
         'box-height': '350px',
-      }
+      },
     },
   },
   plugins: [],

@@ -7,7 +7,7 @@ import Communicate from './components/communicate';
 function App() {
   return (
     <div className="App">
-<Communicate />
+      <Communicate />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
