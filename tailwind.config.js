@@ -4,13 +4,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-          'light-yellow': '#FEE89E',
-          'light-blue': '#EAF8F9',
-          'button-blue': '#2DD3E3'
+        'light-yellow': '#FEE89E',
+        'light-blue': '#EAF8F9',
+        'button-blue': '#2DD3E3',
+        'shadow-grey': '#B2ABAB',
+        'border-grey': '#FBFBFB',
+        'text-background': '#154A80'
       },
       fontFamily: {
-          display: ['Poppins', 'sans-serif']
+          display: ['Poppins']
       },
+      height: {
+        '200':'633px'
+    },
     },
   },
   plugins: [],
