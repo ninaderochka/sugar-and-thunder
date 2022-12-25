@@ -2,16 +2,15 @@ import React from 'react';
 import background from "./images/background.png";
 import image from "./images/image.png";
 
-
 export default function Header() {
   return (
 
-    <div className="text-black font-normal relative" >
-      <div className="absolute top-0 left-0 right-0 w-full h-full" ><img alt="#" src={background}/></div>
+    <div className="text-black font-normal " >
+      <div className="absolute top-[126px] left-0 w-full h-full bg-cover" ><img alt="#" src={background}/></div>
     
-      <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col">
+      <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col absolute">
 
-        <div className="font-Poppins lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left md:mb-0 items-center mt-1">
+        <div className="font-Poppins lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left md:mb-0 items-center mt-">
           
           <p className="text-black ml-36 text-3xl sm:text-3xl">WE ARE HERE TO</p>
           <p className="text-black ml-36 text-9xl ">HELP</p>         
