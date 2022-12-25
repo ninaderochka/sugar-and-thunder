@@ -4,12 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-          'light-yellow': '#FEE89E',
-          'light-blue': '#EAF8F9',
-          'button-blue': '#2DD3E3'
+        'light-yellow': '#FEE89E',
+        'light-blue': '#EAF8F9',
+        'button-blue': '#2DD3E3',
       },
       fontFamily: {
-          display: ['Poppins', 'sans-serif']
+        display: ['Poppins', 'sans-serif'],
       },
     },
   },
