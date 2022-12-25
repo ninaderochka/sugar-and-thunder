@@ -4,7 +4,6 @@ import Box from './box';
 const Communicate = () => {
   return (
     <div className='grid grid-cols-3 h-screen mx-[160px]'>
-
       <Box>
         <div className="m-auto flex flex-col space-y-4">
           <img src="/phone.svg" alt="voice call" className="w-25 m-auto mb-4" />
