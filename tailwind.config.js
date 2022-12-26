@@ -10,6 +10,7 @@ module.exports = {
           'button-blue': '#2DD3E3',
           'shadow-grey': '#B2ABAB',
           'border-grey':'#FBFBFB',
+          'text-background': '#154A80'
       },
       fontFamily: {
           poppins: ['Poppins', 'sans-serif']
@@ -19,6 +20,7 @@ module.exports = {
       },
       height: {
         'box-height': '350px',
+         '200':'633px',
       },
       dropShadow: {
         'lg': '0px 4px 6px rgba(178, 171, 171, 0.25)',
