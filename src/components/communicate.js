@@ -2,8 +2,9 @@ import React from 'react';
 import Box from './box';
 
 const Communicate = () => {
-  return (
-    <div className='grid grid-cols-3 h-screen mx-[160px]'>
+  return (<div className='w-5/6 h-screen m-auto'>
+ <h1 className="font-poppins font-normal text-5xl ml-3 mb-20 pt-20 uppercase">we can communicate through</h1>
+    <div className='grid grid-cols-3 gap-x-2.5'>
       <Box>
         <div className="m-auto flex flex-col space-y-4">
           <img src="/phone.svg" alt="voice call" className="w-25 m-auto mb-4" />
@@ -43,6 +44,7 @@ const Communicate = () => {
         </div>
       </Box>
     </div>
+  </div>
   );
 };
 
