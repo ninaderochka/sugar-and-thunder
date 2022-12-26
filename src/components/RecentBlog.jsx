@@ -3,6 +3,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Rectangle41 from '../images/Rectangle41.png'
 import Rectangle40 from '../images/Rectangle40.png'
+
 function RecentBlog(){
     const responsive = {
         superLargeDesktop: {
