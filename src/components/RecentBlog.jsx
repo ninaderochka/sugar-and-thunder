@@ -24,15 +24,16 @@ function RecentBlog(){
           items: 1
         }
       };
+
 return(
   <div className="bg-light-blue h-200">
-        <h1 className="text-4xl leading-10 font-medium uppercase pt-16 pb-24 pl-40">Recent BLOGs</h1>
+        <h1 className="text-5xl leading-10 uppercase pt-16 pb-24 pl-40 font-poppins">Recent BLOGs</h1>
 
     <div className="px-36 ">
       <Carousel responsive={responsive} >
 
         <div className="relative">
-        <h1 className="absolute text-white pt-3 pl-6 w-44 uppercase ">Mental Health and Technology </h1>
+        <h1 className="absolute text-white pt-3 pl-6 w-44 uppercase">Mental Health and Technology </h1>
         <img src={Rectangle40} alt="" />
           </div>
 
@@ -52,9 +53,9 @@ return(
         <div>
         <img src={Rectangle41} alt="" />
         <div className="absolute text-white bottom-12 m-8 bg-text-background uppercase text-2xl 
-        bg-opacity-50 leading-7 text-center align-middle	">Heal from</div>
+        bg-opacity-50 leading-7 text-center align-middle p-2">Heal from</div>
         <div className="absolute text-white bottom-4  m-8  bg-text-background uppercase  text-2xl
-         font-normal bg-opacity-50 inline-block align-middle	leading-7">trauma </div>
+         font-normal bg-opacity-50 inline-block align-middle	leading-7 p-2">trauma </div>
 
         </div>
     </Carousel>
