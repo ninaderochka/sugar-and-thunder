@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="w-full md:w-1/2 md:text-left mb-6 md:mb-0">
           <h4 className="text-4xl font-bold mb-2">Subscribe</h4>
           <p className="text-2xl mb-4 text-footer-gray font-light">
-            We'll never spam or share your email
+            We’ll never spam or share your email
           </p>
           <div className="flex flex-col">
             <form className="mb-4 flex content-end">
@@ -30,9 +30,9 @@ const Footer = () => {
             <a href="#" className="px-7 py-1 font-light text-2xl rounded-md text-footer-gray">Contact</a>
           </nav>
           <div className="flex justify-center">
-            <a href="https://twitter.com/DiariHama" target="_blank" className="px-5"><img src={twitter} alt="twitter logo" /></a>
-            <a href="https://twitter.com/DiariHama" target="_blank" className="px-5"><img src={facebook} alt="facebook logo" /></a>
-            <a href="https://twitter.com/DiariHama" target="_blank" className="px-5"><img src={gmail} alt="gmail logo" /></a>
+            <a href="https://twitter.com/DiariHama" target="_blank" rel="noreferrer" className="px-5"><img src={twitter} alt="twitter logo" /></a>
+            <a href="https://twitter.com/DiariHama" target="_blank" rel="noreferrer" className="px-5"><img src={facebook} alt="facebook logo" /></a>
+            <a href="https://twitter.com/DiariHama" target="_blank" rel="noreferrer" className="px-5"><img src={gmail} alt="gmail logo" /></a>
           </div>
         </div>
       </div>
