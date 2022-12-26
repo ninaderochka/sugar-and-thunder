@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+          'footer-gray': '#718096',
           'light-yellow': '#FEE89E',
           'light-blue': '#EAF8F9',
           'button-blue': '#2DD3E3',
