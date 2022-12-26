@@ -1,14 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import RecentBlog from './components/RecentBlog';
+import Communicate from './components/communicate';
+import Tickets from './components/tickets';
+
+
 function App() {
- 
-return(
-<div>
-  <RecentBlog />
-</div>
-)
+  return (
+    <div className="App">
+      <Communicate />
+       <RecentBlog />
+      <Tickets />
+
+    </div>
+  );
 }
 
 export default App;
