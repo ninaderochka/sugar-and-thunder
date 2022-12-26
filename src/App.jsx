@@ -8,9 +8,9 @@ function App() {
   return (
     <div className="App">
       <Communicate />
-       <RecentBlog />
+      <RecentBlog />
       <Tickets />
-       <Footer />
+      <Footer />
     </div>
   );
 }
