@@ -14,7 +14,7 @@ const Tickets = () => {
     <div className="h-screen uppercase pt-20 w-5/6 mx-auto">
 <h1 className="font-poppins font-normal text-5xl ml-3 mb-2">Purchase tickets</h1>
 <p className="ml-3 text-2xl mb-12">purchase tickets that can be used to book appointments!</p>
-    <div className='grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-3'>
+    <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
     <Box>
     <div className="m-auto flex flex-col space-y-4">
       <p className="font-poppins font-normal text-5xl text-black text-center">
