@@ -33,28 +33,28 @@ const Footer = () => {
         <div className="w-full md:w-1/2 md:text-left mb-6 md:mb-0">
           <nav className="flex justify-center mb-7">
             <button
-            type='button'
+              type="button"
               // href="#"
               className="px-7 py-1 font-light text-2xl rounded-md text-footer-gray"
             >
               Home
             </button>
             <button
-            type='button'
+              type="button"
               // href="#"
               className="px-7 py-1 font-light text-2xl rounded-md text-footer-gray"
             >
               Blogs
             </button>
             <button
-            type='button'
+              type="button"
               // href="#"
               className="px-7 py-1 font-light text-2xl rounded-md text-footer-gray"
             >
               About
             </button>
             <button
-            type='button'
+              type="button"
               // href="#"
               className="px-7 py-1 font-light text-2xl rounded-md text-footer-gray"
             >
