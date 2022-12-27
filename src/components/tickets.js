@@ -1,6 +1,6 @@
-import React from "react";
-import Box from "./box";
-import Button from "./button";
+import React from 'react';
+import Box from './box';
+import Button from './button';
 
 const Tickets = () => {
 
@@ -56,8 +56,6 @@ const Tickets = () => {
 </div>
     </div>
    )
-
 }
 
-
-export default Tickets
+export default Tickets;
