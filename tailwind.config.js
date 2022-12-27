@@ -20,18 +20,14 @@ module.exports = {
       },
       height: {
         'box-height': '350px',
-        '200': '633px',
+        200: '633px',
       },
       dropShadow: {
         lg: '0px 4px 6px rgba(178, 171, 171, 0.25)',
       },
-<<<<<<< HEAD
       gridTemplateColumns: {
-        '3': 'repeat(3, minmax(350px, 1fr))',
+        3: 'repeat(3, minmax(350px, 1fr))',
       },
-      
-=======
->>>>>>> main
     },
   },
   plugins: [],
