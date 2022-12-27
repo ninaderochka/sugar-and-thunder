@@ -1,6 +1,6 @@
 import React from 'react';
-import Box from './box';
-import Button from './button';
+import Box from './Box';
+import Button from './Button';
 
 const Tickets = () => {
   const handleClick = () => {
@@ -9,7 +9,7 @@ const Tickets = () => {
   };
 
   return (
-    <div className="h-screen uppercase pt-20 w-5/6 mx-auto">
+    <div className="h-full mb-8 max-h-full uppercase pt-20 w-5/6 mx-auto">
       <h1 className="font-poppins font-normal text-5xl ml-3 mb-2">
         Purchase tickets
       </h1>

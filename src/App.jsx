@@ -1,21 +1,21 @@
 import React from 'react';
-import Header from './component/Header';
+import Header from './components/Header';
 import RecentBlog from './components/RecentBlog';
-import Communicate from './components/communicate';
-import Tickets from './components/tickets';
-import Therapists from './components/therapists';
+import Communicate from './components/Communicate';
+import Tickets from './components/Tickets';
+import Therapists from './components/Therapists';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-       <Header/>
-      <Communicate />
+      <Header />
       <Therapists />
+      <Communicate />
       <RecentBlog />
       <Tickets />
-       <Footer />
-  </div>
+      <Footer />
+    </div>
   );
 }
 
