@@ -5,29 +5,26 @@ import Button from './Button';
 
 export default function Header() {
   return (
-    <div className="text-black font-normal h-screen w-screen">
+    <div className="relative text-black min-h-[90vh] h-screen top-16">
       <img
-        className=" absolute bg-center imagee -z-10 "
-        alt="#"
         src={background}
+        alt="backround"
+        className="absolute w-screen left-0 -z-10"
       />
+      <div className="max-w-7xl relative mx-auto flex flex-col py-6 px-5 mt-6">
+        <div className="relative lg:absolute flex flex-col lg:left-3 lg:top-40 mb-10 font-Poppins ml-28">
+          <h3 className="text-2xl sm:text-4xl -mb-1">WE ARE HERE TO</h3>
+          <h1 className=" text-6xl sm:text-9xl leading-[8rem] mb-6 lg:mb-16">
+            HELP
+          </h1>
 
-      <div className="container flex py-24 md:flex-row flex-col justify-center">
-        <div className="font-Poppins lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left md:mb-0 items-center">
-          <p className="text-black ml-36 text-3xl sm:text-3xl">
-            WE ARE HERE TO
-          </p>
-          <p className="text-black ml-36 text-9xl ">HELP</p>
-
-          {/* button */}
-          <div className=" ml-32 py-5 mt-12">
-            <Button value="BOOK AN APPOINTMENT" />
-          </div>
+          <Button value="book an appointment" />
         </div>
-
-        <div className="lg:max-w-lg lg:w-3/5 md:w-1/2 w-5/6 mr-16 mt-6">
-          <img src={image} alt="#" />
-        </div>
+        <img
+          src={image}
+          alt=""
+          className="relative lg:absolute w-[709px] h-[425px] mx-auto lg:right-3 lg:top-28 z-10 mr-16"
+        />
       </div>
     </div>
   );
