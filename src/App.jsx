@@ -5,11 +5,10 @@ import Header from './component/Header';
 import Communicate from './components/communicate';
 import Tickets from './components/tickets';
 
-
 function App() {
   return (
     <div className="App">
-       <Header/>
+      <Header />
       <Communicate />
       <Tickets />
     </div>
