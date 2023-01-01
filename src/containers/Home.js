@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Header from '../components/Header';
 import RecentBlog from '../components/RecentBlog';
 import Communicate from '../components/Communicate';
@@ -8,13 +8,13 @@ import Therapists from '../components/Therapists';
 function Home() {
   return (
     <div>
-            <Header />
+      <Header />
       <Therapists />
       <Communicate />
       <RecentBlog />
       <Tickets />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

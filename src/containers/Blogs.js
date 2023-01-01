@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 function Blogs() {
-  return (
-    <div />
-  )
+  return <div />;
 }
 
-export default Blogs
+export default Blogs;
