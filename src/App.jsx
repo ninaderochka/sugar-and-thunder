@@ -1,4 +1,5 @@
 import React from 'react';
+import Login from './components/Login'
 import Header from './components/Header';
 import RecentBlog from './components/RecentBlog';
 import Communicate from './components/Communicate';
@@ -10,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Login />
       <Therapists />
       <Communicate />
       <RecentBlog />
