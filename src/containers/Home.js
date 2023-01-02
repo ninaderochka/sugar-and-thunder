@@ -7,7 +7,7 @@ import Therapists from '../components/Therapists';
 
 function Home() {
   return (
-    <div className='overflow-hidden'>
+    <div className="overflow-hidden">
       <Header />
       <Therapists />
       <Communicate />

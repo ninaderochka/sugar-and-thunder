@@ -46,12 +46,12 @@ function Navbar() {
           Contact us
         </Link>
         <Link to="/Signup">
-        <button
-          type="button"
-          className="bg-button-blue rounded-md px-6 py-1 text-xl"
-        >
-          Log in
-        </button>
+          <button
+            type="button"
+            className="bg-button-blue rounded-md px-6 py-1 text-xl"
+          >
+            Log in
+          </button>
         </Link>
       </div>
     </nav>
