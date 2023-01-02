@@ -16,6 +16,7 @@ module.exports = {
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif']
       },
       width: {
         'box-width': '350px',
@@ -29,6 +30,9 @@ module.exports = {
       },
       gridTemplateColumns: {
         3: 'repeat(3, minmax(350px, 1fr))',
+      },
+      margin: {
+        '100': '400px',
       },
     },
   },
