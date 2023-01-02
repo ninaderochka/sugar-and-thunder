@@ -1,10 +1,6 @@
 import React from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Logo from '../images/Logo.svg';
-import Home from '../containers/Home';
-import Blogs from '../containers/Blogs';
-import About from '../containers/About';
-import Contact from '../containers/Contact';
 // import triangle from '../images/triangle.svg';
 
 function Navbar() {
@@ -49,19 +45,15 @@ function Navbar() {
         <Link className="p-4" to="/Contact">
           Contact us
         </Link>
+        <Link to="/Signup">
         <button
           type="button"
           className="bg-button-blue rounded-md px-6 py-1 text-xl"
         >
           Log in
         </button>
+        </Link>
       </div>
-      <Routes>
-        <Route path="/Home" element={<Home />} />
-        <Route path="/Blogs" element={<Blogs />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
-      </Routes>
     </nav>
   );
 }

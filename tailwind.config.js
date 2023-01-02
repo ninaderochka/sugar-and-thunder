@@ -11,6 +11,8 @@ module.exports = {
         'shadow-grey': '#B2ABAB',
         'border-grey': '#FBFBFB',
         'text-background': '#154A80',
+        'input-grey': '#9DAFBD',
+        'input-border': '#D1DBE3',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
