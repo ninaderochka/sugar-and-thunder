@@ -1,20 +1,25 @@
 import React from 'react';
-import Header from './components/Header';
-import RecentBlog from './components/RecentBlog';
-import Communicate from './components/Communicate';
-import Tickets from './components/Tickets';
-import Therapists from './components/Therapists';
-import Footer from './components/Footer';
-
+import Header from './Components/Header';
+import RecentBlog from './Components/RecentBlog';
+import Communicate from './Components/Communicate';
+import Tickets from './Components/Tickets';
+import Therapists from './Components/Therapists';
+import Footer from './Components/Footer';
+import {Route, Routes, Link} from "react-router-dom"
+import Blog from './Components/Blog';
+import Home from './Components/Home';
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Therapists />
-      <Communicate />
-      <RecentBlog />
-      <Tickets />
+      {/* navbar should be placed here */}
+
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path='/Blog' element={<Blog />}/>
+      </Routes>
       <Footer />
+
     </div>
   );
 }

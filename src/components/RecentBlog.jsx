@@ -3,7 +3,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Rectangle41 from '../images/Rectangle41.png';
 import Rectangle40 from '../images/Rectangle40.png';
-
+import {Link} from "react-router-dom"
 function RecentBlog() {
   const responsive = {
     superLargeDesktop: {
@@ -33,13 +33,14 @@ function RecentBlog() {
 
       <div className="px-36 ">
         <Carousel responsive={responsive}>
+
           <div className="relative">
             <h1 className="absolute text-white pt-3 pl-6 w-44 uppercase">
               Mental Health and Technology{' '}
             </h1>
             <img src={Rectangle40} alt="" />
           </div>
-
+          <Link to="/Blog">
           <div>
             <img src={Rectangle41} alt="" />
             <div
@@ -55,14 +56,15 @@ function RecentBlog() {
               trauma{' '}
             </div>
           </div>
-
+          </Link>
+          <Link to="/Blog">
           <div>
             <h1 className="absolute text-white pt-3 pl-6 w-44 uppercase">
               Mental Health and Technology{' '}
             </h1>
             <img src={Rectangle40} alt="" />
           </div>
-
+          </Link>
           <div>
             <img src={Rectangle41} alt="" />
             <div
@@ -80,6 +82,7 @@ function RecentBlog() {
           </div>
         </Carousel>
       </div>
+      
     </div>
   );
 }
