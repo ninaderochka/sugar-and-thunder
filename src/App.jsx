@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Communicate from './components/communicate';
-import Tickets from './components/tickets';
+import Communicate from './components/Communicate';
+import Tickets from './components/Tickets';
 import About from './component/About';
 
 import Footer from './components/Footer';
