@@ -3,7 +3,7 @@ import Box from './Box';
 
 const Communicate = () => {
   return (
-    <div className="w-5/6 h-screen m-auto">
+    <div className="w-5/6 h-screen m-auto max-w-full">
       <h1 className="font-poppins font-normal text-5xl ml-3 mb-20 pt-20 uppercase">
         we can communicate through
       </h1>
