@@ -1,10 +1,6 @@
 import React from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Logo from '../images/Logo.svg';
-import Home from '../containers/Home';
-import Blogs from '../containers/Blogs';
-import About from '../containers/About';
-import Contact from '../containers/Contact';
 // import triangle from '../images/triangle.svg';
 
 function Navbar() {
@@ -39,7 +35,7 @@ function Navbar() {
         <Link className="p-4" to="/">
           Home
         </Link>
-        <Link className="p-4" to="/Blogs">
+        <Link className="p-4" to="/Blog">
           Blogs
         </Link>
         <Link className="p-4" to="/About">
@@ -56,12 +52,6 @@ function Navbar() {
           Log in
         </button>
       </div>
-      <Routes>
-        <Route path="/Home" element={<Home />} />
-        <Route path="/Blogs" element={<Blogs />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
-      </Routes>
     </nav>
   );
 }
