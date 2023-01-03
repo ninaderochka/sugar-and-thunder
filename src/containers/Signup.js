@@ -5,13 +5,13 @@ import gmail from '../images/Google.svg';
 
 function Signup() {
   return (
-    <div className="h-screen w-screen">
-      <h1 className="uppercase text-5xl whitespace-nowrap flex justify-end mr-[360px] mt-10 py-6">
-        signup now
-      </h1>
+    <div className="h-screen w-screen bg-white mb-8">
       <div className="font-roboto px-20 mx-auto flex justify-between">
         <img src={SignupImage} alt="signup" className="w-2/4 pr-8" />
         <div className="grid grid-flow-row space-y-4">
+      <h1 className="uppercase text-5xl whitespace-nowrap mt-10 py-6">
+        signup now
+      </h1>
           <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded min-w-min max-w-xl m-auto lg:w-full">
             <form className="w-full">
               <div className="grid grid-cols-2 gap-5 text-input-grey">
@@ -40,7 +40,7 @@ function Signup() {
                   className="border border-input-border box-border rounded-md text-sm p-3 w-full"
                 />
               </div>
-              <div className="grid grid-cols-2 gap-5 text-input-grey space-y-4 mt-5">
+              <div className="grid grid-cols-2 gap-5 text-input-grey mt-5">
                 <input
                   type="text"
                   placeholder="Password"
@@ -52,7 +52,7 @@ function Signup() {
                   className="border border-input-border box-border rounded-md text-sm p-3"
                 />
               </div>
-              <div className="grid grid-cols-4 gap-2 text-input-grey space-y-4">
+              <div className="grid grid-cols-4 gap-2 text-input-grey space-y-4 justify-end">
                 {/* <input
                   type="text"
                   placeholder="Birth Date"
@@ -74,7 +74,8 @@ function Signup() {
                   placeholder="YYYY"
                   className="border border-input-border rounded-md text-sm p-3 h-12"
                 />
-                <div className="flex justify-between gap-6 place-content-center mx-auto">
+              </div>
+                <div className="flex justify-center gap-6 mt-4 place-content-center mx-auto">
                   <button
                     type="button"
                     className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
@@ -88,7 +89,6 @@ function Signup() {
                     Sign up
                   </button>
                 </div>
-              </div>
             </form>
           </div>
           <div className="flex flex-row justify-center mb-8">
