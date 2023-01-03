@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from "react-router-dom"
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Rectangle41 from '../images/Rectangle41.png';
 import Rectangle40 from '../images/Rectangle40.png';
-import {Link} from "react-router-dom"
+
 function RecentBlog() {
   const responsive = {
     superLargeDesktop: {

@@ -6,7 +6,6 @@ import Home from './containers/Home';
 import Blog from './containers/Blog';
 import About from './containers/About';
 import Contact from './containers/Contact';
-import Signup from './containers/Signup';
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
         <Route path="/Blog" element={<Blog />} />
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
-        <Route path="/Signup" element={<Signup />} />
       </Routes>
       <Footer />
     </div>
