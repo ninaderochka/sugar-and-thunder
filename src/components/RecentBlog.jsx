@@ -27,7 +27,7 @@ function RecentBlog() {
   };
 
   return (
-    <div className="bg-light-blue h-200">
+    <div className="bg-light-blue h-screen md:h-screen">
       <h1 className="text-5xl leading-10 uppercase pt-16 pb-24 pl-40 font-poppins">
         Recent BLOGs
       </h1>
