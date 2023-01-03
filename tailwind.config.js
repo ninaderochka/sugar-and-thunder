@@ -11,9 +11,12 @@ module.exports = {
         'shadow-grey': '#B2ABAB',
         'border-grey': '#FBFBFB',
         'text-background': '#154A80',
+        'input-grey': '#9DAFBD',
+        'input-border': '#D1DBE3',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
       },
       width: {
         'box-width': '350px',
@@ -28,7 +31,11 @@ module.exports = {
       gridTemplateColumns: {
         3: 'repeat(3, minmax(350px, 1fr))',
       },
+      margin: {
+        100: '400px',
+      },
     },
   },
   plugins: [],
 };
+
