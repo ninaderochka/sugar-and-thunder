@@ -35,7 +35,7 @@ function Navbar() {
         <Link className="p-4" to="/">
           Home
         </Link>
-        <Link className="p-4" to="/Blogs">
+        <Link className="p-4" to="/Blog">
           Blogs
         </Link>
         <Link className="p-4" to="/About">

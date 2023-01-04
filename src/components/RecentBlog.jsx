@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Rectangle41 from '../images/Rectangle41.png';
@@ -26,7 +27,7 @@ function RecentBlog() {
   };
 
   return (
-    <div className="bg-light-blue h-200">
+    <div className="bg-light-blue h-screen md:h-screen">
       <h1 className="text-5xl leading-10 uppercase pt-16 pb-24 pl-40 font-poppins">
         Recent BLOGs
       </h1>
@@ -39,30 +40,31 @@ function RecentBlog() {
             </h1>
             <img src={Rectangle40} alt="" />
           </div>
-
-          <div>
-            <img src={Rectangle41} alt="" />
-            <div
-              className="absolute text-white bottom-12 m-8 bg-text-background uppercase text-2xl 
+          <Link to="/Blog">
+            <div>
+              <img src={Rectangle41} alt="" />
+              <div
+                className="absolute text-white bottom-12 m-8 bg-text-background uppercase text-2xl 
         bg-opacity-50 leading-7 text-center align-middle	"
-            >
-              Heal from
-            </div>
-            <div
-              className="absolute text-white bottom-4  m-8  bg-text-background uppercase  text-2xl
+              >
+                Heal from
+              </div>
+              <div
+                className="absolute text-white bottom-4  m-8  bg-text-background uppercase  text-2xl
          font-normal bg-opacity-50 inline-block align-middle	leading-7"
-            >
-              trauma{' '}
+              >
+                trauma{' '}
+              </div>
             </div>
-          </div>
-
-          <div>
-            <h1 className="absolute text-white pt-3 pl-6 w-44 uppercase">
-              Mental Health and Technology{' '}
-            </h1>
-            <img src={Rectangle40} alt="" />
-          </div>
-
+          </Link>
+          <Link to="/Blog">
+            <div>
+              <h1 className="absolute text-white pt-3 pl-6 w-44 uppercase">
+                Mental Health and Technology{' '}
+              </h1>
+              <img src={Rectangle40} alt="" />
+            </div>
+          </Link>
           <div>
             <img src={Rectangle41} alt="" />
             <div
