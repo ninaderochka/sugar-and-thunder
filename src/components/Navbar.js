@@ -45,12 +45,14 @@ function Navbar() {
         <Link className="p-4" to="/Contact">
           Contact us
         </Link>
-        <button
-          type="button"
-          className="bg-button-blue rounded-md px-6 py-1 text-xl"
-        >
-          Log in
-        </button>
+        <Link to="/Signup">
+          <button
+            type="button"
+            className="bg-button-blue rounded-md px-6 py-1 text-xl"
+          >
+            Log in
+          </button>
+        </Link>
       </div>
     </nav>
   );
