@@ -1,7 +1,7 @@
 import React from 'react';
+import Button from './Button';
 import background from '../images/background.png';
 import image from '../images/image.png';
-import Button from './Button';
 
 export default function Header() {
   return (
