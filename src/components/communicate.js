@@ -5,7 +5,7 @@ const Communicate = () => {
   return (
     <div className="w-5/6 h-screen m-auto max-w-full">
       <h1 className="font-poppins font-normal text-5xl ml-3 mb-20 pt-20 uppercase">
-        we can communicate through
+        We can communicate through
       </h1>
       <div className="grid grid-cols-1 gap-6 max-h-full md:grid-cols-3 lg:grid-cols-3">
         <Box>

@@ -9,9 +9,9 @@ function Signup() {
       <div className="font-roboto px-20 mx-auto flex justify-between">
         <img src={SignupImage} alt="signup" className="w-2/4 pr-8" />
         <div className="grid grid-flow-row space-y-4">
-      <h1 className="uppercase text-5xl whitespace-nowrap mt-10 py-6">
-        signup now
-      </h1>
+          <h1 className="uppercase text-5xl whitespace-nowrap mt-10 py-6">
+            signup now
+          </h1>
           <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded min-w-min max-w-xl m-auto lg:w-full">
             <form className="w-full">
               <div className="grid grid-cols-2 gap-5 text-input-grey">
@@ -58,7 +58,7 @@ function Signup() {
                   placeholder="Birth Date"
                   className="p-3 align-middle"
                 /> */}
-                <p className='p-6 px-0'>Birthdate</p>
+                <p className="p-6 px-0">Birthdate</p>
                 <input
                   type="text"
                   placeholder="DD"
@@ -75,20 +75,20 @@ function Signup() {
                   className="border border-input-border rounded-md text-sm p-3 h-12"
                 />
               </div>
-                <div className="flex justify-center gap-6 mt-4 place-content-center mx-auto">
-                  <button
-                    type="button"
-                    className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
-                  >
-                    Log in
-                  </button>
-                  <button
-                    type="button"
-                    className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max outline whitespace-nowrap border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
-                  >
-                    Sign up
-                  </button>
-                </div>
+              <div className="flex justify-center gap-6 mt-4 place-content-center mx-auto">
+                <button
+                  type="button"
+                  className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+                >
+                  Log in
+                </button>
+                <button
+                  type="button"
+                  className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max outline whitespace-nowrap border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+                >
+                  Sign up
+                </button>
+              </div>
             </form>
           </div>
           <div className="flex flex-row justify-center mb-8">

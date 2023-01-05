@@ -21,8 +21,7 @@ const Therapists = () => {
           would expect from an in-office therapist, but with the ability to
           communicate whenever and however you want.
         </p>
-<Button value="Book an Appointment" onClick={handleClick()} />
-
+        <Button value="Book an Appointment" onClick={handleClick()} />
       </div>
     </div>
   );
