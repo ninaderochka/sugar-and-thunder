@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
 import RecentBlog from '../components/RecentBlog';
-import Communicate from '../components/Communicate';
 import Tickets from '../components/Tickets';
 import Therapists from '../components/Therapists';
 
@@ -10,7 +9,6 @@ function Home() {
     <div className="overflow-hidden">
       <Header />
       <Therapists />
-      <Communicate />
       <RecentBlog />
       <Tickets />
     </div>
