@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './Button';
+
 
 const Therapists = () => {
   const handleClick = () => {
@@ -21,7 +21,7 @@ const Therapists = () => {
           would expect from an in-office therapist, but with the ability to
           communicate whenever and however you want.
         </p>
-        <Button value="Book an Appointment" onClick={handleClick()} />
+        <button value="Book an Appointment" onClick={handleClick()} />
       </div>
     </div>
   );
