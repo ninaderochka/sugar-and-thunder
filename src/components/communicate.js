@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from './Box';
 
-const Communicate = () => {
+export default function Communicate() {
   return (
     <div className="w-5/6 h-screen m-auto max-w-full">
       <h1 className="font-poppins font-normal text-5xl ml-3 mb-20 pt-20 uppercase">
@@ -50,6 +50,4 @@ const Communicate = () => {
       </div>
     </div>
   );
-};
-
-export default Communicate;
+}
