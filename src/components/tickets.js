@@ -14,7 +14,7 @@ const Tickets = () => {
         Purchase tickets
       </h1>
       <p className="ml-3 text-2xl mb-12">
-        purchase tickets that can be used to book appointments!
+        Purchase tickets that can be used to book appointments!
       </p>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <Box>
