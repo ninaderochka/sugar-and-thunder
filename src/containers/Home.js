@@ -11,9 +11,9 @@ function Home() {
     <div className="overflow-hidden">
       <Header />
       <Therapists />
-<Communicate />
+      <Communicate />
       <RecentBlog />
-<Tickets />
+      <Tickets />
     </div>
   );
 }
