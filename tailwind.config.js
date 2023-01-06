@@ -28,6 +28,9 @@ module.exports = {
       dropShadow: {
         lg: '0px 4px 6px rgba(178, 171, 171, 0.25)',
       },
+       boxShadow: {
+        shadow: '0px 4px 12px rgba(0, 0, 0, 0.12)'
+       },
       gridTemplateColumns: {
         3: 'repeat(3, minmax(350px, 1fr))',
       },

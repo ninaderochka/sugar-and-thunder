@@ -8,11 +8,14 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Home from './containers/Home';
 
+import Booking from './BookingComp/Booking';
+// import { useState } from 'react';
 
 function App() {
   return (
     <div className="App">
 
+      <Booking/>
       <About />
       <Communicate />
       <Tickets />
