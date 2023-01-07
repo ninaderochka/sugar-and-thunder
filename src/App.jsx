@@ -11,6 +11,7 @@ import Signup from './containers/Signup';
 function App() {
   return (
     <div className="App">
+      <Contact />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
