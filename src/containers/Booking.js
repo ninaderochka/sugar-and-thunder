@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Questions } from '../components/Questions'
+import Button from '../components/Button'
 
 function Booking() {
     const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -7,9 +8,8 @@ function Booking() {
     const { question , choices } = questions[currentQuestion]
     const [ selectedAnswer, setSelectedAnswer ] = useState('')
 
-    const onSelectedAnswer = (answer,index) => {
-        setSelectedAnswer(index) 
-        if (answer) {
+    const onSelectedAnswer = (answer) => { 
+        if (answer === choices) {
             setSelectedAnswer(true)
         }
     }
@@ -28,24 +28,25 @@ function Booking() {
                 with the most suitable therapist for you. </p>
             </div>
 
-    <div className='h-screen w-screen flex justify-center p-10 mx-auto mt-10'>
-        <div className='bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded w-2/4 mx-auto absolute'>
+    <div className='flex justify-center p-10 mx-auto'>
+        <div className='bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded w-2/4 h-full mx-auto max-h-content aspect-sqaure'>
 
-     <div className="grid gap-y-4 mx-auto relative">
+     <div className="grid gap-y-4 m-auto">
         <h3 className='font-poppins text-3xl font-normal'>{question}</h3>
-        <ul className='grid gap-y-4 align-middle'>
+        <div className='grid gap-y-4 align-middle'>
            {choices.map((answer,index) => {
             return (
 
-                <li className={`font-poppins text-2xl border-2 w-full p-4 rounded focus:bg-button-blue ${selectedAnswer === index ? 'bg-button-blue' : ''}`}>{answer}</li>
+                <input type="button" value={answer}
+ onClick={() => onSelectedAnswer(answer)} key={answer} className={`font-poppins text-2xl border-2 w-full p-4 rounded focus:bg-button-blue focus:text-white ${selectedAnswer === index ? 'bg-button-blue' : ''}`} />
             )
            })}
-        </ul> 
-        <div className='flex gap-6'>
-        <button type='button' onClick={handlePrev} className='bg-button-blue flex items-center uppercase w-[122px] h-[50px] rounded-md text-center px-6 text-[28px]'>Back</button>
-<button type='button' onClick={handleNext} className='bg-button-blue flex items-center uppercase w-[122px] h-[50px] rounded-md text-center px-6 text-[28px]'>Next</button>
-        </div>
+        </div> 
     </div>
+        <div className='flex gap-6 mt-20'>
+        <Button type='button' onClick={() => handlePrev()} value='Back'/>
+<Button type='button' onClick={() => handleNext()} value='Next'/>
+        </div>
         </div>
     </div>
   </div>
