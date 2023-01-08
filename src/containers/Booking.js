@@ -5,7 +5,7 @@ import Button from '../components/Button';
 function Booking() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const { questions } = Questions;
-  const { question, choices, type } = questions[currentQuestion];
+  const { question, choices, type, text } = questions[currentQuestion];
   const [selectedAnswer, setSelectedAnswer] = useState('');
 
   const onSelectedAnswer = (answer) => {
@@ -20,6 +20,7 @@ function Booking() {
   function handlePrev() {
     setCurrentQuestion((prev) => prev - 1);
   }
+
   return (
     <div>
       <div className="px-16 py-12 font-normal">
@@ -54,22 +55,34 @@ function Booking() {
                       }`}
                     />
                   );
-                }
-                return (
-                  <div className="flex whitespace-nowrap font-poppins text-2xl gap-5">
-                    <input
-                      id={`${currentQuestion}-${index}`}
-                      type="radio"
-                      value={answer}
-                      onChange={() => onSelectedAnswer(answer)}
-                      key={answer}
-                    />
-                    <label htmlFor={`${currentQuestion}-${index}`}>
-                      {answer}
-                    </label>
+                } if (type === 'radio') {
+                  
+                  return (
+                    <div className="flex whitespace-nowrap font-poppins text-2xl gap-5">
+                      <input
+                        id={`${currentQuestion}-${index}`}
+                        type="radio"
+                        value={answer}
+                        key={answer}
+                      />
+                      <label htmlFor={`${currentQuestion}-${index}`}>
+                        {answer}
+                      </label>
+                    </div>
+                  );
+                } return (
+
+                 <div className="px-16 py-12 font-normal">
+                  <h1 className="text-[50px] uppercase mb-4">
+                  {question}
+              </h1>
+              <p className="text-[28px] text-black/50">
+              {text}
+              </p>
+              <input type='text' value={answer} className='w-full p-20 h-[360px]'/>
                   </div>
-                );
-              })}
+                )
+                })}
             </div>
             <div className="flex gap-6 mt-20 fixed py-[340px]">
               <Button type="button" onClick={() => handlePrev()} value="Back" />
