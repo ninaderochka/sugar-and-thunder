@@ -27,8 +27,8 @@ export default function Login() {
                 <input className='border relative bg-gray-100 p-2' type="password" />
             </div>
             <div className='flex justify-between font-poppins'>
-               <button className='w-28 h-50 py-4 px-2 mt-8 ml-3 bg-blue-400 hover:bg-blue-200 scale-x-125 rounded hover:cursor-pointer text-black  border-blue-400 font-poppins'>Login</button>
-               <button className='w-28 h-50 py-4 px-2 mt-8 mr-3 hover:bg-blue-200 scale-x-125 rounded hover:cursor-pointer text-blue-400 border border-blue-400 font-poppins'>Signup</button>
+               <button className='w-28 h-50 py-4 px-2 mt-8 ml-3 bg-button-blue leading-tight shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 scale-x-125 rounded hover:cursor-pointer text-black  border-button-blue font-poppins'>Login</button>
+               <button className='w-28 h-50 py-4 px-2 mt-8 mr-3 scale-x-125 rounded hover:cursor-pointer hover:shadow-lg text-button-blue border border-button-blue font-poppins'>Signup</button>
             </div>
         </form>
     </div>
