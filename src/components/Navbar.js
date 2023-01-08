@@ -6,7 +6,8 @@ import Logo from '../images/Logo.svg';
 function Navbar() {
   return (
     <nav
-      className="flex justify-between align-center p-4 h-[106px] bg-light-blue font-poppins"
+      className="flex justify-between flex-wrap
+      items-center align-center p-4 h-[106px] bg-light-blue font-poppins  focus:text-light-yellow focus:underline-offset-2"
       role="navigation"
     >
       <div className="pl-8 flex">
@@ -31,18 +32,30 @@ function Navbar() {
           />
         </svg>
       </div>
-      <div className="pr-8 text-xl focus:text-light-yellow underline-offset-2 transition-colors md:block hidden">
-        <Link className="p-4" to="/">
+      <div className="pr-8 text-xl transition-colors md:block hidden">
+        <Link
+          className="p-4 focus:text-light-yellow focus:underline focus:font-bold"
+          to="/"
+        >
           Home
         </Link>
-        <Link className="p-4" to="/Blog">
+        <Link
+          className="p-4  focus:text-light-yellow focus:underline focus:font-bold"
+          to="/Blog"
+        >
           Blogs
         </Link>
-        <Link className="p-4" to="/About">
+        <Link
+          className="p-4  focus:text-light-yellow focus:underline focus:font-bold"
+          to="/About"
+        >
           About
         </Link>
         {/* <img src={triangle} alt='triangle' className='p-0'/> */}
-        <Link className="p-4" to="/Contact">
+        <Link
+          className="p-4  focus:text-light-yellow focus:underline focus:font-bold"
+          to="/Contact"
+        >
           Contact us
         </Link>
         <Link to="/Signup">
