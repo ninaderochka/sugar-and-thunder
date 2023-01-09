@@ -40,9 +40,7 @@ export const Questions = {
     },
     {
       question: 'What brings you here?',
-      choices: [
-
-      ],
+      choices: ['none'],
       type: 'input',
     },
   ],

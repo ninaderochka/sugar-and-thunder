@@ -5,14 +5,32 @@ import Button from '../components/Button';
 function Booking() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const { questions } = Questions;
-  const { question, choices, type, text } = questions[currentQuestion];
+  const { question, choices, type } = questions[currentQuestion];
   const [selectedAnswer, setSelectedAnswer] = useState('');
+  const [isChecked, setIsChecked] = useState(false);
+  // const [ radioSelect, setRadioSelect] = useState (true)
 
   const onSelectedAnswer = (answer) => {
     if (answer === choices) {
       setSelectedAnswer(true);
     }
   };
+
+  // const onOptionChange = e => {
+  //   setRadioSelect(e.target.value)
+  // }
+
+  // function handleIsChecked() {
+  //   if(isChecked) {
+  //     setIsChecked(false)
+  //   } else {
+  //     setIsChecked(true)
+  //   }
+  // }
+
+  function handleCheckedChange() {
+    setIsChecked(!isChecked);
+  }
 
   function handleNext() {
     setCurrentQuestion((prev) => prev + 1);
@@ -42,6 +60,26 @@ function Booking() {
           <div className="grid gap-y-4 m-auto">
             <h3 className="font-poppins text-3xl font-normal">{question}</h3>
             <div className="grid gap-y-4 pt-10">
+              {/* {question.map((finalQuestion) => { if (choices === 'none') {
+return (
+  <div className="px-16 py-12 font-normal">
+  <h1 className="text-[50px] uppercase mb-4">
+  {finalQuestion}
+</h1>
+<p className="text-[28px] text-black/50">
+Please specify (in a few sentences) why you’d like counseling.This will give your counselor a good understanding of where to start.
+</p>
+<input type='text' className='w-full p-20 h-[360px]'/>
+  </div>
+)
+          } return (
+
+          <div className="grid gap-y-4 m-auto">
+            <h3 className="font-poppins text-3xl font-normal">{question}</h3>
+            </div>
+          )
+          } 
+          )}  */}
               {choices.map((answer, index) => {
                 if (type === 'normal') {
                   return (
@@ -49,40 +87,32 @@ function Booking() {
                       type="button"
                       value={answer}
                       onClick={() => onSelectedAnswer(answer)}
-                      key={answer}
+                      key={answer.toString()}
                       className={`font-poppins text-2xl border-2 w-full lg:w-[723px] p-4 rounded focus:bg-button-blue focus:text-white ${
                         selectedAnswer === index ? 'bg-button-blue' : ''
                       }`}
                     />
                   );
-                } if (type === 'radio') {
-                  
-                  return (
-                    <div className="flex whitespace-nowrap font-poppins text-2xl gap-5">
-                      <input
-                        id={`${currentQuestion}-${index}`}
-                        type="radio"
-                        value={answer}
-                        key={answer}
-                      />
-                      <label htmlFor={`${currentQuestion}-${index}`}>
-                        {answer}
-                      </label>
-                    </div>
-                  );
-                } return (
+                }
 
-                 <div className="px-16 py-12 font-normal">
-                  <h1 className="text-[50px] uppercase mb-4">
-                  {question}
-              </h1>
-              <p className="text-[28px] text-black/50">
-              {text}
-              </p>
-              <input type='text' value={answer} className='w-full p-20 h-[360px]'/>
+                return (
+                  <div className="flex whitespace-nowrap font-poppins text-2xl gap-5">
+                    <input
+                      id={`${currentQuestion}-${index}`}
+                      type="radio"
+                      key={answer}
+                      // checked={isChecked}
+                      // onChange={() => handleIsChecked()}
+                      checked={isChecked}
+                      onChange={handleCheckedChange}
+                      // onChange={onOptionChange}
+                    />
+                    <label htmlFor={`${currentQuestion}-${index}`}>
+                      {answer}
+                    </label>
                   </div>
-                )
-                })}
+                );
+              })}
             </div>
             <div className="flex gap-6 mt-20 fixed py-[340px]">
               <Button type="button" onClick={() => handlePrev()} value="Back" />
