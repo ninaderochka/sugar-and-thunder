@@ -7,6 +7,7 @@ import Blog from './containers/Blog';
 import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
+import Career from './components/Career';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Signup" element={<Signup />} />
+        <Route path="/About/Career" element={<Career />} />
       </Routes>
       <Footer />
     </div>
