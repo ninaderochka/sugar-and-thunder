@@ -7,8 +7,8 @@ function Booking() {
   const { questions } = Questions;
   const { question, choices, type } = questions[currentQuestion];
   const [selectedAnswer, setSelectedAnswer] = useState('');
-  const [isChecked, setIsChecked] = useState(false);
-  // const [ radioSelect, setRadioSelect] = useState (true)
+  const [isChecked, setIsChecked] = useState("");
+
 
   const onSelectedAnswer = (answer) => {
     if (answer === choices) {
@@ -16,26 +16,18 @@ function Booking() {
     }
   };
 
-  // const onOptionChange = e => {
-  //   setRadioSelect(e.target.value)
-  // }
 
-  // function handleIsChecked() {
-  //   if(isChecked) {
-  //     setIsChecked(false)
-  //   } else {
-  //     setIsChecked(true)
-  //   }
-  // }
-
-  function handleCheckedChange() {
-    setIsChecked(!isChecked);
+  function handleCheckedChange(answer) {
+    setIsChecked(answer);
   }
 
   function handleNext() {
-    setCurrentQuestion((prev) => prev + 1);
+    if(currentQuestion !== questions.length - 1){
+      setCurrentQuestion((prev) => prev + 1);
+    }
   }
   function handlePrev() {
+    if(currentQuestion !== 0)
     setCurrentQuestion((prev) => prev - 1);
   }
 
@@ -55,12 +47,57 @@ function Booking() {
         </p>
       </div>
 
-      <div className="w-full flex flex-col p-2 sm:w-1/2 lg:w-full mb-10">
-        <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded w-full md:w-full md:mx-auto lg:w-[800px] lg:h-[557px]">
+      <div className="w-full flex flex-col p-2">
+        <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded w-full md:mx-auto lg:w-2/4 lg:h-[557px] mb-20">
           <div className="grid gap-y-4 m-auto">
             <h3 className="font-poppins text-3xl font-normal">{question}</h3>
             <div className="grid gap-y-4 pt-10">
-              {/* {question.map((finalQuestion) => { if (choices === 'none') {
+              
+              {choices.map((answer, index) => {
+                if (type === 'normal') {
+                  return (
+                    <input
+                      type="button"
+                      value={answer}
+                      onClick={() => onSelectedAnswer(answer)}
+                      key={answer}
+                      className={`font-poppins text-2xl border-2 w-full lg:w-11/12 p-4 rounded focus:bg-button-blue focus:text-white ${
+                        selectedAnswer === index ? 'bg-button-blue' : ''
+                      }`}
+                    />
+                  );
+                }
+
+                return (
+                  <div className="flex whitespace-nowrap font-poppins text-2xl gap-2">
+                    <input
+                      id={`${currentQuestion}-${index}`}
+                      type="radio"
+                      key={answer}
+                      checked={isChecked === answer}
+                      onChange={() => handleCheckedChange(answer)}
+                    />
+                    <label htmlFor={`${currentQuestion}-${index}`}>
+                      {answer}
+                    </label>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+            <div className='flex gap-6 fixed bottom-11'>
+            {/* <div className="flex gap-6 mt-20 fixed py-[340px]"> */}
+              { currentQuestion!==0 && <Button type="button" onClick={() => handlePrev()} value='Back' />}
+              <Button type="button" onClick={() => handleNext()} value={currentQuestion === questions.length - 1 ? 'Finish' : 'Next'} />
+            </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Booking;
+/* {question.map((finalQuestion) => { if (currentQuestion === questions.length - 1) {
 return (
   <div className="px-16 py-12 font-normal">
   <h1 className="text-[50px] uppercase mb-4">
@@ -79,50 +116,4 @@ Please specify (in a few sentences) why you’d like counseling.This will give y
             </div>
           )
           } 
-          )}  */}
-              {choices.map((answer, index) => {
-                if (type === 'normal') {
-                  return (
-                    <input
-                      type="button"
-                      value={answer}
-                      onClick={() => onSelectedAnswer(answer)}
-                      key={answer.toString()}
-                      className={`font-poppins text-2xl border-2 w-full lg:w-[723px] p-4 rounded focus:bg-button-blue focus:text-white ${
-                        selectedAnswer === index ? 'bg-button-blue' : ''
-                      }`}
-                    />
-                  );
-                }
-
-                return (
-                  <div className="flex whitespace-nowrap font-poppins text-2xl gap-5">
-                    <input
-                      id={`${currentQuestion}-${index}`}
-                      type="radio"
-                      key={answer}
-                      // checked={isChecked}
-                      // onChange={() => handleIsChecked()}
-                      checked={isChecked}
-                      onChange={handleCheckedChange}
-                      // onChange={onOptionChange}
-                    />
-                    <label htmlFor={`${currentQuestion}-${index}`}>
-                      {answer}
-                    </label>
-                  </div>
-                );
-              })}
-            </div>
-            <div className="flex gap-6 mt-20 fixed py-[340px]">
-              <Button type="button" onClick={() => handlePrev()} value="Back" />
-              <Button type="button" onClick={() => handleNext()} value="Next" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export default Booking;
+          )} */

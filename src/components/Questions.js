@@ -38,10 +38,5 @@ export const Questions = {
       ],
       type: 'radio',
     },
-    {
-      question: 'What brings you here?',
-      choices: ['none'],
-      type: 'input',
-    },
   ],
 };
