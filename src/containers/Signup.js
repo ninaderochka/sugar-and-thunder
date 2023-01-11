@@ -6,16 +6,16 @@ import gmail from '../images/Google.svg';
 
 function Signup() {
   return (
-    <div className="h-screen w-screen bg-white mb-8">
+    <div className="h-screen w-screen bg-white mb-20">
       <div className="font-roboto px-20 mx-auto flex justify-between">
         <img src={SignupImage} alt="signup" className="w-2/4 pr-8" />
         <div className="grid grid-flow-row space-y-4">
           <h1 className="uppercase text-5xl whitespace-nowrap mt-10 py-6">
             signup now
           </h1>
-          <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded min-w-min max-w-xl m-auto lg:w-full">
+          <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded min-w-min max-w-xl m-auto lg:w-[555px]">
             <form className="w-full">
-              <div className="grid grid-cols-2 gap-5 text-input-grey">
+              <div className="grid grid-cols-2 gap-5">
                 <input
                   type="text"
                   placeholder="First Name"
@@ -59,11 +59,11 @@ function Signup() {
                   placeholder="Birth Date"
                   className="p-3 align-middle"
                 /> */}
-                <p className="p-6 px-0">Birthdate</p>
+                <p className="p-6 px-0 mx-auto">Birthdate</p>
                 <input
                   type="text"
                   placeholder="DD"
-                  className="border border-input-border rounded-md text-sm p-3 aspect-square h-12 w-12 py-4 px-3.5"
+                  className="border border-input-border rounded-md text-sm p-3 aspect-square h-12 w-12 py-4 px-3.5 ml-16"
                 />
                 <input
                   type="text"
