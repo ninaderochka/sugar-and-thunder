@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { signIn } from '../firebase';
 import image from '../images/image.png';
 import facebook from '../images/Facebook.svg';
 import gmail from '../images/Google.svg';
 
 export default function Login() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+setEmail("");
+setPassword("");
+const res = await signIn(email, password);
+if (res.error) setError(res.error);
+    }
   return (
     <div className="h-screen w-screen bg-white mb-8">
       <div className="font-roboto px-20 mx-auto flex justify-between">
@@ -13,23 +24,29 @@ export default function Login() {
             login
           </h1>
           <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border px-10 py-10 border-2 rounded min-w-min max-w-xl m-auto lg:w-96 md:mx-auto">
-            <form className="w-full">
+            <form className="w-full" onSubmit={handleSubmit}>
               <div className="mt-5 flex flex-col space-y-5 text-input-grey">
                 <input
                   type="text"
                   placeholder="Your Email"
+                  value={email}
+                  required
+                  onChange={(e) => setEmail(e.target.value)}
                   className="border border-input-border box-border rounded-md text-sm p-7 "
                 />
                 <input
                   type="text"
                   placeholder="Your Password"
+                  value={password}
+                  required
+                  onChange={(e) => setPassword(e.target.value)}
                   className="border border-input-border box-border rounded-md text-sm p-7"
                 />
               </div>
               <div className="flex justify-center gap-6 mt-10 place-content-center mx-auto">
                 <Link to="/Login">
                   <button
-                    type="button"
+                    type="submit"
                     className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
                   >
                     Log in
