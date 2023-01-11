@@ -45,15 +45,15 @@ function Signup() {
     if (password !== confirmPassword) {
       setError('Passwords does not match');
     } else {
-      setEmail('')
-      setConfirmEmail('')
-      setPassword('')
-      setConfirmPassword('')
-      const res = await signUp(email, password)
-        if (res.error) setError(res.error) 
-      }
-  }
-    return (
+      setEmail('');
+      setConfirmEmail('');
+      setPassword('');
+      setConfirmPassword('');
+      const res = await signUp(email, password);
+      if (res.error) setError(res.error);
+    }
+  };
+  return (
     <div className="h-screen w-screen bg-white mb-20 auth">
       <div className="font-roboto px-20 mx-auto flex justify-between">
         <img src={SignupImage} alt="signup" className="w-2/4 pr-8" />
@@ -174,6 +174,5 @@ function Signup() {
     </div>
   );
 }
-
 
 export default Signup;

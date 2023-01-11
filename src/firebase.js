@@ -2,11 +2,11 @@
 import { initializeApp } from 'firebase/app';
 // import { getAnalytics } from 'firebase/analytics';
 import {
- getAuth,
-createUserWithEmailAndPassword,
-signInWithEmailAndPassword,
-  } from "firebase/auth";
-import { getFirestore, addDoc, collection } from "firebase/firestore";
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
+import { getFirestore, addDoc, collection } from 'firebase/firestore';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -23,36 +23,36 @@ const firebaseConfig = {
   measurementId: 'G-TR98PV627V',
 };
 
-const signUp = async (email, password) => {
-try {
-const userCredential = await createUserWithEmailAndPassword(
-auth,
-email,
-  );
-const user = userCredential.user;
-await addDoc(collection(db, "users"), {
-uid: user.uid,
-email: user.email,
-});
-return true
-} catch (error) {
-return {error: error.message}
-}
-  };
+export const app = initializeApp(firebaseConfig);
+export const db = getFirestore();
 
-  const signIn = async (email, password) => {
-try {
-const userCredential = await signInWithEmailAndPassword(
-auth,
-email,
-password
-);
-const user = userCredential.user;
-return true
-} catch (error) {
-return {error: error.message}
-}
-    };
+export const signUp = async (auth, email) => {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email);
+    const user = userCredential.user;
+    await addDoc(collection(db, 'users'), {
+      uid: user.uid,
+      email: user.email,
+    });
+    return true;
+  } catch (error) {
+    return { error: error.message };
+  }
+};
+
+export const signIn = async (email, password) => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+  } catch (error) {
+    return { error: error.message };
+  }
+};
+
+const auth = getAuth();
 
 //     const signOut = async() => {
 // try {
@@ -63,9 +63,5 @@ return {error: error.message}
 // }
 //       };
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore();
-const auth = getAuth();
-// const analytics = getAnalytics(app);
 
-export {signIn, signUp}
+// const analytics = getAnalytics(app);

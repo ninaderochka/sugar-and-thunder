@@ -6,16 +6,16 @@ import facebook from '../images/Facebook.svg';
 import gmail from '../images/Google.svg';
 
 export default function Login() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('')
-    const [error, setError] = useState('')
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-setEmail("");
-setPassword("");
-const res = await signIn(email, password);
-if (res.error) setError(res.error);
-    }
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setEmail('');
+    setPassword('');
+    const res = await signIn(email, password);
+    if (res.error) setError(res.error);
+  };
   return (
     <div className="h-screen w-screen bg-white mb-8">
       <div className="font-roboto px-20 mx-auto flex justify-between">
