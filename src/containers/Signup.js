@@ -77,18 +77,22 @@ function Signup() {
                 />
               </div>
               <div className="flex justify-center gap-6 mt-4 place-content-center mx-auto">
-              <Link to='/Login'><button
-                        type="button"
-                        className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
-                      >
-                        Log in
-                      </button></Link>
-                      <Link to='/Signup'><button
-                        type="button"
-                        className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max outline whitespace-nowrap border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
-                      >
-                        Sign up
-                      </button></Link>
+                <Link to="/Login">
+                  <button
+                    type="button"
+                    className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+                  >
+                    Log in
+                  </button>
+                </Link>
+                <Link to="/Signup">
+                  <button
+                    type="button"
+                    className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max outline whitespace-nowrap border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+                  >
+                    Sign up
+                  </button>
+                </Link>
               </div>
             </form>
           </div>
