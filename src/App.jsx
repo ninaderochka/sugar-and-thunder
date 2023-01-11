@@ -8,11 +8,13 @@ import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
 import Career from './components/Career';
-
+import TherapistProfile from './components/TherapistProfile';
 function App() {
   return (
     <div className="App">
       <Navbar />
+      <TherapistProfile />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Blog" element={<Blog />} />
