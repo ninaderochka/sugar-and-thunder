@@ -29,7 +29,7 @@ export const db = getFirestore();
 export const signUp = async (auth, email) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email);
-    const user = userCredential.user;
+    const [user]= userCredential;
     await addDoc(collection(db, 'users'), {
       uid: user.uid,
       email: user.email,
@@ -40,6 +40,8 @@ export const signUp = async (auth, email) => {
   }
 };
 
+const auth = getAuth();
+
 export const signIn = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(
@@ -47,12 +49,14 @@ export const signIn = async (email, password) => {
       email,
       password
     );
+    const [user] = userCredential
+    return true
   } catch (error) {
     return { error: error.message };
   }
 };
 
-const auth = getAuth();
+
 
 //     const signOut = async() => {
 // try {
