@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { signUp } from '../firebase';
+import {createUserWithEmailAndPassword} from 'firebase/auth';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../firebase';
 import SignupImage from '../images/SignupImage.svg';
 import facebook from '../images/Facebook.svg';
 import gmail from '../images/Google.svg';
@@ -39,7 +41,19 @@ function Signup() {
   //   }
   //   return isValid;
   // };
-
+const signUp = async (auth, email) => {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email);
+      const [user]= userCredential;
+      await addDoc(collection(db, 'users'), {
+        uid: user.uid,
+        email: user.email,
+      });
+      return true;
+    } catch (error) {
+      return { error: error.message };
+    }
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {

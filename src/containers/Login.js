@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { signIn } from '../firebase';
+import { signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider, signInWithPopup, updateProfile } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth'
+
+import { auth } from '../firebase';
 import image from '../images/image.png';
 import facebook from '../images/Facebook.svg';
 import gmail from '../images/Google.svg';
@@ -9,6 +12,52 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [user,loading] = useAuthState(auth)
+
+const route = useRouter()
+const googleProvider = new GoogleAuthProvider()
+const fbProvider = new FacebookAuthProvider()
+
+useEffect(() => {
+  if(user) {
+   route.push('/')
+  }
+})
+
+const googleLogin = async () => {
+  try {
+const result = signInWithPopup(auth, googleProvider)
+route.push('/')
+return result
+  } catch(error) {
+    return { error: error.message };
+  }
+}
+
+const fbLogin = async () => {
+  try {
+const result = signInWithPopup(auth, fbProvider)
+route.push('/')
+return result
+  } catch(error) {
+    return { error: error.message };
+  }
+}
+
+const signIn = async (email, password) => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const [user] = userCredential
+      return true
+    } catch (error) {
+      return { error: error.message };
+    }
+  };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setEmail('');
@@ -71,8 +120,8 @@ export default function Login() {
           </div>
           <div>
             <div className="flex justify-center cursor-pointer gap-12">
-              <img src={facebook} alt="facebook logo" />
-              <img src={gmail} alt="gmail logo" />
+              <button type='button'  onClick={fbLogin}>{facebook}</button>
+              <button type='button' onClick={googleLogin}>{gmail}</button>
             </div>
           </div>
         </div>

@@ -1316,18 +1316,7 @@
   resolved "https://registry.npmjs.org/@firebase/auth-types/-/auth-types-0.12.0.tgz"
   integrity sha512-pPwaZt+SPOshK8xNoiQlK5XIrS97kFYc3Rc7xmy373QsOJ9MmqXxLaYssP5Kcds4wd2qK//amx/c+A8O2fVeZA==
 
-"@firebase/auth@0.21.0":
-  version "0.21.0"
-  resolved "https://registry.npmjs.org/@firebase/auth/-/auth-0.21.0.tgz"
-  integrity sha512-kXOQl/hyLuGKxs0r2icLsDmAyeO0uM4zV9Q+fx6VE8Ncl94TBUc/n895GSrF3RkNHdiq/DZxV/PUCZ/ozPQNKw==
-  dependencies:
-    "@firebase/component" "0.6.0"
-    "@firebase/logger" "0.4.0"
-    "@firebase/util" "1.8.0"
-    node-fetch "2.6.7"
-    tslib "^2.1.0"
-
-"@firebase/auth@^0.21.0":
+"@firebase/auth@0.21.0", "@firebase/auth@^0.21.0":
   version "0.21.0"
   resolved "https://registry.yarnpkg.com/@firebase/auth/-/auth-0.21.0.tgz#058ee82bbea55c41ec4f92465e98e8013055eb2c"
   integrity sha512-kXOQl/hyLuGKxs0r2icLsDmAyeO0uM4zV9Q+fx6VE8Ncl94TBUc/n895GSrF3RkNHdiq/DZxV/PUCZ/ozPQNKw==
@@ -8455,6 +8444,11 @@ react-error-overlay@^6.0.11:
   version "6.0.11"
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
+
+react-firebase-hooks@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/react-firebase-hooks/-/react-firebase-hooks-5.1.1.tgz#fc92bb4b860c6753c806583f64d7f069b6ee6785"
+  integrity sha512-y2UpWs82xs+39q5Rc/wq316ca52QsC0n8m801V+yM4IC4hbfOL4yQPVSh7w+ydstdvjN9F+lvs1WrO2VYxpmdA==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"

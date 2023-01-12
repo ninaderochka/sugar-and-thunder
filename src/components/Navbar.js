@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth } from '../firebase';
 import Logo from '../images/Logo.svg';
+
 // import triangle from '../images/triangle.svg';
 
 function Navbar() {
+  const [user,loading] = useAuthState(auth)
   return (
     <nav
       className="flex justify-between align-center p-4 h-[106px] bg-light-blue font-poppins"
@@ -45,14 +49,20 @@ function Navbar() {
         <Link className="p-4" to="/Contact">
           Contact us
         </Link>
-        <Link to="/Signup">
+       { !user && (<Link to="/Signup">
           <button
             type="button"
             className="bg-button-blue rounded-md px-6 py-1 text-xl"
           >
             Log in
           </button>
-        </Link>
+        </Link>)}
+        { user && (<div>
+          <h2>{user.displayName}</h2>
+          <Link to='/'>
+            <img src={user.photoURL} alt='avatar' referrerPolicy='no-referrer' className='w-12 rounded-full'></img>
+          </Link>
+        </div>)}
       </div>
     </nav>
   );
