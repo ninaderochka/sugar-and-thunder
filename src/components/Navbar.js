@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-// import { useAuthState } from 'react-firebase-hooks/auth'
+import { useAuthState } from 'react-firebase-hooks/auth'
 import { useUserAuth } from '../AuthContext';
 import { auth } from '../firebase';
 import Logo from '../images/Logo.svg';
@@ -7,15 +7,19 @@ import Logo from '../images/Logo.svg';
 // import triangle from '../images/triangle.svg';
 
 function Navbar() {
+  // console.log(useUserAuth())
+  
 
-  const { logOut, user } = useUserAuth(auth);
-  // eslint-disable-next-line
-  console.log(logOut)
+  
+  
+  
+  const [user] = useAuthState(auth);
 
-  // const [user] = useAuthState(auth);
+  const { logOut, loggedInUser} = useUserAuth();
+  console.log(loggedInUser)
+ 
 
-
-
+  
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
@@ -23,7 +27,8 @@ function Navbar() {
       navigate("/");
     } catch (error) {
       // eslint-disable-next-line
-      console.log(error.message);}
+       console.log(error.message);
+      }
     }
 
   return (
@@ -77,7 +82,7 @@ function Navbar() {
         </Link>)}
         { user && (<div className='inline-block align-middle'>
           <Link to='/Home'>
-            {/* <img src={user.photoURL} alt='avatar' referrerPolicy='no-referrer' className='w-12 rounded-full' /> */}
+            <img src={user.photoURL} alt='avatar' referrerPolicy='no-referrer' className='w-12 rounded-full' />
           </Link>
         </div>)}
         <button className='text-xs outline p-1 ml-2 cursor-pointer' type='button' onClick={handleLogout}>Log out</button>

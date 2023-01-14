@@ -25,7 +25,7 @@ export function UserAuthContextProvider({ children }) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
         // eslint-disable-next-line
-      console.log("Auth", currentuser);
+    //   console.log("Auth", currentuser);
       setUser(currentuser);
     });
 
@@ -34,7 +34,7 @@ export function UserAuthContextProvider({ children }) {
     };
   }, []);
 
-  const methods = useMemo(() => ({user, logIn, signUp, logOut}), []);
+  const methods = useMemo(() => ({loggedInUser:user, logIn, signUp, logOut}), []);
   return (
     <userAuthContext.Provider
       value={methods}
@@ -47,8 +47,4 @@ export function UserAuthContextProvider({ children }) {
 export function useUserAuth() {
   return useContext(userAuthContext);
 }
-    // useEffect(() => {
-    // onAuthStateChanged(auth,(person) => {
-    // setUser(person)
-    // })
-    // }, []);
+    

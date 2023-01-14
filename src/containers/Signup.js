@@ -60,6 +60,7 @@ const googleProvider = new GoogleAuthProvider()
 //     }
 //   };
 const auth = getAuth()
+
 const googleLogin = async () => {
   try {
 const result = signInWithPopup(auth, googleProvider)
@@ -72,6 +73,7 @@ return result
 
 
 const { signUp } = useUserAuth();
+console.log(useUserAuth())
 
   const handleSubmit = async (e) => {
     e.preventDefault();
