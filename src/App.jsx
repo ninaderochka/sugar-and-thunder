@@ -7,10 +7,12 @@ import Blog from './containers/Blog';
 import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
+import EditProfile from './components/EditProfile';
 
 function App() {
   return (
     <div className="App">
+      <EditProfile/>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
