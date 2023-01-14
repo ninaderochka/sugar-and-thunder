@@ -8,12 +8,14 @@ import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
 import Login from './containers/Login';
+import { UserAuthContextProvider } from './AuthContext';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Routes>
+      <UserAuthContextProvider>
+     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Blog" element={<Blog />} />
         <Route path="/About" element={<About />} />
@@ -21,6 +23,7 @@ function App() {
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Login" element={<Login />} />
       </Routes>
+      </UserAuthContextProvider>
       <Footer />
     </div>
   );

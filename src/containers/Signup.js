@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import {createUserWithEmailAndPassword} from 'firebase/auth';
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../firebase';
+import { Link, useNavigate } from 'react-router-dom';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from '@firebase/auth';
+// import { getAuth } from 'firebase/auth'
+// import { addDoc, collection } from 'firebase/firestore';
+// import { db } from '../firebase';
 import SignupImage from '../images/SignupImage.svg';
 import facebook from '../images/Facebook.svg';
 import gmail from '../images/Google.svg';
+import { useUserAuth } from '../AuthContext';
 
 function Signup() {
   const [email, setEmail] = useState('');
@@ -13,6 +15,9 @@ function Signup() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate()
+
+const googleProvider = new GoogleAuthProvider()
 
   // const validatePassword = () => {
   //   let isValid = true;
@@ -41,19 +46,33 @@ function Signup() {
   //   }
   //   return isValid;
   // };
-const signUp = async (auth, email) => {
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email);
-      const [user]= userCredential;
-      await addDoc(collection(db, 'users'), {
-        uid: user.uid,
-        email: user.email,
-      });
-      return true;
-    } catch (error) {
-      return { error: error.message };
-    }
-  };
+// const signUp = async (auth, email) => {
+//     try {
+//       const userCredential = await createUserWithEmailAndPassword(auth, email);
+//       const [user]= userCredential;
+//       await addDoc(collection(db, 'users'), {
+//         uid: user.uid,
+//         email: user.email,
+//       });
+//       return true;
+//     } catch (error) {
+//       return { error: error.message };
+//     }
+//   };
+const auth = getAuth()
+const googleLogin = async () => {
+  try {
+const result = signInWithPopup(auth, googleProvider)
+navigate('/Home')
+return result
+  } catch(error) {
+    return { error: error.message };
+  }
+}
+
+
+const { signUp } = useUserAuth();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
@@ -64,9 +83,11 @@ const signUp = async (auth, email) => {
       setPassword('');
       setConfirmPassword('');
       const res = await signUp(email, password);
+      navigate("/Home");
       if (res.error) setError(res.error);
     }
   };
+
   return (
     <div className="h-screen w-screen bg-white mb-20 auth">
       <div className="font-roboto px-20 mx-auto flex justify-between">
@@ -155,6 +176,7 @@ const signUp = async (auth, email) => {
                 <Link to="/Login">
                   <button
                     type="button"
+
                     className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
                   >
                     Log in
@@ -163,6 +185,7 @@ const signUp = async (auth, email) => {
                 <Link to="/Signup">
                   <button
                     type="submit"
+
                     className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max outline whitespace-nowrap border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
                   >
                     Sign up
@@ -179,8 +202,8 @@ const signUp = async (auth, email) => {
           </div>
           <div>
             <div className="flex justify-center cursor-pointer gap-12">
-              <img src={facebook} alt="facebook logo" />
-              <img src={gmail} alt="gmail logo" />
+            <button type='button'><img src={facebook} alt="facebook logo"/></button>
+              <button type='button' onClick={googleLogin}><img src={gmail} alt="gmail logo" /></button>
             </div>
           </div>
         </div>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider, signInWithPopup, updateProfile } from 'firebase/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import { GoogleAuthProvider, FacebookAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth'
-
+import { useUserAuth } from '../AuthContext';
 import { auth } from '../firebase';
 import image from '../images/image.png';
 import facebook from '../images/Facebook.svg';
@@ -12,59 +12,74 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [user,loading] = useAuthState(auth)
+  const [user] = useAuthState(auth)
+  const { logIn } = useUserAuth();
+  const navigate = useNavigate();
 
-const route = useRouter()
+
 const googleProvider = new GoogleAuthProvider()
 const fbProvider = new FacebookAuthProvider()
 
 useEffect(() => {
   if(user) {
-   route.push('/')
+   navigate('/Home')
   }
 })
 
 const googleLogin = async () => {
   try {
 const result = signInWithPopup(auth, googleProvider)
-route.push('/')
+navigate('/Home')
 return result
-  } catch(error) {
-    return { error: error.message };
+  } catch(err) {
+    return { err: error.message };
   }
 }
 
 const fbLogin = async () => {
   try {
 const result = signInWithPopup(auth, fbProvider)
-route.push('/')
+navigate('/Home')
 return result
   } catch(error) {
     return { error: error.message };
   }
 }
 
-const signIn = async (email, password) => {
-    try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const [user] = userCredential
-      return true
-    } catch (error) {
-      return { error: error.message };
-    }
-  };
+// const signIn = async (email, password) => {
+//     try {
+//       const userCredential = await signInWithEmailAndPassword(
+//         auth,
+//         email,
+//         password
+//       );
+//       const [user] = userCredential
+//       return true
+//     } catch (error) {
+//       return { error: error.message };
+//     }
+//   };
   
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setEmail('');
+  //   setPassword('');
+  //   const res = await signIn(email, password);
+  //   if (res.error) setError(res.error);
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setEmail('');
-    setPassword('');
-    const res = await signIn(email, password);
-    if (res.error) setError(res.error);
+    setError("");
+    try {
+      await logIn(email, password);
+      navigate("/home");
+    } catch (err) {
+      setError(err.message);
+    }
   };
+
+
   return (
     <div className="h-screen w-screen bg-white mb-8">
       <div className="font-roboto px-20 mx-auto flex justify-between">
@@ -120,8 +135,8 @@ const signIn = async (email, password) => {
           </div>
           <div>
             <div className="flex justify-center cursor-pointer gap-12">
-              <button type='button'  onClick={fbLogin}>{facebook}</button>
-              <button type='button' onClick={googleLogin}>{gmail}</button>
+            <button type='button' onClick={fbLogin}><img src={facebook} alt="facebook logo"/></button>
+            <button type='button' onClick={googleLogin}><img src={gmail} alt="gmail logo" /></button>
             </div>
           </div>
         </div>
