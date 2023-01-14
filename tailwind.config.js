@@ -3,7 +3,7 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
-      colors:{
+      colors: {
         'contact-us-gray': '#00000080',
         'textbox-gray': '#808080',
         'footer-gray': '#718096',
@@ -15,7 +15,7 @@ module.exports = {
         'text-background': '#154A80',
         'input-grey': '#9DAFBD',
         'input-border': '#D1DBE3',
-        'card-text' : '#94AFB6'
+        'card-text': '#94AFB6',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],

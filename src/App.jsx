@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <AddNewCard />
       <ThankUTicket />
-      <Cards/>
+      <Cards />
       {/* <EditProfile/> */}
       <Navbar />
       <Routes>
