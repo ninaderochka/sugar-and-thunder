@@ -9,12 +9,11 @@ import Contact from './containers/Contact';
 import Signup from './containers/Signup';
 import Career from './components/Career';
 import TherapistProfile from './components/TherapistProfile';
+import AboutTeam from './components/AboutTeam';
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <TherapistProfile />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Blog" element={<Blog />} />
@@ -22,6 +21,8 @@ function App() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/About/Career" element={<Career />} />
+        <Route path="/About/AboutTeam" element={<AboutTeam />} />
+        <Route path="/TherapistProfile" element={<TherapistProfile />} />
       </Routes>
       <Footer />
     </div>
