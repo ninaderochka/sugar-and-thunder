@@ -11,10 +11,12 @@ import Signup from './containers/Signup';
 import Cards from './components/Cards';
 import ThankUTicket from './components/ThankUTicket';
 import AddNewCard from './components/AddNewCard';
+import ThankUCard from './components/ThankUCard';
 
 function App() {
   return (
     <div className="App">
+      <ThankUCard />
       <AddNewCard />
       <ThankUTicket />
       <Cards />
