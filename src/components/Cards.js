@@ -18,32 +18,29 @@ export default function Cards() {
 
             <div className='pt-20 cursor-pointer justify-center'><IoIosArrowBack/></div>
         
-            <div className=''>
              <img
              className=" w-[350px] h-[223.36px] "
              alt="#"
              src={card1} />
-            </div>
 
-            <div className=''>
+
               <img
               className=" w-[350px] h-[223.36px] "
               alt="#"
               src={card2} />
-            </div>
 
-            <div className=''>
+
              <img
              className=" w-[350px] h-[223.36px] "
              alt="#"
              src={card3} />
-            </div>
+
 
             <div className='pt-20 cursor-pointer justify-center ' data-carousel-next ><IoIosArrowForward /></div>
 
         </div>
 
-        {/* <Link to="/AddCard"> */}
+        {/* <Link to="/ByTicket"> */}
         <div className='pt-20 pl-28 text-[12px] pb-8 '>
         <Button value="ADD NEW CARD+" />
         </div>
