@@ -2,7 +2,6 @@ import React from 'react';
 import Box from './Box';
 import Button from './Button';
 
-
 function Tickets() {
   return (
     <div className="h-full mb-8 max-h-full uppercase pt-20 w-5/6 mx-auto">
