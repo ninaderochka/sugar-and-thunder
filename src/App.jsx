@@ -11,12 +11,14 @@ import Signup from './containers/Signup';
 import Cards from './components/Cards';
 import ThankUTicket from './components/ThankUTicket';
 import AddNewCard from './components/AddNewCard';
+import ThankUSub from './components/ThankUSub';
 
 function App() {
   return (
     <div className="App">
-      <AddNewCard />
+      <ThankUSub />
       <ThankUTicket />
+      <AddNewCard />
       <Cards />
       {/* <EditProfile/> */}
       <Navbar />
