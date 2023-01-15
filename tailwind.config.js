@@ -3,7 +3,7 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
-      colors:{
+      colors: {
         'contact-us-gray': '#00000080',
         'textbox-gray': '#808080',
         'footer-gray': '#718096',
