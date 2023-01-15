@@ -8,7 +8,7 @@ export default function ThankUSignup() {
       <h1 className="text-[30px] md:text-[46] lg:text-[50px] tracking-[-1px]">
         THANK YOU!
       </h1>
-      <p className="text-[18px] md:text-[20px] lg:text-[24px] text-contact-us-gray pt-4 pb-10 w-[350px] md:w-[650px] lg:w-full ">
+      <p className="text-[18px] md:text-[20px] lg:text-[24px] text-contact-us-gray pt-4 pb-10 w-[350px] md:w-[600px] lg:w-full ">
         Your Sign Up request has been received, you will soon receive a
         confirmation email.
         <br />
