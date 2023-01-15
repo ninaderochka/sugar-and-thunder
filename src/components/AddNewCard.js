@@ -14,25 +14,23 @@ export default function AddNewCard() {
       </p>
 
       <div className="text-card-text flex pt-10 text-[24px] place-content-between">
-
         {/* Left side */}
         <div className=" pt-6 flex flex-col w-[310px]">
           <form className="">
-            <p >Supported Card types</p>
-            
-              <button
-                type="button"
-                className="border-button-blue text-button-blue border w-[155px] px-4 rounded-l-sm"
-              >
-                Visa
-              </button>
-              <button
-                type="button"
-                className="border border-button-blue px-4 rounded-r-sm text-button-blue w-[155px]"
-              >
-                Mastercard
-              </button>
-           
+            <p>Supported Card types</p>
+
+            <button
+              type="button"
+              className="border-button-blue text-button-blue border w-[155px] px-4 rounded-l-sm"
+            >
+              Visa
+            </button>
+            <button
+              type="button"
+              className="border border-button-blue px-4 rounded-r-sm text-button-blue w-[155px]"
+            >
+              Mastercard
+            </button>
 
             <p className=" mt-6">Card Number</p>
             <input

@@ -7,20 +7,27 @@ import Blog from './containers/Blog';
 import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
-// import EditProfile from './components/EditProfile';
-import Cards from './components/Cards';
-import ThankUTicket from './components/ThankUTicket';
-import AddNewCard from './components/AddNewCard';
+
+// import ThankUTicket from './components/ThankUTicket';
+
 import ThankUCard from './components/ThankUCard';
+// import ThankUContact from './components/ThankUContact';
+// import ThankUEdit from './components/ThankUEdit';
+// import ThankUSignup from './components/ThankUSignup';
+// import ThankUSub from './components/ThankUSub';
+// import ThankUTherapist from './components/ThankUTherapist';
 
 function App() {
   return (
     <div className="App">
       <ThankUCard />
-      <AddNewCard />
-      <ThankUTicket />
-      <Cards />
-      {/* <EditProfile/> */}
+      {/* <ThankUContact />
+      <ThankUEdit />
+      <ThankUSignup />
+      <ThankUSub />
+      <ThankUTherapist />
+      <ThankUTicket /> */}
+
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
