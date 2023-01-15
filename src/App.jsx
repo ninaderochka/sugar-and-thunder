@@ -7,12 +7,21 @@ import Blog from './containers/Blog';
 import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
+
+import Login from './containers/Login';
+
 import Career from './components/Career';
+
 import TherapistProfile from './components/TherapistProfile';
 import AboutTeam from './components/AboutTeam';
+
+import ByTicket from './components/ByTicket';
+
+
 function App() {
   return (
     <div className="App">
+      <ByTicket />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -20,9 +29,16 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Signup" element={<Signup />} />
+
+        <Route path="/Login" element={<Login />} />
+
         <Route path="/About/Career" element={<Career />} />
+
         <Route path="/About/AboutTeam" element={<AboutTeam />} />
         <Route path="/TherapistProfile" element={<TherapistProfile />} />
+
+
+
       </Routes>
       <Footer />
     </div>

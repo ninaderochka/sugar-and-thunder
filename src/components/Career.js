@@ -23,7 +23,7 @@ function Heading() {
         </div>
         <p className="font-normal text-xs md:text-xl sm:text-xl text-second-font w-3/4 my-28">
         Our SEO software cuts through mountains of data to surface critical insights.We build and maintain<br />
-        systems that process massive amounts of data (we're talking 36 trillion records per day and multiple<br />
+        systems that process massive amounts of data (we&apos;re talking 36 trillion records per day and multiple<br />
         petabytes of storage.) We model transparent and empathetic marketing for the world. We educate<br />
         our community, making every effort to help them improve their skill. And we do it all by fostering a<br />
         culture that encourages accountability, empathy, and transparency<br />
