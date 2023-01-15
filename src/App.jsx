@@ -7,13 +7,11 @@ import Blog from './containers/Blog';
 import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
-import Req from './components/Req';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Req />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Blog" element={<Blog />} />
