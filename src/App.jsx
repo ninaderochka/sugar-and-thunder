@@ -9,19 +9,19 @@ import Contact from './containers/Contact';
 import Signup from './containers/Signup';
 // import EditProfile from './components/EditProfile';
 import Cards from './components/Cards';
-import ThankUTicket from './components/ThankUTicket';
+// import ThankUTicket from './components/ThankUTicket';
 import AddNewCard from './components/AddNewCard';
-import ThankUSub from './components/ThankUSub';
-import ThankUTherapist from './components/ThankUTherapist';
+// import ThankUSub from './components/ThankUSub';
+// import ThankUTherapist from './components/ThankUTherapist';
 import ThankUEdit from './components/ThankUEdit';
 
 function App() {
   return (
     <div className="App">
       <ThankUEdit />
-      <ThankUTherapist />
+      {/* <ThankUTherapist />
       <ThankUSub />
-      <ThankUTicket />
+      <ThankUTicket /> */}
       <AddNewCard />
       <Cards />
       {/* <EditProfile/> */}

@@ -7,7 +7,11 @@ export default function ThankUTherapist() {
     <div className="flex flex-col pt-12 pl-16">
       <h1 className="text-[50px] tracking-[-1px]">THANK YOU!</h1>
       <p className="text-[24px] text-contact-us-gray pt-4 pb-10">
-      Thank you for your interest in working with Healing, we have recieved your application.<br/>You will receive an email guiding you for the next steps soon after your information is reviewed.
+        Thank you for your interest in working with Healing, we have recieved
+        your application.
+        <br />
+        You will receive an email guiding you for the next steps soon after your
+        information is reviewed.
       </p>
 
       <Link to="/Home">
