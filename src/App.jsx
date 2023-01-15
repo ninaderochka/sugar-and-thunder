@@ -14,10 +14,12 @@ import AddNewCard from './components/AddNewCard';
 import ThankUSub from './components/ThankUSub';
 import ThankUTherapist from './components/ThankUTherapist';
 import ThankUEdit from './components/ThankUEdit';
+import ThankUSignup from './components/ThankUSignup';
 
 function App() {
   return (
     <div className="App">
+      <ThankUSignup />
       <ThankUEdit />
       <ThankUTherapist />
       <ThankUSub />
