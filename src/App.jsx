@@ -12,10 +12,12 @@ import Cards from './components/Cards';
 import ThankUTicket from './components/ThankUTicket';
 import AddNewCard from './components/AddNewCard';
 import ThankUSub from './components/ThankUSub';
+import ThankUTherapist from './components/ThankUTherapist';
 
 function App() {
   return (
     <div className="App">
+      <ThankUTherapist />
       <ThankUSub />
       <ThankUTicket />
       <AddNewCard />
