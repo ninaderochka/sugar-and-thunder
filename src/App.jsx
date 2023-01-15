@@ -15,10 +15,12 @@ import ThankUSub from './components/ThankUSub';
 import ThankUTherapist from './components/ThankUTherapist';
 import ThankUEdit from './components/ThankUEdit';
 import ThankUSignup from './components/ThankUSignup';
+import ThankUContact from './components/ThankUContact';
 
 function App() {
   return (
     <div className="App">
+      <ThankUContact />
       <ThankUSignup />
       <ThankUEdit />
       <ThankUTherapist />
