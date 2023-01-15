@@ -8,10 +8,12 @@ import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
 import Career from './components/Career';
+import ByTicket from './components/ByTicket';
 
 function App() {
   return (
     <div className="App">
+      <ByTicket />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
