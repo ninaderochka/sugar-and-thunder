@@ -1,7 +1,7 @@
 import React from "react";
-import Requirements from "../images/Requirements.png";
+import Requirement from "../images/Requirements.png";
 
-const Req = () => {
+const Requirements = () => {
   return (
     <div className="w-4/5 flex flex-wrap justify-between mt-10 container mx-auto px-4 py-8 font-poppins">
         <div className="w-1/2">
@@ -40,9 +40,9 @@ const Req = () => {
         </div>
 
         <div className="w-1/2 flex items-start justify-center">
-            <img src={Requirements} alt="Requirements" />
+            <img src={Requirement} alt="Requirements" />
         </div>
     </div>
   );
 }
-export default Req;
+export default Requirements;
