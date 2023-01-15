@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from './Button';
 
-export default function ThankUTicket() {
+export default function ThankUSub() {
   return (
     <div className="flex flex-col pt-12 pl-16">
       <h1 className="text-[50px] tracking-[-1px]">THANK YOU!</h1>

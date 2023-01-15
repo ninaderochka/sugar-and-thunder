@@ -8,11 +8,25 @@ import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
 import ThankUContact from './components/ThankUContact';
+import ThankUSignup from './components/ThankUSignup';
+import ThankUTherapist from './components/ThankUTherapist';
+import ThankUTicket from './components/ThankUTicket';
+import ThankUSub from './components/ThankUSub';
+import ThankUEdit from './components/ThankUEdit';
+import ThankUCard from './components/ThankUCard';
+
 
 function App() {
   return (
     <div className="App">
       <ThankUContact />
+      <ThankUSignup />
+      <ThankUTherapist />
+      <ThankUTicket />
+      <ThankUSub />
+      <ThankUEdit />
+      <ThankUCard />
+
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
