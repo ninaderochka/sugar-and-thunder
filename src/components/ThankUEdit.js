@@ -8,7 +8,7 @@ export default function ThankUEdit() {
       <h1 className="text-[30px] md:text-[46] lg:text-[50px] tracking-[-1px]">
         THANK YOU!
       </h1>
-      <p className="text-[18px] md:text-[20px] lg:text-[24px] text-contact-us-gray pt-4 pb-10 md:w-[400px] lg:w-full">
+      <p className="text-[18px] md:text-[20px] lg:text-[24px] text-contact-us-gray pt-4 pb-10 w-[350px] md:w-[600px] lg:w-full">
         Request submitted, you will soon receive an email confirming your
         changes after they are reviewed.
       </p>
