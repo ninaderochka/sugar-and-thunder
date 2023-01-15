@@ -91,55 +91,55 @@ const { signUp } = useUserAuth();
 
   return (
     <div className="h-screen w-screen bg-white mb-20 auth">
-      <div className="font-roboto px-20 mx-auto flex justify-between">
-        <img src={SignupImage} alt="signup" className="w-2/4 pr-8" />
+      <div className="font-roboto px-20 mx-auto flex justify-center lg:justify-between">
+        <img src={SignupImage} alt="signup" className="w-2/4 pr-8 hidden lg:block" />
         <div className="grid grid-flow-row space-y-4">
           <h1 className="uppercase text-5xl whitespace-nowrap mt-10 py-6">
             signup now
           </h1>
           <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded min-w-min max-w-xl m-auto lg:w-[555px]">
             {error && <div className="auth__error">{error}</div>}
-            <form className="w-full" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-2 gap-5">
+            <form className="w-full grid grid-cols-4 gap-2 grid-row-5" onSubmit={handleSubmit}>
+              {/* <div className='row-span-1'> */}
                 <input
                   type="text"
                   placeholder="First Name"
-                  className="border border-input-border box-border rounded-md text-sm p-3 "
+                  className="border border-input-border box-border rounded-md text-sm p-3 col-span-2"
                 />
                 <input
                   type="text"
                   placeholder="Last Name"
-                  className="border border-input-border box-border rounded-md text-sm p-3"
+                  className="border border-input-border box-border rounded-md text-sm p-3 col-span-2"
                 />
-              </div>
-              <div className="mt-5">
+              {/* </div> */}
+              {/* <div className="mt-5"> */}
                 <input
                   type="email"
                   value={email}
                   placeholder="Your Email"
                   required
                   onChange={(e) => setEmail(e.target.value)}
-                  className="border border-input-border box-border rounded-md text-sm p-3 w-full"
+                  className="border border-input-border box-border rounded-md text-sm p-3 w-full col-span-full"
                 />
-              </div>
-              <div className="mt-5">
+              {/* </div> */}
+              {/* <div className="mt-5"> */}
                 <input
                   type="email"
                   value={confirmEmail}
                   placeholder="Confirm Email"
                   required
                   onChange={(e) => setConfirmEmail(e.target.value)}
-                  className="border border-input-border box-border rounded-md text-sm p-3 w-full"
+                  className="border border-input-border box-border rounded-md text-sm p-3 w-full col-span-full"
                 />
-              </div>
-              <div className="grid grid-cols-2 gap-5 text-input-grey mt-5">
+              {/* </div> */}
+              {/* <div className=" text-input-grey mt-5"> */}
                 <input
                   type="password"
                   value={password}
                   placeholder="Password"
                   required
                   onChange={(e) => setPassword(e.target.value)}
-                  className="border border-input-border box-border rounded-md text-sm py-4 px-3.5  w-full mb-2 lg:mb-0 lg:mr-1"
+                  className="border border-input-border box-border rounded-md text-sm py-4 px-3.5  w-full mb-2 lg:mb-0 lg:mr-1 col-span-2"
                 />
                 <input
                   type="password"
@@ -147,21 +147,25 @@ const { signUp } = useUserAuth();
                   placeholder="Confirm Password"
                   required
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="border border-input-border box-border rounded-md text-sm p-3"
+                  className="border border-input-border box-border rounded-md text-sm p-3 col-span-2"
                 />
-              </div>
-              <div className="grid grid-cols-4 gap-2 text-input-grey space-y-4 justify-end">
+              {/* </div> */}
+              {/* <div className=" text-input-grey space-y-4 justify-end col-span-4"> */}
                 {/* <input
                   type="text"
                   placeholder="Birth Date"
                   className="p-3 align-middle"
                 /> */}
-                <p className="p-6 px-0 mx-auto">Birthdate</p>
+                <div className='flex grid-span-2'>
+                  <p className="p-6 px-0">Birthdate</p>
                 <input
                   type="text"
                   placeholder="DD"
-                  className="border border-input-border rounded-md text-sm p-3 aspect-square h-12 w-12 py-4 px-3.5 ml-16"
+                  className="border border-input-border rounded-md text-sm p-3 aspect-square h-12 w-12 py-4 px-3.5"
                 />
+                  </div>
+                  <div className='flex grid-span-2'>
+
                 <input
                   type="text"
                   placeholder="MM"
@@ -172,8 +176,9 @@ const { signUp } = useUserAuth();
                   placeholder="YYYY"
                   className="border border-input-border rounded-md text-sm p-3 h-12"
                 />
-              </div>
-              <div className="flex justify-center gap-6 mt-4 place-content-center mx-auto">
+                  </div>
+              {/* </div> */}
+              <div className="flex justify-center gap-6 mt-4 place-content-center mx-auto col-span-4">
                 <Link to="/Login">
                   <button
                     type="button"

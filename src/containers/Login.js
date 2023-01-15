@@ -134,14 +134,14 @@ return result
             <div className="w-3/4 bg-button-blue mt-3 h-px" />
           </div>
           <div>
-         { !user (<Link to='/Login'><div className="flex justify-center cursor-pointer gap-12">
+<Link to='/Login'><div className="flex justify-center cursor-pointer gap-12">
            <button type='button' onClick={fbLogin}><img src={facebook} alt="facebook logo"/></button>
             <button type='button' onClick={googleLogin}><img src={gmail} alt="gmail logo" /></button>
-            </div></Link>)}
+            </div></Link>
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full w-full flex mr-20 m-auto">
-          <img className="scale-125" src={image} alt="login" />
+          <img className="scale-125 md:hidden" src={image} alt="login" />
         </div>
       </div>
     </div>
