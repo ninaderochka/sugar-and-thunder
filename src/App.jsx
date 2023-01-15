@@ -11,6 +11,10 @@ import Signup from './containers/Signup';
 import Login from './containers/Login';
 
 import Career from './components/Career';
+
+import TherapistProfile from './components/TherapistProfile';
+import AboutTeam from './components/AboutTeam';
+
 import ByTicket from './components/ByTicket';
 
 
@@ -29,6 +33,11 @@ function App() {
         <Route path="/Login" element={<Login />} />
 
         <Route path="/About/Career" element={<Career />} />
+
+        <Route path="/About/AboutTeam" element={<AboutTeam />} />
+        <Route path="/TherapistProfile" element={<TherapistProfile />} />
+
+
 
       </Routes>
       <Footer />
