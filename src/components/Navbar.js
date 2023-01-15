@@ -1,8 +1,13 @@
+
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useUserAuth } from '../AuthContext';
 import { auth } from '../firebase';
 import Logo from '../images/Logo.svg';
+
+
+
 
 // import triangle from '../images/triangle.svg';
 
@@ -10,16 +15,13 @@ function Navbar() {
   // console.log(useUserAuth())
   
 
-  
-  
+  const [isOpen, setIsOpen] = useState(false)
+console.log(isOpen)
   
   const [user] = useAuthState(auth);
 
-  const { logOut, loggedInUser} = useUserAuth();
-  console.log(loggedInUser)
- 
-
-  
+  const { logOut } = useUserAuth();
+   
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
@@ -31,6 +33,8 @@ function Navbar() {
       }
     }
 
+
+  
   return (
     <nav
       className="flex justify-between align-center p-4 h-[106px] bg-light-blue font-poppins"
@@ -81,11 +85,24 @@ function Navbar() {
           </button>
         </Link>)}
         { user && (<div className='inline-block align-middle'>
-          <Link to='/Home'>
-            <img src={user.photoURL} alt='avatar' referrerPolicy='no-referrer' className='w-12 rounded-full' />
-          </Link>
-        </div>)}
-        <button className='text-xs outline p-1 ml-2 cursor-pointer' type='button' onClick={handleLogout}>Log out</button>
+         <button onClick={()=> setIsOpen((prev) => !prev)} className='flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600' type="button">
+        <span className="sr-only">Open user menu</span>
+        <img className= 'w-8 h-8 rounded-full' src={user.photoURL} alt="user" />
+     </button>
+     <div id="dropdownAvatar" className={` ${isOpen} z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600 visible`}>
+         <div className='px-4 py-3 text-sm text-gray-900 dark:text-white'>
+           <div>{user.displayName}</div>
+         </div>
+         <ul className='py-1 text-sm text-gray-700 dark:text-gray-200'>
+           <li>
+             <p className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit Profile</p>
+           </li>
+         </ul>
+         <div className="py-1">
+           <button type='button' onClick={handleLogout} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</button>
+         </div>
+     </div>
+     </div>)}
       </div>
     </nav>
   );

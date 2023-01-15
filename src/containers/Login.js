@@ -91,7 +91,7 @@ return result
             <form className="w-full" onSubmit={handleSubmit}>
               <div className="mt-5 flex flex-col space-y-5 text-input-grey">
                 <input
-                  type="text"
+                  type="email"
                   placeholder="Your Email"
                   value={email}
                   required
@@ -99,7 +99,7 @@ return result
                   className="border border-input-border box-border rounded-md text-sm p-7 "
                 />
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Your Password"
                   value={password}
                   required
@@ -134,10 +134,10 @@ return result
             <div className="w-3/4 bg-button-blue mt-3 h-px" />
           </div>
           <div>
-            <div className="flex justify-center cursor-pointer gap-12">
-            <button type='button' onClick={fbLogin}><img src={facebook} alt="facebook logo"/></button>
+         { !user (<Link to='/Login'><div className="flex justify-center cursor-pointer gap-12">
+           <button type='button' onClick={fbLogin}><img src={facebook} alt="facebook logo"/></button>
             <button type='button' onClick={googleLogin}><img src={gmail} alt="gmail logo" /></button>
-            </div>
+            </div></Link>)}
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full w-full flex mr-20 m-auto">

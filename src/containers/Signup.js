@@ -73,7 +73,6 @@ return result
 
 
 const { signUp } = useUserAuth();
-console.log(useUserAuth())
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -115,7 +114,7 @@ console.log(useUserAuth())
               </div>
               <div className="mt-5">
                 <input
-                  type="text"
+                  type="email"
                   value={email}
                   placeholder="Your Email"
                   required
@@ -125,7 +124,7 @@ console.log(useUserAuth())
               </div>
               <div className="mt-5">
                 <input
-                  type="text"
+                  type="email"
                   value={confirmEmail}
                   placeholder="Confirm Email"
                   required
@@ -135,7 +134,7 @@ console.log(useUserAuth())
               </div>
               <div className="grid grid-cols-2 gap-5 text-input-grey mt-5">
                 <input
-                  type="text"
+                  type="password"
                   value={password}
                   placeholder="Password"
                   required
@@ -143,7 +142,7 @@ console.log(useUserAuth())
                   className="border border-input-border box-border rounded-md text-sm py-4 px-3.5  w-full mb-2 lg:mb-0 lg:mr-1"
                 />
                 <input
-                  type="text"
+                  type="password"
                   value={confirmPassword}
                   placeholder="Confirm Password"
                   required
