@@ -17,7 +17,6 @@ import AboutTeam from './components/AboutTeam';
 
 import ByTicket from './components/ByTicket';
 
-
 function App() {
   return (
     <div className="App">
@@ -36,9 +35,6 @@ function App() {
 
         <Route path="/About/AboutTeam" element={<AboutTeam />} />
         <Route path="/TherapistProfile" element={<TherapistProfile />} />
-
-
-
       </Routes>
       <Footer />
     </div>

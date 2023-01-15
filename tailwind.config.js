@@ -17,9 +17,7 @@ module.exports = {
         'input-border': '#D1DBE3',
         'light-shade-cyan': '#EAF8F9',
         'shade-green': '#6BD24D',
-        'meet-color': '#424A4F'
-
-
+        'meet-color': '#424A4F',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],

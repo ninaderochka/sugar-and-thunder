@@ -16,26 +16,36 @@ function Heading() {
     <div className="font-poppins">
       <div className="flex flex-col justify-center items-center py-[2rem]">
         <div className="w-3/4 py-[2rem]">
-          <h1 className="text-xl sm:text-2xl md:text-5xl">CAREERS AT HEALING!</h1>
+          <h1 className="text-xl sm:text-2xl md:text-5xl">
+            CAREERS AT HEALING!
+          </h1>
           <h5 className="text-shadow-grey text-sm md:text-2xl sm:text-xl font-light">
-          Be a part of making people feel better.
+            Be a part of making people feel better.
           </h5>
         </div>
         <p className="font-normal text-xs md:text-xl sm:text-xl text-second-font w-3/4 my-28">
-        Our SEO software cuts through mountains of data to surface critical insights.We build and maintain<br />
-        systems that process massive amounts of data (we&apos;re talking 36 trillion records per day and multiple<br />
-        petabytes of storage.) We model transparent and empathetic marketing for the world. We educate<br />
-        our community, making every effort to help them improve their skill. And we do it all by fostering a<br />
-        culture that encourages accountability, empathy, and transparency<br />
+          Our SEO software cuts through mountains of data to surface critical
+          insights.We build and maintain
+          <br />
+          systems that process massive amounts of data (we&apos;re talking 36
+          trillion records per day and multiple
+          <br />
+          petabytes of storage.) We model transparent and empathetic marketing
+          for the world. We educate
+          <br />
+          our community, making every effort to help them improve their skill.
+          And we do it all by fostering a<br />
+          culture that encourages accountability, empathy, and transparency
+          <br />
         </p>
         <p className="font-normal text-xs md:text-xl sm:text-xl text-second-font w-3/4">
-        What role will you play?
+          What role will you play?
         </p>
         <div className="w-3/4 px-4 py-6">
           <Button value="SEE OUR OPEN LIST" onClick={() => {}} />
-       </div>
+        </div>
       </div>
-   </div>
+    </div>
   );
 }
 
@@ -45,10 +55,12 @@ function Philosophy() {
       <h1 className="md:text-4xl text-2xl w-3/4">OUR HIRING PHILOSOPHY</h1>
       <p className="w-3/4 md:text-xl text-sm">
         To build the very best SEO tools, we need a workforce that reflects the
-        diversity of our communities and<br /> customers. We want Online Therapy to be
-        a place where everyone feels welcome and engaged, bar<br /> none. It&apos;s
-        our mission and promise to interview a diverse and representative slate
-        of candidates before<br /> making an offer for our open roles.
+        diversity of our communities and
+        <br /> customers. We want Online Therapy to be a place where everyone
+        feels welcome and engaged, bar
+        <br /> none. It&apos;s our mission and promise to interview a diverse
+        and representative slate of candidates before
+        <br /> making an offer for our open roles.
       </p>
     </div>
   );
@@ -62,8 +74,7 @@ const positionsData = [
     position: 'Application Development',
   },
   {
-    title:
-      'Senior Software Developer | Rapid Prototyping | Remote in',
+    title: 'Senior Software Developer | Rapid Prototyping | Remote in',
     describtion:
       'Moz is looking for a Senior Software Developer to join our Rapid Prototyping Team (RPT). This team is responsible for working closely with product managers to take ideas for new features and quickly validate their technical and business feasibility.',
     major: 'Engineering',
