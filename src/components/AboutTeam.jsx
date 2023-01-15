@@ -5,6 +5,7 @@ import Team3 from '../images/Team3.png';
 import Team4 from '../images/Team4.png';
 import Team5 from '../images/Team5.png';
 import Team6 from '../images/Team6.png';
+
 function AboutTeam() {
   return (
     <div className="pb-20 lg:w-4/5 xl:w-4/5  mx-auto font-poppins ">
