@@ -56,7 +56,7 @@ function Tickets() {
           schedule and how much you want to work, we’ll take care of the client
           referrals and billing details!
         </p>
-        <Link to ='./Requirements'><Button value="learn more" align="place-self-center" /></Link>
+        <Link className="self-center" to ='./Requirements'><Button value="learn more" align="place-self-center" /></Link>
       </div>
     </div>
   );
