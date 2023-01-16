@@ -1,20 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SignupImage from '../images/SignupImage.svg';
 import facebook from '../images/Facebook.svg';
 import gmail from '../images/Google.svg';
 
 function Signup() {
   return (
-    <div className="h-screen w-screen bg-white mb-8">
+    <div className="h-screen w-screen bg-white mb-20">
       <div className="font-roboto px-20 mx-auto flex justify-between">
         <img src={SignupImage} alt="signup" className="w-2/4 pr-8" />
         <div className="grid grid-flow-row space-y-4">
           <h1 className="uppercase text-5xl whitespace-nowrap mt-10 py-6">
             signup now
           </h1>
-          <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded min-w-min max-w-xl m-auto lg:w-full">
+          <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded min-w-min max-w-xl m-auto lg:w-[555px]">
             <form className="w-full">
-              <div className="grid grid-cols-2 gap-5 text-input-grey">
+              <div className="grid grid-cols-2 gap-5">
                 <input
                   type="text"
                   placeholder="First Name"
@@ -58,11 +59,11 @@ function Signup() {
                   placeholder="Birth Date"
                   className="p-3 align-middle"
                 /> */}
-                <p className="p-6 px-0">Birthdate</p>
+                <p className="p-6 px-0 mx-auto">Birthdate</p>
                 <input
                   type="text"
                   placeholder="DD"
-                  className="border border-input-border rounded-md text-sm p-3 aspect-square h-12 w-12 py-4 px-3.5"
+                  className="border border-input-border rounded-md text-sm p-3 aspect-square h-12 w-12 py-4 px-3.5 ml-16"
                 />
                 <input
                   type="text"
@@ -76,18 +77,22 @@ function Signup() {
                 />
               </div>
               <div className="flex justify-center gap-6 mt-4 place-content-center mx-auto">
-                <button
-                  type="button"
-                  className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
-                >
-                  Log in
-                </button>
-                <button
-                  type="button"
-                  className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max outline whitespace-nowrap border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
-                >
-                  Sign up
-                </button>
+                <Link to="/Login">
+                  <button
+                    type="button"
+                    className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+                  >
+                    Log in
+                  </button>
+                </Link>
+                <Link to="/Signup">
+                  <button
+                    type="button"
+                    className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max outline whitespace-nowrap border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+                  >
+                    Sign up
+                  </button>
+                </Link>
               </div>
             </form>
           </div>
