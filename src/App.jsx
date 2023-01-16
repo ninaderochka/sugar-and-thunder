@@ -6,6 +6,7 @@ import Communicate from './components/Communicate';
 import Tickets from './components/Tickets';
 import Therapists from './components/Therapists';
 import Footer from './components/Footer';
+import TherapistCreate from './components/TherapistCreate';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <RecentBlog />
       <Tickets />
       <Footer />
+      <TherapistCreate />
     </div>
   );
 }
