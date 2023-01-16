@@ -7,18 +7,12 @@ import Blog from './containers/Blog';
 import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
-// import EditProfile from './components/EditProfile';
-import Cards from './components/Cards';
-import ThankUTicket from './components/ThankUTicket';
 import AddNewCard from './components/AddNewCard';
 
 function App() {
   return (
     <div className="App">
       <AddNewCard />
-      <ThankUTicket />
-      <Cards />
-      {/* <EditProfile/> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
