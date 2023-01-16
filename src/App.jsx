@@ -7,24 +7,21 @@ import Blog from './containers/Blog';
 import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
-<<<<<<< HEAD
 import Requirements from './components/Requirements';
 
 // import EditProfile from './components/EditProfile';
 import Cards from './components/Cards';
 import ThankUTicket from './components/ThankUTicket'
-=======
-import ThankUTicket from './components/ThankUTicket';
->>>>>>> d9c51c950e92bd6b4c1b9eda6eedaa0ec07f8863
+import Login from "./containers/Login"
+import Career from './components/Career'
+import AboutTeam from './components/AboutTeam'
+import TherapistProfile from './components/TherapistProfile'
+import ByTicket from './components/ByTicket'
 
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
       {/* <EditProfile/> */}
-=======
-      <ThankUTicket />
->>>>>>> d9c51c950e92bd6b4c1b9eda6eedaa0ec07f8863
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
