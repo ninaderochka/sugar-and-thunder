@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="pb-20 lg:w-4/5 xl:w-4/5  mx-auto font-poppins "
+  >
+    <h1
+      class="font-normal lg:text-5xl  md:text-2xl sm:text-xl  leading-[75px] uppercase  xl:ml-4  md:ml-14 sm:ml-11 mt-20"
+    >
+      WE ARE HEALING, NICE TO MEET YOU!
+    </h1>
+    <p
+      class="xl:text-[29px] lg:text-[29px]  sm:text-lg  leading-[39px] font-normal text-meet-color xl:ml-4  md:ml-14 sm:ml-11 xl:pt-28 lg:pt-16 md:pt-12  sm:pt-8  pb-10"
+    >
+      Meet the Team!
+    </p>
+    <div
+      class="grid 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4   md:grid-cols-3   sm:grid-cols-2 justify-center mb-10  text-xl "
+    >
+      <div
+        class="w-[176.41px]  mx-auto"
+      >
+        <img
+          alt=""
+          src="Team1.png"
+        />
+        <div
+          class="h-1 bg-shade-green   object-left	m-0 p-0"
+        >
+           
+        </div>
+        <div
+          class="bg-light-shade-cyan text-center rounded-b-3xl "
+        >
+          <h1
+            class="pt-4 pb-6 font-normal"
+          >
+            Allan Saleh
+          </h1>
+          <p
+            class="pb-14 text-meet-color text-base"
+          >
+            Lead Engineer 
+            <br />
+            & Web Developer
+          </p>
+        </div>
+      </div>
+      <div
+        class="w-[176.41px] mx-auto"
+      >
+        <img
+          alt=""
+          src="Team2.png"
+        />
+        <div
+          class="h-1 bg-shade-green   object-left	m-0 p-0"
+        >
+           
+        </div>
+        <div
+          class="bg-light-shade-cyan text-center rounded-b-3xl "
+        >
+          <h1
+            class="pt-4 pb-6 "
+          >
+            Payam Abubakr
+          </h1>
+          <p
+            class="pb-14 text-meet-color text-base"
+          >
+            Junior Designer 
+            <br />
+            & FE Developer 
+          </p>
+        </div>
+      </div>
+      <div
+        class="w-[176.41px] mx-auto"
+      >
+        <img
+          alt=""
+          src="Team3.png"
+        />
+        <div
+          class="h-1 bg-shade-green m-0 p-0"
+        >
+           
+        </div>
+        <div
+          class="bg-light-shade-cyan text-center rounded-b-3xl px-6"
+        >
+          <h1
+            class="pb-4"
+          >
+            Ahmed Mohammed
+          </h1>
+          <p
+            class="pb-14 text-meet-color text-base"
+          >
+            Junior Designer 
+            <br />
+            & FE Developer 
+          </p>
+        </div>
+      </div>
+      <div
+        class="w-[176.41px] mx-auto"
+      >
+        <img
+          alt=""
+          src="Team4.png"
+        />
+        <div
+          class="h-1 bg-shade-green   object-left	m-0 p-0"
+        >
+           
+        </div>
+        <div
+          class="bg-light-shade-cyan text-center rounded-b-3xl px-6"
+        >
+          <h1
+            class="pb-4"
+          >
+            Abdulmajeed Jaafer
+          </h1>
+          <p
+            class="pb-14 text-meet-color text-base"
+          >
+            Junior Designer 
+            <br />
+            & FE Developer 
+          </p>
+        </div>
+      </div>
+      <div
+        class="w-[176.41px] mx-auto"
+      >
+        <img
+          alt=""
+          src="Team5.png"
+        />
+        <div
+          class="h-1 bg-shade-green   object-left	m-0 p-0"
+        >
+           
+        </div>
+        <div
+          class="bg-light-shade-cyan text-center rounded-b-3xl px-6"
+        >
+          <h1
+            class="pt-4 pb-6"
+          >
+            Snoor Madih
+          </h1>
+          <p
+            class="pb-14 text-meet-color text-base"
+          >
+            Junior Designer 
+            <br />
+            & FE Developer 
+          </p>
+        </div>
+      </div>
+      <div
+        class="w-[176.41px] mx-auto"
+      >
+        <img
+          alt=""
+          src="Team6.png"
+        />
+        <div
+          class="h-1 bg-shade-green   object-left	m-0 p-0"
+        >
+           
+        </div>
+        <div
+          class="bg-light-shade-cyan text-center rounded-b-3xl px-6"
+        >
+          <h1
+            class="pt-4 pb-6"
+          >
+            Avraz Zebary
+          </h1>
+          <p
+            class="pb-14 text-meet-color  text-base"
+          >
+            Junior Designer 
+            <br />
+            & FE Developer 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

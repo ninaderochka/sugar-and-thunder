@@ -53,7 +53,7 @@ const Requirements = () => {
           </ul>
         </div>
 
-        <Link to="/TherapistProfile">
+        <Link to="/TherapistCreate">
           <button
             className="h-16 w-56 text-2xl font-normal bg-button-blue text-black py-2 px-4 rounded-md mb-10"
             type="button"
