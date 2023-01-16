@@ -33,28 +33,32 @@ const Footer = () => {
         </div>
         <div className="w-full md:w-1/2 md:text-left mb-6 md:mb-0">
           <nav className="flex justify-center mb-7">
-            <Link to='/'
+            <Link
+              to="/"
               type="Link to=''"
               // href="#"
               className="px-7 py-1 font-light text-2xl rounded-md text-footer-gray"
             >
               Home
             </Link>
-            <Link to='/Blog'
+            <Link
+              to="/Blog"
               type="Link to=''"
               // href="#"
               className="px-7 py-1 font-light text-2xl rounded-md text-footer-gray"
             >
               Blogs
             </Link>
-            <Link to='/About'
+            <Link
+              to="/About"
               type="Link to=''"
               // href="#"
               className="px-7 py-1 font-light text-2xl rounded-md text-footer-gray"
             >
               About
             </Link>
-            <Link to='/Contact'
+            <Link
+              to="/Contact"
               type="Link to=''"
               // href="#"
               className="px-7 py-1 font-light text-2xl rounded-md text-footer-gray"
