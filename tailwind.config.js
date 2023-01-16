@@ -3,7 +3,7 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
-      colors:{
+      colors: {
         'contact-us-gray': '#00000080',
         'textbox-gray': '#808080',
         'footer-gray': '#718096',
@@ -15,6 +15,9 @@ module.exports = {
         'text-background': '#154A80',
         'input-grey': '#9DAFBD',
         'input-border': '#D1DBE3',
+        'light-shade-cyan': '#EAF8F9',
+        'shade-green': '#6BD24D',
+        'meet-color': '#424A4F',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
@@ -29,6 +32,9 @@ module.exports = {
       },
       dropShadow: {
         lg: '0px 4px 6px rgba(178, 171, 171, 0.25)',
+      },
+      boxShadow: {
+        ts: '0px 4px 4px 0px #AC97971F',
       },
       gridTemplateColumns: {
         3: 'repeat(3, minmax(350px, 1fr))',
