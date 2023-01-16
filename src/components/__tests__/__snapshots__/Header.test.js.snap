@@ -6,7 +6,7 @@ exports[`Header component renders correctly 1`] = `
 >
   <img
     alt="#"
-    className=" absolute bg-center imagee -z-10 "
+    className=" absolute bg-center imagee -z-10"
     src="background.png"
   />
   <div

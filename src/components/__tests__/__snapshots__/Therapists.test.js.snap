@@ -2,7 +2,7 @@
 
 exports[`Therapists component renders correctly 1`] = `
 <div
-  className="bg-light-yellow h-full w-screen max-h-full md:h-screen"
+  className="bg-light-yellow h-full w-screen max-h-full pb-10"
 >
   <div
     className="w-5/6 flex flex-col space-y-12 m-auto"
@@ -14,7 +14,7 @@ exports[`Therapists component renders correctly 1`] = `
     </h1>
     <img
       alt="therapists"
-      className="w-6/12 "
+      className="w-full lg:w-2/4"
       src="./therapists.png"
     />
     <p
@@ -22,13 +22,17 @@ exports[`Therapists component renders correctly 1`] = `
     >
       Tap into the world’s largest network of licensed, accredited, and experienced therapists who can help you with a range of issues including depression, anxiety, relationships, trauma, grief, and more. with our therapists, you get the same professionalism and quality you would expect from an in-office therapist, but with the ability to communicate whenever and however you want.
     </p>
-    <button
-      className="undefined font-poppins font-normal text-black text-2xl uppercase w-fit px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="top-2"
     >
-      Book an Appointment
-    </button>
+      <button
+        className="undefined font-poppins font-normal text-black text-2xl uppercase w-fit px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+        onClick={[Function]}
+        type="button"
+      >
+        Book an Appointment
+      </button>
+    </div>
   </div>
 </div>
 `;
