@@ -8,15 +8,15 @@ import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
 import Requirements from './components/Requirements';
-
 // import EditProfile from './components/EditProfile';
 import Cards from './components/Cards';
-import ThankUTicket from './components/ThankUTicket'
-import Login from "./containers/Login"
-import Career from './components/Career'
-import AboutTeam from './components/AboutTeam'
-import TherapistProfile from './components/TherapistProfile'
-import ByTicket from './components/ByTicket'
+import ThankUTicket from './components/ThankUTicket';
+import Login from './containers/Login';
+import Career from './components/Career';
+import AboutTeam from './components/AboutTeam';
+import TherapistProfile from './components/TherapistProfile';
+import ByTicket from "./components/ByTicket";
+import TherapistCreate from "./components/TherapistCreate"
 
 function App() {
   return (
@@ -32,13 +32,14 @@ function App() {
 
         <Route path="/Requirements" element={<Requirements />} />
 
- <Route path="/Login" element={<Login />} />
- <Route path="/About/Career" element={<Career />} />
-<Route path="/About/AboutTeam" element={<AboutTeam />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/About/Career" element={<Career />} />
+        <Route path="/About/AboutTeam" element={<AboutTeam />} />
         <Route path="/TherapistProfile" element={<TherapistProfile />} />
         <Route path="/ByTicket" element={<ByTicket />} />
         <Route path="/Cards" element={<Cards />} />
         <Route path="/ThankUTicket" element={<ThankUTicket />} />
+        <Route path="/TherapistCreate" element={<TherapistCreate />} />
       </Routes>
       <Footer />
     </div>
