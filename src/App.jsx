@@ -7,23 +7,24 @@ import Blog from './containers/Blog';
 import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
+<<<<<<< HEAD
 import Requirements from './components/Requirements';
 
 // import EditProfile from './components/EditProfile';
 import Cards from './components/Cards';
-
-import Login from './containers/Login';
-import Career from './components/Career';
-import TherapistProfile from './components/TherapistProfile';
-import AboutTeam from './components/AboutTeam';
-import ByTicket from './components/ByTicket';
-
+import ThankUTicket from './components/ThankUTicket'
+=======
+import ThankUTicket from './components/ThankUTicket';
+>>>>>>> d9c51c950e92bd6b4c1b9eda6eedaa0ec07f8863
 
 function App() {
   return (
     <div className="App">
-      <Cards />
+<<<<<<< HEAD
       {/* <EditProfile/> */}
+=======
+      <ThankUTicket />
+>>>>>>> d9c51c950e92bd6b4c1b9eda6eedaa0ec07f8863
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -39,7 +40,8 @@ function App() {
 <Route path="/About/AboutTeam" element={<AboutTeam />} />
         <Route path="/TherapistProfile" element={<TherapistProfile />} />
         <Route path="/ByTicket" element={<ByTicket />} />
-
+        <Route path="/Cards" element={<Cards />} />
+        <Route path="/ThankUTicket" element={<ThankUTicket />} />
       </Routes>
       <Footer />
     </div>
