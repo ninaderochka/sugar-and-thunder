@@ -1,7 +1,7 @@
 import React from 'react';
+import Button from './Button';
 import background from '../images/background.png';
 import image from '../images/image.png';
-import Button from './Button';
 
 export default function Header() {
   return (
@@ -14,8 +14,8 @@ export default function Header() {
 
       <div className="container flex py-24 md:flex-row flex-col justify-center">
         <div className="font-Poppins lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left md:mb-0 items-center">
-          <p className="text-black ml-36 text-3xl sm:text-3xl">
-            WE ARE HERE TO
+          <p className="text-black ml-36 text-3xl sm:text-3xl uppercase">
+            We are here to
           </p>
           <p className="text-black ml-36 text-9xl ">HELP</p>
 

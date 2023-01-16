@@ -7,7 +7,7 @@ const Therapists = () => {
     console.log('book an appointment');
   };
   return (
-    <div className="bg-light-yellow h-full w-screen md:h-screen">
+    <div className="bg-light-yellow h-full w-screen max-h-full md:h-screen">
       <div className="w-5/6 flex flex-col space-y-12 m-auto">
         <h1 className="font-poppins font-normal text-5xl pt-20 uppercase w-9/12">
           Professional, licensed, and vetted therapists that you can trust
