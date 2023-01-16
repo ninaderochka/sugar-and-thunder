@@ -21,7 +21,7 @@ function Tickets() {
             <p className="font-poppins font-normal text-4xl text-center text-black/50 mb-20">
               10$
             </p>
-            <Button value="purchase" align="place-self-center" />
+            <Link to ='./ByTicket'><Button value="purchase" align="place-self-center" /></Link>
           </div>
         </Box>
         <Box>
@@ -32,7 +32,7 @@ function Tickets() {
             <p className="font-poppins font-normal text-4xl text-center text-black/50 mb-20">
               40$
             </p>
-            <Button value="purchase" align="place-self-center" />
+            <Link to ='./ByTicket'><Button value="purchase" align="place-self-center" /></Link>
           </div>
         </Box>
         <Box>
@@ -43,7 +43,7 @@ function Tickets() {
             <p className="font-poppins font-normal text-4xl text-center text-black/50 mb-20">
               70$
             </p>
-            <Button value="purchase" align="place-self-center" />
+            <Link to ='./ByTicket'><Button value="purchase" align="place-self-center" /></Link>
           </div>
         </Box>
       </div>
