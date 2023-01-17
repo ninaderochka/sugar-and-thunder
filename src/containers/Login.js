@@ -46,6 +46,7 @@ return result
   }
 }
 
+
 // const signIn = async (email, password) => {
 //     try {
 //       const userCredential = await signInWithEmailAndPassword(
@@ -81,8 +82,8 @@ return result
 
 
   return (
-    <div className="h-screen w-screen bg-white mb-8">
-      <div className="font-roboto px-20 mx-auto flex justify-between">
+    <div className="h-screen w-screen bg-white mb-8 justify-items-center">
+      <div className="font-roboto px-20 mx-auto flex justify-center lg:justify-between">
         <div className="grid grid-flow-row space-y-4 ml-20">
           <h1 className="uppercase text-5xl whitespace-nowrap mt-10 py-6">
             login
@@ -107,7 +108,7 @@ return result
                   className="border border-input-border box-border rounded-md text-sm p-7"
                 />
               </div>
-              <div className="flex justify-center gap-6 mt-10 place-content-center mx-auto">
+              <div className="flex justify-center gap-6 mt-10 place-content-center mx-auto w-full">
                 <Link to="/Login">
                   <button
                     type="submit"
@@ -134,14 +135,14 @@ return result
             <div className="w-3/4 bg-button-blue mt-3 h-px" />
           </div>
           <div>
-<Link to='/Login'><div className="flex justify-center cursor-pointer gap-12">
+<Link to='/Login'><div className="flex justify-center cursor-pointer gap-12 w-full">
            <button type='button' onClick={fbLogin}><img src={facebook} alt="facebook logo"/></button>
             <button type='button' onClick={googleLogin}><img src={gmail} alt="gmail logo" /></button>
             </div></Link>
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full w-full flex mr-20 m-auto">
-          <img className="scale-125 md:hidden" src={image} alt="login" />
+          <img className="scale-125 hidden md:block" src={image} alt="login" />
         </div>
       </div>
     </div>

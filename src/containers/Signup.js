@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { getAuth, GoogleAuthProvider, signInWithPopup } from '@firebase/auth';
+import { getAuth, GoogleAuthProvider, FacebookAuthProvider, signInWithPopup} from '@firebase/auth';
 // import { getAuth } from 'firebase/auth'
-// import { addDoc, collection } from 'firebase/firestore';
-// import { db } from '../firebase';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../firebase';
 import SignupImage from '../images/SignupImage.svg';
 import facebook from '../images/Facebook.svg';
 import gmail from '../images/Google.svg';
@@ -18,8 +18,10 @@ function Signup() {
   const navigate = useNavigate()
 
 const googleProvider = new GoogleAuthProvider()
+const fbProvider = new FacebookAuthProvider();
 
-  // const validatePassword = () => {
+
+  // const validatePassword = async () => {
   //   let isValid = true;
   //   if (password !== '' && confirmPassword !== '') {
   //     if (password !== confirmPassword) {
@@ -46,34 +48,52 @@ const googleProvider = new GoogleAuthProvider()
   //   }
   //   return isValid;
   // };
-// const signUp = async (auth, email) => {
-//     try {
-//       const userCredential = await createUserWithEmailAndPassword(auth, email);
-//       const [user]= userCredential;
-//       await addDoc(collection(db, 'users'), {
-//         uid: user.uid,
-//         email: user.email,
-//       });
-//       return true;
-//     } catch (error) {
-//       return { error: error.message };
-//     }
-//   };
-const auth = getAuth()
 
-const googleLogin = async () => {
-  try {
-const result = signInWithPopup(auth, googleProvider)
-navigate('/Home')
-return result
-  } catch(error) {
-    return { error: error.message };
+
+
+  const auth = getAuth()
+
+  
+  const googleLogin = async () => {
+    try {
+      const result = signInWithPopup(auth, googleProvider)
+      navigate('/Home')
+      return result
+    } catch(error) {
+      return { error: error.message };
+    }
   }
-}
+  
+  const fbLogin = async () => {
+    try {
+  const result = signInWithPopup(auth, fbProvider)
+  navigate('/Home')
+  return result
+    } catch(error) {
+      return { error: error.message };
+    }
+  }
+  
+  const { signUp } = useUserAuth();
+  
+  
+  const Register = async (auth, email) => {
+      try {
+        const userCredential = await signUp(auth, email);
+        const [user]= userCredential;
+        await addDoc(collection(db, 'users'), {
+          uid: user.uid,
+          email: user.email,
+        });
+        return true;
+      } catch (error) {
+        return { error: error.message };
+      }
+    };
 
+  Register()
 
-const { signUp } = useUserAuth();
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
@@ -89,10 +109,12 @@ const { signUp } = useUserAuth();
     }
   };
 
+
+
   return (
     <div className="h-screen w-screen bg-white mb-20 auth">
       <div className="font-roboto px-20 mx-auto flex justify-center lg:justify-between">
-        <img src={SignupImage} alt="signup" className="w-2/4 pr-8 hidden lg:block" />
+        <img src={SignupImage} alt="signup" className="w-2/4 pr-8 hidden md:hidden lg:block" />
         <div className="grid grid-flow-row space-y-4">
           <h1 className="uppercase text-5xl whitespace-nowrap mt-10 py-6">
             signup now
@@ -148,17 +170,17 @@ const { signUp } = useUserAuth();
                 />
             
                 {/* BIRTHDAY-TEXT AND DD */}
-                <div className='flex col-span-2 justify-between'>
-                  <p className="p-6 px-0">Birthdate</p>
+                <div className='flex col-span-2 justify-between items-center'>
+                  <p className="p-6 px-0 grow text-center font-roboto text-sm text-gray-400">Birthdate</p>
                   <input
                     type="text"
                     placeholder="DD"
-                    className="border border-input-border rounded-md text-sm p-3 aspect-square h-12 w-12 py-4 px-3.5 place-self-center"
+                    className="border border-input-border rounded-md text-sm p-3 aspect-square h-12 w-12 py-4 px-3.5 "
                   />
                 </div>
 
                 {/* MM YYYY */}
-                <div className='flex col-span-2 w-full justify-between '>
+                <div className='flex col-span-2 w-full justify-between items-center'>
                   <input
                     type="text"
                     placeholder="MM"
@@ -167,17 +189,17 @@ const { signUp } = useUserAuth();
                   <input
                     type="text"
                     placeholder="YYYY"
-                    className="border border-input-border rounded-md text-sm p-3 h-12 w-2/3"
+                    className="border border-input-border rounded-md text-sm p-3 h-12 w-2/3 "
                   />
                 </div>
 
                 {/* BUTTONS */}
-                <div className="flex justify-center gap-6 mt-4 place-content-center mx-auto col-span-4">
+                <div className="flex justify-center gap-6 mt-4 place-content-center mx-auto col-span-4 w-full text-m lg:text-2xl">
                   <Link to="/Login">
                     <button
                       type="button"
 
-                      className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+                      className="font-poppins font-normal text-button-blue px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
                     >
                       Log in
                     </button>
@@ -186,7 +208,7 @@ const { signUp } = useUserAuth();
                     <button
                       type="submit"
 
-                      className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max outline whitespace-nowrap border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+                      className="font-poppins font-normal text-button-blue px-10 py-2 w-max outline whitespace-nowrap border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
                     >
                       Sign up
                     </button>
@@ -202,7 +224,7 @@ const { signUp } = useUserAuth();
           </div>
           <div>
             <div className="flex justify-center cursor-pointer gap-12">
-            <button type='button'><img src={facebook} alt="facebook logo"/></button>
+            <button type='button'onClick={fbLogin}><img src={facebook} alt="facebook logo"/></button>
               <button type='button' onClick={googleLogin}><img src={gmail} alt="gmail logo" /></button>
             </div>
           </div>

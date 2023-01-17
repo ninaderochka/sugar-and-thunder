@@ -1,11 +1,11 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut
-} from "firebase/auth";
-import { auth } from "./firebase";
+  signOut,
+} from 'firebase/auth';
+import { auth } from './firebase';
 
 const userAuthContext = createContext();
 
@@ -24,8 +24,8 @@ export function UserAuthContextProvider({ children }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
-        // eslint-disable-next-line
-    //   console.log("Auth", currentuser);
+      // eslint-disable-next-line
+      //   console.log("Auth", currentuser);
       setUser(currentuser);
     });
 
@@ -34,11 +34,12 @@ export function UserAuthContextProvider({ children }) {
     };
   }, []);
 
-  const methods = useMemo(() => ({loggedInUser:user, logIn, signUp, logOut}), []);
+  const methods = useMemo(
+    () => ({ loggedInUser: user, logIn, signUp, logOut }),
+    []
+  );
   return (
-    <userAuthContext.Provider
-      value={methods}
-    >
+    <userAuthContext.Provider value={methods}>
       {children}
     </userAuthContext.Provider>
   );
@@ -47,4 +48,3 @@ export function UserAuthContextProvider({ children }) {
 export function useUserAuth() {
   return useContext(userAuthContext);
 }
-    
