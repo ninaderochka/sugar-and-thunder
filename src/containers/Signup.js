@@ -100,7 +100,7 @@ const { signUp } = useUserAuth();
           <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded min-w-min max-w-xl m-auto lg:w-[555px]">
             {error && <div className="auth__error">{error}</div>}
             <form className="w-full grid grid-cols-4 gap-2 grid-row-5" onSubmit={handleSubmit}>
-              {/* <div className='row-span-1'> */}
+              {/* FIRST NAME AND LAST NAME */}
                 <input
                   type="text"
                   placeholder="First Name"
@@ -111,8 +111,7 @@ const { signUp } = useUserAuth();
                   placeholder="Last Name"
                   className="border border-input-border box-border rounded-md text-sm p-3 col-span-2"
                 />
-              {/* </div> */}
-              {/* <div className="mt-5"> */}
+              {/* EMAIL AND CONFIRM EMAIL */}
                 <input
                   type="email"
                   value={email}
@@ -121,8 +120,7 @@ const { signUp } = useUserAuth();
                   onChange={(e) => setEmail(e.target.value)}
                   className="border border-input-border box-border rounded-md text-sm p-3 w-full col-span-full"
                 />
-              {/* </div> */}
-              {/* <div className="mt-5"> */}
+              
                 <input
                   type="email"
                   value={confirmEmail}
@@ -131,15 +129,14 @@ const { signUp } = useUserAuth();
                   onChange={(e) => setConfirmEmail(e.target.value)}
                   className="border border-input-border box-border rounded-md text-sm p-3 w-full col-span-full"
                 />
-              {/* </div> */}
-              {/* <div className=" text-input-grey mt-5"> */}
+                {/* PASSWORD AND CONFIRM PASS */}
                 <input
                   type="password"
                   value={password}
                   placeholder="Password"
                   required
                   onChange={(e) => setPassword(e.target.value)}
-                  className="border border-input-border box-border rounded-md text-sm py-4 px-3.5  w-full mb-2 lg:mb-0 lg:mr-1 col-span-2"
+                  className="border border-input-border box-border rounded-md text-sm py-4 px-3.5 p-3  w-full  lg:mb-0 lg:mr-1 col-span-2"
                 />
                 <input
                   type="password"
@@ -149,55 +146,52 @@ const { signUp } = useUserAuth();
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   className="border border-input-border box-border rounded-md text-sm p-3 col-span-2"
                 />
-              {/* </div> */}
-              {/* <div className=" text-input-grey space-y-4 justify-end col-span-4"> */}
-                {/* <input
-                  type="text"
-                  placeholder="Birth Date"
-                  className="p-3 align-middle"
-                /> */}
-                <div className='flex grid-span-2'>
+            
+                {/* BIRTHDAY-TEXT AND DD */}
+                <div className='flex col-span-2 justify-between'>
                   <p className="p-6 px-0">Birthdate</p>
-                <input
-                  type="text"
-                  placeholder="DD"
-                  className="border border-input-border rounded-md text-sm p-3 aspect-square h-12 w-12 py-4 px-3.5"
-                />
-                  </div>
-                  <div className='flex grid-span-2'>
+                  <input
+                    type="text"
+                    placeholder="DD"
+                    className="border border-input-border rounded-md text-sm p-3 aspect-square h-12 w-12 py-4 px-3.5 place-self-center"
+                  />
+                </div>
 
-                <input
-                  type="text"
-                  placeholder="MM"
-                  className="border border-input-border rounded-md text-sm p-3 aspect square h-12 w-12"
-                />
-                <input
-                  type="text"
-                  placeholder="YYYY"
-                  className="border border-input-border rounded-md text-sm p-3 h-12"
-                />
-                  </div>
-              {/* </div> */}
-              <div className="flex justify-center gap-6 mt-4 place-content-center mx-auto col-span-4">
-                <Link to="/Login">
-                  <button
-                    type="button"
+                {/* MM YYYY */}
+                <div className='flex col-span-2 w-full justify-between '>
+                  <input
+                    type="text"
+                    placeholder="MM"
+                    className="border border-input-border rounded-md text-sm p-3 aspect square h-12 w-12"
+                  />
+                  <input
+                    type="text"
+                    placeholder="YYYY"
+                    className="border border-input-border rounded-md text-sm p-3 h-12 w-2/3"
+                  />
+                </div>
 
-                    className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
-                  >
-                    Log in
-                  </button>
-                </Link>
-                <Link to="/Signup">
-                  <button
-                    type="submit"
+                {/* BUTTONS */}
+                <div className="flex justify-center gap-6 mt-4 place-content-center mx-auto col-span-4">
+                  <Link to="/Login">
+                    <button
+                      type="button"
 
-                    className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max outline whitespace-nowrap border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
-                  >
-                    Sign up
-                  </button>
-                </Link>
-              </div>
+                      className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+                    >
+                      Log in
+                    </button>
+                  </Link>
+                  <Link to="/Signup">
+                    <button
+                      type="submit"
+
+                      className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max outline whitespace-nowrap border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+                    >
+                      Sign up
+                    </button>
+                  </Link>
+                </div>
             </form>
           </div>
           <div className="flex flex-row justify-center mb-8">
