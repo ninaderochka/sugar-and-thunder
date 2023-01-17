@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../images/Logo.svg';
-// import triangle from '../images/triangle.svg';
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav
       className="flex justify-between align-center p-4 h-[106px] bg-light-blue font-poppins"
@@ -23,6 +24,7 @@ function Navbar() {
           strokeWidth={1.5}
           stroke="currentColor"
           className="w-6 h-6"
+          onClick={() => setIsOpen(!isOpen)}
         >
           <path
             strokeLinecap="round"
@@ -31,7 +33,7 @@ function Navbar() {
           />
         </svg>
       </div>
-      <div className="pr-8 text-xl focus:text-light-yellow underline-offset-2 transition-colors md:block hidden">
+      <div className={`pr-8 text-xl focus:text-light-yellow underline-offset-2 transition-colors md:block ${isOpen ? 'block' : 'hidden'} flex flex-col`}>
         <Link className="p-4" to="/">
           Home
         </Link>
@@ -41,7 +43,6 @@ function Navbar() {
         <Link className="p-4" to="/About">
           About
         </Link>
-        {/* <img src={triangle} alt='triangle' className='p-0'/> */}
         <Link className="p-4" to="/Contact">
           Contact us
         </Link>
