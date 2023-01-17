@@ -35,7 +35,8 @@ function Booking() {
       {currentQuestion !== questions.length - 1 ? (
         <div className="px-16 py-12 font-normal">
           <h1 className="text-[50px] uppercase mb-4">
-            let&apos;s match you with the right therapist
+            {/* let&apos;s match you with the right therapist */}
+            {question}
           </h1>
           <p className="text-[28px] text-black/50">
             Please fill out this short questionnaire to provide some general and
@@ -95,6 +96,7 @@ function Booking() {
                   return (
                     <input
                       type="text"
+                      placeholder='hi'
                       className="w-2/4 h-screen bg-slate-50 shadow-sm"
                     />
                   );
