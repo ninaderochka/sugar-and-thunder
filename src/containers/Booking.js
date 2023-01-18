@@ -10,9 +10,7 @@ function Booking() {
   const [isChecked, setIsChecked] = useState('');
 
   const onSelectedAnswer = (answer) => {
-    if (answer === choices) {
-      setSelectedAnswer(true);
-    }
+    setSelectedAnswer(answer)
   };
 
   // const isLastQuestion = currentQuestion === questions.length -1
@@ -60,10 +58,11 @@ function Booking() {
       <div className="w-full flex flex-col p-2">
         <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded w-full md:mx-auto lg:w-2/4 lg:h-[557px] mb-20">
           <div className="grid gap-y-4 m-auto">
-            <h3 className="font-poppins text-3xl font-normal">{question}</h3>
+            {currentQuestion !== questions.length - 1 && (<h3 className="font-poppins text-3xl font-normal">{question}</h3>)}
             <div className="grid gap-y-4 pt-10">
               {choices &&
                 choices.map((answer, index) => {
+                  
                   if (type === 'normal') {
                     return (
                       <input
@@ -78,7 +77,7 @@ function Booking() {
                     );
                   }
 
-                  if (type === 'radio')
+                  if (type === 'radio'){
                     return (
                       <div className="flex whitespace-nowrap font-poppins text-2xl gap-2">
                         <input
@@ -92,15 +91,15 @@ function Booking() {
                           {answer}
                         </label>
                       </div>
-                    );
+                    );}
                   return (
-                    <input
+                    <textarea
                       type="text"
-                      placeholder='hi'
-                      className="w-2/4 h-screen bg-slate-50 shadow-sm"
+                      className="w-full h-full shadow-sm"
                     />
                   );
-                })}
+                })
+                }
             </div>
           </div>
           <div className="flex gap-6 fixed bottom-11">
@@ -108,7 +107,7 @@ function Booking() {
             {currentQuestion !== 0 && (
               <Button type="button" onClick={() => handlePrev()} value="Back" />
             )}
-            <Button type="button" onClick={() => handleNext()} value="Next" />
+          <Button type="button" onClick={() => {if(selectedAnswer)handleNext()}} value="Next" />
           </div>
         </div>
       </div>
