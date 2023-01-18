@@ -1,35 +1,118 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import {
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+  signInWithPopup,
+} from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useUserAuth } from '../AuthContext';
+import { auth } from '../firebase';
 import image from '../images/image.png';
 import facebook from '../images/Facebook.svg';
 import gmail from '../images/Google.svg';
 
 export default function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [user] = useAuthState(auth);
+  const { logIn } = useUserAuth();
+  const navigate = useNavigate();
+
+  const googleProvider = new GoogleAuthProvider();
+  const fbProvider = new FacebookAuthProvider();
+
+  useEffect(() => {
+    if (user) {
+      navigate('/Home');
+    }
+  });
+
+  const googleLogin = async () => {
+    try {
+      const result = signInWithPopup(auth, googleProvider);
+      navigate('/Home');
+      return result;
+    } catch (err) {
+      return { err: error.message };
+    }
+  };
+
+  const fbLogin = async () => {
+    try {
+      const result = signInWithPopup(auth, fbProvider);
+      navigate('/Home');
+      return result;
+    } catch (error) {
+      return { error: error.message };
+    }
+  };
+
+  // const signIn = async (email, password) => {
+  //     try {
+  //       const userCredential = await signInWithEmailAndPassword(
+  //         auth,
+  //         email,
+  //         password
+  //       );
+  //       const [user] = userCredential
+  //       return true
+  //     } catch (error) {
+  //       return { error: error.message };
+  //     }
+  //   };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setEmail('');
+  //   setPassword('');
+  //   const res = await signIn(email, password);
+  //   if (res.error) setError(res.error);
+  // };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    try {
+      await logIn(email, password);
+      navigate('/home');
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   return (
-    <div className="h-screen w-screen bg-white mb-8">
-      <div className="font-roboto px-20 mx-auto flex justify-between">
+    <div className="h-screen w-screen bg-white mb-8 justify-items-center">
+      <div className="font-roboto px-20 mx-auto flex justify-center lg:justify-between">
         <div className="grid grid-flow-row space-y-4 ml-20">
           <h1 className="uppercase text-5xl whitespace-nowrap mt-10 py-6">
             login
           </h1>
           <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border px-10 py-10 border-2 rounded min-w-min max-w-xl m-auto lg:w-96 md:mx-auto">
-            <form className="w-full">
+            <form className="w-full" onSubmit={handleSubmit}>
               <div className="mt-5 flex flex-col space-y-5 text-input-grey">
                 <input
-                  type="text"
+                  type="email"
                   placeholder="Your Email"
+                  value={email}
+                  required
+                  onChange={(e) => setEmail(e.target.value)}
                   className="border border-input-border box-border rounded-md text-sm p-7 "
                 />
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Your Password"
+                  value={password}
+                  required
+                  onChange={(e) => setPassword(e.target.value)}
                   className="border border-input-border box-border rounded-md text-sm p-7"
                 />
               </div>
-              <div className="flex justify-center gap-6 mt-10 place-content-center mx-auto">
+              <div className="flex justify-center gap-6 mt-10 place-content-center mx-auto w-full">
                 <Link to="/Login">
                   <button
-                    type="button"
+                    type="submit"
                     className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
                   >
                     Log in
@@ -53,14 +136,20 @@ export default function Login() {
             <div className="w-3/4 bg-button-blue mt-3 h-px" />
           </div>
           <div>
-            <div className="flex justify-center cursor-pointer gap-12">
-              <img src={facebook} alt="facebook logo" />
-              <img src={gmail} alt="gmail logo" />
-            </div>
+            <Link to="/Login">
+              <div className="flex justify-center cursor-pointer gap-12 w-full">
+                <button type="button" onClick={fbLogin}>
+                  <img src={facebook} alt="facebook logo" />
+                </button>
+                <button type="button" onClick={googleLogin}>
+                  <img src={gmail} alt="gmail logo" />
+                </button>
+              </div>
+            </Link>
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full w-full flex mr-20 m-auto">
-          <img className="scale-125" src={image} alt="login" />
+          <img className="scale-125 hidden md:block" src={image} alt="login" />
         </div>
       </div>
     </div>
