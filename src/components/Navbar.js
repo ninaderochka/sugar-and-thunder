@@ -1,16 +1,22 @@
+
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Menu } from '@headlessui/react';
 import { useUserAuth } from '../AuthContext';
 import { auth } from '../firebase';
 import Logo from '../images/Logo.svg';
-
 // import triangle from '../images/triangle.svg';
 
-function Navbar() {
-  // console.log(useUserAuth())
 
-  const [user] = useAuthState(auth);
+
+
+
+function Navbar() {
+
+const [user] = useAuthState(auth);
+const [isOpen, setIsOpen] = useState(false);
+
 
   const { logOut } = useUserAuth();
 
@@ -24,6 +30,7 @@ function Navbar() {
       console.log(error.message);
     }
   };
+
 
   return (
     <nav
@@ -44,6 +51,7 @@ function Navbar() {
           strokeWidth={1.5}
           stroke="currentColor"
           className="w-6 h-6"
+          onClick={() => setIsOpen(!isOpen)}
         >
           <path
             strokeLinecap="round"
@@ -52,7 +60,9 @@ function Navbar() {
           />
         </svg>
       </div>
-      <div className="pr-8 text-xl focus:text-light-yellow underline-offset-2 transition-colors md:block hidden z-">
+
+      <div className={`pr-8 text-xl focus:text-light-yellow underline-offset-2 transition-colors md:block ${isOpen ? 'block' : 'hidden'} flex flex-col`}>
+
         <Link className="p-4" to="/">
           Home
         </Link>
@@ -62,7 +72,6 @@ function Navbar() {
         <Link className="p-4" to="/About">
           About
         </Link>
-        {/* <img src={triangle} alt='triangle' className='p-0'/> */}
         <Link className="p-4" to="/Contact">
           Contact us
         </Link>
