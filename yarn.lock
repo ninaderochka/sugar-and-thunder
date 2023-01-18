@@ -11563,17 +11563,10 @@ write-file-atomic@^3.0.0:
     signal-exit "^3.0.2"
     typedarray-to-buffer "^3.1.5"
 
-<<<<<<< HEAD
-"write-file-atomic@^4.0.1":
-  "integrity" "sha512-7KxauUdBmSdWnmpaGFg+ppNjKF8uNLry8LyzjauQDOVONfFLNKrKvQOxZ/VuTIcS/gge/YNahf5RIIQWTSarlg=="
-  "resolved" "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-4.0.2.tgz"
-  "version" "4.0.2"
-=======
 write-file-atomic@^4.0.1:
   version "4.0.2"
   resolved "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-4.0.2.tgz"
   integrity sha512-7KxauUdBmSdWnmpaGFg+ppNjKF8uNLry8LyzjauQDOVONfFLNKrKvQOxZ/VuTIcS/gge/YNahf5RIIQWTSarlg==
->>>>>>> main
   dependencies:
     imurmurhash "^0.1.4"
     signal-exit "^3.0.7"
@@ -11628,17 +11621,10 @@ yargs-parser@^20.2.2:
   resolved "https://registry.npmjs.org/yargs-parser/-/yargs-parser-20.2.9.tgz"
   integrity sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==
 
-<<<<<<< HEAD
-"yargs-parser@^21.1.1":
-  "integrity" "sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw=="
-  "resolved" "https://registry.npmjs.org/yargs-parser/-/yargs-parser-21.1.1.tgz"
-  "version" "21.1.1"
-=======
 yargs-parser@^21.1.1:
   version "21.1.1"
   resolved "https://registry.npmjs.org/yargs-parser/-/yargs-parser-21.1.1.tgz"
   integrity sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==
->>>>>>> main
 
 yargs@^16.2.0:
   version "16.2.0"
@@ -11653,17 +11639,10 @@ yargs@^16.2.0:
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
 
-<<<<<<< HEAD
-"yargs@^17.3.1":
-  "integrity" "sha512-1/9UrdHjDZc0eOU0HxOHoS78C69UD3JRMvzlJ7S79S2nTaWRA/whGCTV8o9e/N/1Va9YIV7Q4sOxD8VV4pCWOw=="
-  "resolved" "https://registry.npmjs.org/yargs/-/yargs-17.6.2.tgz"
-  "version" "17.6.2"
-=======
 yargs@^17.3.1:
   version "17.6.2"
   resolved "https://registry.npmjs.org/yargs/-/yargs-17.6.2.tgz"
   integrity sha512-1/9UrdHjDZc0eOU0HxOHoS78C69UD3JRMvzlJ7S79S2nTaWRA/whGCTV8o9e/N/1Va9YIV7Q4sOxD8VV4pCWOw==
->>>>>>> main
   dependencies:
     cliui "^8.0.1"
     escalade "^3.1.1"
@@ -11673,17 +11652,6 @@ yargs@^17.3.1:
     y18n "^5.0.5"
     yargs-parser "^21.1.1"
 
-<<<<<<< HEAD
-"yarn@^1.22.19":
-  "integrity" "sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ=="
-  "resolved" "https://registry.npmjs.org/yarn/-/yarn-1.22.19.tgz"
-  "version" "1.22.19"
-
-"yocto-queue@^0.1.0":
-  "integrity" "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="
-  "resolved" "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
-  "version" "0.1.0"
-=======
 yarn@^1.22.19:
   version "1.22.19"
   resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.19.tgz#4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
@@ -11693,4 +11661,3 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
->>>>>>> main
