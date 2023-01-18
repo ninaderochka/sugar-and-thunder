@@ -16,7 +16,7 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [user] = useAuthState(auth);
+  const { user } = useAuthState(auth);
   const { logIn } = useUserAuth();
   const navigate = useNavigate();
 
@@ -25,14 +25,14 @@ export default function Login() {
 
   useEffect(() => {
     if (user) {
-      navigate('/Home');
+      navigate('/');
     }
-  });
+  }, [user]);
 
   const googleLogin = async () => {
     try {
       const result = signInWithPopup(auth, googleProvider);
-      navigate('/Home');
+      navigate('/');
       return result;
     } catch (err) {
       return { err: error.message };
@@ -42,7 +42,7 @@ export default function Login() {
   const fbLogin = async () => {
     try {
       const result = signInWithPopup(auth, fbProvider);
-      navigate('/Home');
+      navigate('/');
       return result;
     } catch (error) {
       return { error: error.message };
@@ -71,14 +71,16 @@ export default function Login() {
   //   if (res.error) setError(res.error);
   // };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    // e.preventDefault();
     setError('');
     try {
-      await logIn(email, password);
-      navigate('/home');
+      const userCred = await logIn(email, password);
+      // eslint-disable-next-line
+      console.log(userCred)
+      navigate('/');
     } catch (err) {
-      setError(err.message);
+      setError(console.log(err));
     }
   };
 
@@ -110,14 +112,13 @@ export default function Login() {
                 />
               </div>
               <div className="flex justify-center gap-6 mt-10 place-content-center mx-auto w-full">
-                <Link to="/Login">
                   <button
-                    type="submit"
+                    type="button"
+                    onClick={handleSubmit}
                     className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
                   >
                     Log in
-                  </button>
-                </Link>
+                  </button> 
                 <Link to="/Signup">
                   <button
                     type="button"

@@ -211,7 +211,7 @@ function Signup() {
                   </button>
                 </Link>
                 <button
-                  type="submit"
+                  type="button"
                   className="font-poppins font-normal text-button-blue px-10 py-2 w-max outline whitespace-nowrap border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
                   onClick={() => {
                     Register();

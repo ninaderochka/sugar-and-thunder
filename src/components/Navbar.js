@@ -90,15 +90,15 @@ const [isOpen, setIsOpen] = useState(false);
             <Menu.Button
               id="dropdownUserAvatarButton"
               data-dropdown-toggle="dropdownAvatar"
-              className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+              className="flex mx-3 text-sm md:mr-0 focus:ring-4 w-8 h-8  bg-gray-800 rounded-full focus:ring-gray-300 dark:focus:ring-gray-600"
               type="button"
             >
               <span className="sr-only">Open user menu</span>
-              <img
+              { user.photoURL ? (<img
                 className="w-8 h-8 rounded-full"
                 src={user.photoURL}
                 alt="user avatar"
-              />
+              />) : (<span className='text-white m-auto text-center'>{user.email.charAt(0).toUpperCase()}</span>)}
             </Menu.Button>
             <div className="absolute -right-px">
               <Menu.Items
