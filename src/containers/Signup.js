@@ -1,24 +1,24 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   getAuth,
   GoogleAuthProvider,
   FacebookAuthProvider,
   signInWithPopup,
-} from "@firebase/auth";
-import { addDoc, collection } from "firebase/firestore";
-import { db } from "../firebase";
-import SignupImage from "../images/SignupImage.svg";
-import facebook from "../images/Facebook.svg";
-import gmail from "../images/Google.svg";
-import { useUserAuth } from "../AuthContext";
+} from '@firebase/auth';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../firebase';
+import SignupImage from '../images/SignupImage.svg';
+import facebook from '../images/Facebook.svg';
+import gmail from '../images/Google.svg';
+import { useUserAuth } from '../AuthContext';
 
 function Signup() {
-  const [email, setEmail] = useState("");
-  const [confirmEmail, setConfirmEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
+  const [email, setEmail] = useState('');
+  const [confirmEmail, setConfirmEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const googleProvider = new GoogleAuthProvider();
@@ -53,11 +53,11 @@ function Signup() {
   // };
 
   const auth = getAuth();
-  // changed all /home to / 
+  // changed all /home to /
   const googleLogin = async () => {
     try {
       const result = signInWithPopup(auth, googleProvider);
-      navigate("/");
+      navigate('/');
       return result;
     } catch (error) {
       return { error: error.message };
@@ -67,7 +67,7 @@ function Signup() {
   const fbLogin = async () => {
     try {
       const result = signInWithPopup(auth, fbProvider);
-      navigate("/");
+      navigate('/');
       return result;
     } catch (error) {
       return { error: error.message };
@@ -76,14 +76,12 @@ function Signup() {
 
   const { signUp } = useUserAuth();
 
-
-  
   const Register = async () => {
     try {
       const userCredential = await signUp(email, password);
-     
+
       const { user } = userCredential;
-      await addDoc(collection(db, "users"), {
+      await addDoc(collection(db, 'users'), {
         uid: user.uid,
         email: user.email,
       });
@@ -96,18 +94,17 @@ function Signup() {
     }
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      setError("Passwords does not match");
+      setError('Passwords does not match');
     } else {
-      setEmail("");
-      setConfirmEmail("");
-      setPassword("");
-      setConfirmPassword("");
+      setEmail('');
+      setConfirmEmail('');
+      setPassword('');
+      setConfirmPassword('');
       const res = await signUp(email, password);
-      navigate("/");
+      navigate('/');
       if (res.error) setError(res.error);
     }
   };

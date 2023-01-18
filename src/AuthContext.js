@@ -19,7 +19,7 @@ export function UserAuthContextProvider({ children }) {
   function signUp(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
   }
-  
+
   function logOut() {
     return signOut(auth);
   }

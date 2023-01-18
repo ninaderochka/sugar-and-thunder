@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { GoogleAuthProvider, FacebookAuthProvider, signInWithPopup } from 'firebase/auth';
-import { useAuthState } from 'react-firebase-hooks/auth'
+import {
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+  signInWithPopup,
+} from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useUserAuth } from '../AuthContext';
 import { auth } from '../firebase';
 import image from '../images/image.png';
@@ -12,55 +16,53 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [user] = useAuthState(auth)
+  const [user] = useAuthState(auth);
   const { logIn } = useUserAuth();
   const navigate = useNavigate();
 
+  const googleProvider = new GoogleAuthProvider();
+  const fbProvider = new FacebookAuthProvider();
 
-const googleProvider = new GoogleAuthProvider()
-const fbProvider = new FacebookAuthProvider()
+  useEffect(() => {
+    if (user) {
+      navigate('/Home');
+    }
+  });
 
-useEffect(() => {
-  if(user) {
-   navigate('/Home')
-  }
-})
+  const googleLogin = async () => {
+    try {
+      const result = signInWithPopup(auth, googleProvider);
+      navigate('/Home');
+      return result;
+    } catch (err) {
+      return { err: error.message };
+    }
+  };
 
-const googleLogin = async () => {
-  try {
-const result = signInWithPopup(auth, googleProvider)
-navigate('/Home')
-return result
-  } catch(err) {
-    return { err: error.message };
-  }
-}
+  const fbLogin = async () => {
+    try {
+      const result = signInWithPopup(auth, fbProvider);
+      navigate('/Home');
+      return result;
+    } catch (error) {
+      return { error: error.message };
+    }
+  };
 
-const fbLogin = async () => {
-  try {
-const result = signInWithPopup(auth, fbProvider)
-navigate('/Home')
-return result
-  } catch(error) {
-    return { error: error.message };
-  }
-}
+  // const signIn = async (email, password) => {
+  //     try {
+  //       const userCredential = await signInWithEmailAndPassword(
+  //         auth,
+  //         email,
+  //         password
+  //       );
+  //       const [user] = userCredential
+  //       return true
+  //     } catch (error) {
+  //       return { error: error.message };
+  //     }
+  //   };
 
-
-// const signIn = async (email, password) => {
-//     try {
-//       const userCredential = await signInWithEmailAndPassword(
-//         auth,
-//         email,
-//         password
-//       );
-//       const [user] = userCredential
-//       return true
-//     } catch (error) {
-//       return { error: error.message };
-//     }
-//   };
-  
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
   //   setEmail('');
@@ -71,15 +73,14 @@ return result
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
+    setError('');
     try {
       await logIn(email, password);
-      navigate("/home");
+      navigate('/home');
     } catch (err) {
       setError(err.message);
     }
   };
-
 
   return (
     <div className="h-screen w-screen bg-white mb-8 justify-items-center">
@@ -135,10 +136,16 @@ return result
             <div className="w-3/4 bg-button-blue mt-3 h-px" />
           </div>
           <div>
-<Link to='/Login'><div className="flex justify-center cursor-pointer gap-12 w-full">
-           <button type='button' onClick={fbLogin}><img src={facebook} alt="facebook logo"/></button>
-            <button type='button' onClick={googleLogin}><img src={gmail} alt="gmail logo" /></button>
-            </div></Link>
+            <Link to="/Login">
+              <div className="flex justify-center cursor-pointer gap-12 w-full">
+                <button type="button" onClick={fbLogin}>
+                  <img src={facebook} alt="facebook logo" />
+                </button>
+                <button type="button" onClick={googleLogin}>
+                  <img src={gmail} alt="gmail logo" />
+                </button>
+              </div>
+            </Link>
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full w-full flex mr-20 m-auto">
