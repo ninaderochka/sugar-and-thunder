@@ -7,27 +7,22 @@ import Blog from './containers/Blog';
 import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
-
-// import ThankUTicket from './components/ThankUTicket';
-
-import ThankUCard from './components/ThankUCard';
-// import ThankUContact from './components/ThankUContact';
-// import ThankUEdit from './components/ThankUEdit';
-// import ThankUSignup from './components/ThankUSignup';
-// import ThankUSub from './components/ThankUSub';
-// import ThankUTherapist from './components/ThankUTherapist';
+import Requirements from './components/Requirements';
+// import EditProfile from './components/EditProfile';
+import Cards from './components/Cards';
+import ThankUTicket from './components/ThankUTicket';
+import Login from './containers/Login';
+import Career from './components/Career';
+import AboutTeam from './components/AboutTeam';
+import TherapistProfile from './components/TherapistProfile';
+import ByTicket from './components/ByTicket';
+import TherapistCreate from './components/TherapistCreate';
+import ThankUCard from './components/ThankUCard'
 
 function App() {
   return (
     <div className="App">
-      <ThankUCard />
-      {/* <ThankUContact />
-      <ThankUEdit />
-      <ThankUSignup />
-      <ThankUSub />
-      <ThankUTherapist />
-      <ThankUTicket /> */}
-
+      {/* <EditProfile/> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -35,6 +30,18 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Signup" element={<Signup />} />
+
+        <Route path="/Requirements" element={<Requirements />} />
+
+        <Route path="/Login" element={<Login />} />
+        <Route path="/About/Career" element={<Career />} />
+        <Route path="/About/AboutTeam" element={<AboutTeam />} />
+        <Route path="/TherapistProfile" element={<TherapistProfile />} />
+        <Route path="/ByTicket" element={<ByTicket />} />
+        <Route path="/Cards" element={<Cards />} />
+        <Route path="/ThankUTicket" element={<ThankUTicket />} />
+        <Route path="/TherapistCreate" element={<TherapistCreate />} />
+        <Route path="/ThankUCard" element={<ThankUCard />} />
       </Routes>
       <Footer />
     </div>

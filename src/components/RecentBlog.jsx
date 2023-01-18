@@ -27,12 +27,12 @@ function RecentBlog() {
   };
 
   return (
-    <div className="bg-light-blue h-screen md:h-screen">
-      <h1 className="text-5xl leading-10 uppercase pt-16 pb-24 pl-40 font-poppins">
+    <div className="bg-light-blue h-full md:h-screen">
+      <h1 className="text-5xl leading-10 uppercase pt-16 pb-24 pl-28 font-poppins">
         Recent BLOGs
       </h1>
 
-      <div className="px-36 ">
+      <div className="px-36 my-auto">
         <Carousel responsive={responsive}>
           <div className="relative">
             <h1 className="absolute text-white pt-3 pl-6 w-44 uppercase">
