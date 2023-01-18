@@ -34,16 +34,12 @@ export default function Cards() {
           <IoIosArrowForward />
         </div>
       </div>
+
       <Link to="/AddNewCard">
         <div className="pt-20 pl-28 text-[12px] pb-8 ">
           <Button value="ADD NEW CARD+" />
         </div>
       </Link>
-      {/* <Link to="/ByTicket"> */}
-      <div className="pt-20 pl-28 text-[12px] pb-8 ">
-        <Button value="ADD NEW CARD+" />
-      </div>
-      {/* </Link> */}
     </div>
   );
 }
