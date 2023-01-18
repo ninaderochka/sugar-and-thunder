@@ -136,8 +136,7 @@ export default function Login() {
             <div className="w-3/4 bg-button-blue mt-3 h-px" />
           </div>
           <div>
-            <Link to="/Login">
-              <div className="flex justify-center cursor-pointer gap-12 w-full">
+  <div className="flex justify-center cursor-pointer gap-12 w-full">
                 <button type="button" onClick={fbLogin}>
                   <img src={facebook} alt="facebook logo" />
                 </button>
@@ -145,7 +144,6 @@ export default function Login() {
                   <img src={gmail} alt="gmail logo" />
                 </button>
               </div>
-            </Link>
           </div>
         </div>
         <div className="lg:max-w-lg lg:w-full w-full flex mr-20 m-auto">
