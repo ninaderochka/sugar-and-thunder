@@ -11,10 +11,10 @@ import Login from './containers/Login';
 import { UserAuthContextProvider } from './AuthContext';
 import Requirements from './components/Requirements';
 import TherapistsCreate from './components/TherapistCreate';
-import ThankUTherapist from './components/ThankUTherapist'
+import ThankUTherapist from './components/ThankUTherapist';
 import ThankUContact from './components/ThankUContact';
-import EditProfile from './components/EditProfile'
-import ThankUEdit from './components/ThankUEdit'
+import EditProfile from './components/EditProfile';
+import ThankUEdit from './components/ThankUEdit';
 
 function App() {
   return (

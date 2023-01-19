@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Login from './components/Login'
+import Login from './components/Login';
 import Header from './components/Header';
 import RecentBlog from './components/RecentBlog';
 import Communicate from './components/Communicate';
@@ -17,14 +17,11 @@ import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
 
-
 import ThankUSignup from './components/ThankUSignup';
 
 import ThankUEdit from './components/ThankUEdit';
 
-
 import ThankUTherapist from './components/ThankUTherapist';
-
 
 import ThankUContact from './components/ThankUContact';
 
@@ -38,16 +35,12 @@ import AboutTeam from './components/AboutTeam';
 import TherapistProfile from './components/TherapistProfile';
 import ByTicket from './components/ByTicket';
 import TherapistCreate from './components/TherapistCreate';
-import ThankUCard from './components/ThankUCard'
-import ThankUSub from './components/ThankUSub'
-
-
-
+import ThankUCard from './components/ThankUCard';
+import ThankUSub from './components/ThankUSub';
 
 function App() {
   return (
     <div className="App">
-
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -70,12 +63,11 @@ function App() {
         <Route path="/TherapistCreate" element={<TherapistCreate />} />
         <Route path="/ThankUCard" element={<ThankUCard />} />
         <Route path="/ThankUTherapist" element={<ThankUTherapist />} />
-          <Route path="/ThankUEdit" element={<ThankUEdit />} />
-          <Route path="/ThankUSignup" element={<ThankUSignup />} />
-     </Routes>
+        <Route path="/ThankUEdit" element={<ThankUEdit />} />
+        <Route path="/ThankUSignup" element={<ThankUSignup />} />
+      </Routes>
 
       <Footer />
-
     </div>
   );
 }

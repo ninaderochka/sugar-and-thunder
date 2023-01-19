@@ -1,6 +1,7 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import i18next from 'i18next';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Menu } from '@headlessui/react';
 import { useUserAuth } from '../AuthContext';
@@ -9,14 +10,29 @@ import Logo from '../images/Logo.svg';
 // import triangle from '../images/triangle.svg';
 
 
-
+const languages = [
+  { value: 'en', text: "EN" },
+  { value: 'ar', text: "AR" },
+  { value: 'ckb', text: "CKB" },
+  { value: 'tr', text: "TR" }
+]
 
 
 function Navbar() {
 
 const [user] = useAuthState(auth);
 const [isOpen, setIsOpen] = useState(false);
+const [lang, setLang] = useState('en');
 
+const handleChange = e => { 
+        setLang(e.target.value);}
+      //  const loc = "http://localhost:3000/";
+        // window.location.replace(loc + "?lng=" + e.target.value);
+
+       
+ useEffect(() => {
+  i18next.changeLanguage(lang)}
+        ,[lang]);
 
   const { logOut } = useUserAuth();
 
@@ -61,7 +77,7 @@ const [isOpen, setIsOpen] = useState(false);
         </svg>
       </div>
 
-      <div className={`pr-8 text-xl focus:text-light-yellow underline-offset-2 transition-colors md:block ${isOpen ? 'block' : 'hidden'} flex flex-col`}>
+      <div className={`pr-8 text-xl focus:text-light-yellow underline-offset-2 bg-light-blue h-full transition-colors md:block ${isOpen ? 'block' : 'hidden'} flex flex-col`}>
 
         <Link className="p-4" to="/">
           Home
@@ -113,9 +129,9 @@ const [isOpen, setIsOpen] = useState(false);
                 <ul className="py-1 text-sm text-gray-700 dark:text-gray-200">
                   <Menu.Item>
                     <li>
-                      <p className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      <Link to ="/EditProfile"><button type="button" className="block px-4 py-2 text-sm text-gray-700 w-full text-left hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                         Edit Profile
-                      </p>
+                      </button></Link>
                     </li>
                   </Menu.Item>
                 </ul>
@@ -134,6 +150,12 @@ const [isOpen, setIsOpen] = useState(false);
             </div>
           </Menu>
         )}
+         <select className="ml-5" value={lang} onChange={handleChange}>
+                {languages.map(item => {
+                    return (<option key={item.value} 
+                    value={item.value}>{item.text}</option>);
+                })}
+            </select>
       </div>
     </nav>
   );
