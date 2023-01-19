@@ -16,6 +16,9 @@ import Blog from './containers/Blog';
 import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
+
+import ThankUContact from './components/ThankUContact';
+
 import Requirements from './components/Requirements';
 // import EditProfile from './components/EditProfile';
 import Cards from './components/Cards';
@@ -28,6 +31,7 @@ import ByTicket from './components/ByTicket';
 import TherapistCreate from './components/TherapistCreate';
 import ThankUCard from './components/ThankUCard'
 import ThankUSub from './components/ThankUSub'
+
 
 function App() {
   return (
