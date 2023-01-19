@@ -6,7 +6,7 @@ import Button from './Button';
 
 export default function AddNewCard() {
   return (
-    <div className="flex flex-col sm:pt-[8] md:pt-8 lg:pt-8 px-[8] md:px-10 lg:px-16 justify-center">
+    <div className="flex flex-col sm:pt-5 md:pt-8 lg:pt-8 sm:px-4 md:px-14 lg:px-16 justify-center">
       <h1 className="text-[28px] md:text-[40px] lg:text-[50px] tracking-[-1px] ">
         ADD CARD DETAILS
       </h1>
@@ -15,20 +15,20 @@ export default function AddNewCard() {
         registration info.
       </p>
 
-      <div className="text-card-text flex pt-8 text-[24px] place-content-between">
+      <div className="text-card-text md:flex lg:flex sm:pt-4 md:pt-8 lg:pt-8 text-[12px] md:text-[18px] lg:text-[24px] md:mx-5 lg:place-content-between">
         {/* Left side */}
-        <div className="pt-4 flex flex-col">
+        <div className="pt-4 flex flex-col md:mr-10">
           <div className="">
             <p>Supported Card types</p>
             <button
               type="button"
-              className="border rounded-l-sm border-button-blue text-button-blue w-[155px] hover:bg-button-blue hover:text-white"
+              className="border rounded-l-sm border-button-blue text-button-blue sm:w-[65px] md:w-[125px] lg:w-[155px] hover:bg-button-blue hover:text-white"
             >
               Visa
             </button>
             <button
               type="button"
-              className="border rounded-r-sm border-button-blue text-button-blue w-[155px] hover:bg-button-blue hover:text-white"
+              className="border rounded-r-sm border-button-blue text-button-blue sm:w-[85px] md:w-[125px] lg:w-[155px] hover:bg-button-blue hover:text-white"
             >
               Mastercard
             </button>
@@ -37,7 +37,7 @@ export default function AddNewCard() {
           <div className="pt-5">
             <p className="">Card Number</p>
             <input
-              className="text-[12px] border rounded px-2 w-[310px] h-[40px] pl-2"
+              className="text-[12px] border rounded px-2 sm:w-[150px] md:w-[250px] lg:w-[310px] h-[40px] pl-2"
               type="tel"
               maxLength={19}
               placeholder="Enter your card number"
@@ -52,13 +52,13 @@ export default function AddNewCard() {
 
             <div className="flex ">
               <input
-                className="text-[12px] border rounded w-[151px] pl-2"
+                className="text-[12px] border rounded sm:w-[70px] md:w-[120px] lg:w-[151px] pl-2"
                 type="tel"
                 maxLength={10}
                 placeholder="MM / YY"
               />
               <input
-                className="text-[12px] border rounded px-2 w-[151px] h-[40px] ml-2"
+                className="text-[12px] border rounded px-2 sm:w-[70px] md:w-[120px] lg:w-[151px] h-[40px] ml-2"
                 type="password"
                 minLength={5}
                 placeholder="***"
@@ -68,7 +68,7 @@ export default function AddNewCard() {
 
           <div className="pt-5">
             <p>Name on Card</p>
-            <input className="text-[12px] border rounded w-[311px] h-[40px] pl-2" type="text" placeholder='Enter your card name'/>
+            <input className="text-[12px] border rounded sm:w-[150px] md:w-[250px] lg:w-[310px] h-[40px] pl-2" type="text" placeholder='Enter your card name'/>
           </div>
         </div>
 
@@ -77,7 +77,7 @@ export default function AddNewCard() {
           <div>
             <p>Country</p>
             <select
-              className="text-[12px] border rounded w-[311px] h-[40px] pl-2"
+              className="text-[12px] border rounded sm:w-[150px] md:w-[250px] lg:w-[310px] h-[40px] pl-2"
               type="option"
             >
               <option value="1">United State</option>
@@ -89,7 +89,7 @@ export default function AddNewCard() {
           <div className="pt-5">
             <p>ZIP Code</p>
             <input
-              className="text-[12px] border rounded w-[311px] h-[40px] pl-2"
+              className="text-[12px] border rounded sm:w-[150px] md:w-[250px] lg:w-[310px] h-[40px] pl-2"
               type="text"
               maxLength={15}
               placeholder="Enter your ZIP Code"
@@ -99,7 +99,7 @@ export default function AddNewCard() {
           <div className="pt-5">
             <p>City</p>
             <select
-              className="text-[12px] border rounded w-[210px] h-[40px] pl-2"
+              className="text-[12px] border rounded sm:w-[150px] md:w-[250px] lg:w-[215px] h-[40px] pl-2"
               type="option"
             >
               <option value="1">San-Francisco</option>
@@ -111,7 +111,7 @@ export default function AddNewCard() {
           <div className="pt-5">
             <p>Address</p>
             <input
-              className="text-[12px] border rounded px-2 w-[311px] h-[40px] pl-2"
+              className="text-[12px] border rounded px-2 sm:w-[150px] md:w-[250px] lg:w-[310px] h-[40px] pl-2"
               type="text"
               placeholder="Enter your Address"
             />
@@ -119,14 +119,14 @@ export default function AddNewCard() {
         </div>
 
         <div className="">
-          <img className=" w-[350px] h-[223.36px] " alt="#" src={card1} />
+          <img className="sm:invisible w-[350px] h-[223.36px] " alt="#" src={card1} />
 
-          <img className=" w-[350px] h-[223.36px] " alt="#" src={card2} />
+          <img className="sm:invisible w-[350px] h-[223.36px] " alt="#" src={card2} />
         </div>
       </div>
 
       <Link to="/ThankUCard">
-        <div className=" pt-8 pb-64">
+        <div className=" pt-8 pb-64 ">
           <Button className=" text-[14px]" value="ADD CARD" />
         </div>
       </Link>
