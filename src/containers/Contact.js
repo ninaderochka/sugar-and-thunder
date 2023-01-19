@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import contact from '../images/contact-us.png';
 
 function Contact() {
@@ -111,12 +112,12 @@ function Contact() {
             </label>
           </div>
           <div className="flex items-center justify-between">
-            <button
+            <Link to="/ThankUContact"><button
               className="h-16 w-56 text-2xl font-normal bg-button-blue text-black py-2 px-4 rounded-md"
               type="button"
             >
               Submit
-            </button>
+            </button></Link>
           </div>
         </form>
         <div className="flex justify-center items-center w-6/12">

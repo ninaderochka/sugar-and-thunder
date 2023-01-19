@@ -9,6 +9,12 @@ import Contact from './containers/Contact';
 import Signup from './containers/Signup';
 import Login from './containers/Login';
 import { UserAuthContextProvider } from './AuthContext';
+import Requirements from './components/Requirements';
+import TherapistsCreate from './components/TherapistCreate';
+import ThankUTherapist from './components/ThankUTherapist'
+import ThankUContact from './components/ThankUContact';
+import EditProfile from './components/EditProfile'
+import ThankUEdit from './components/ThankUEdit'
 
 function App() {
   return (
@@ -22,6 +28,12 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/Requirements" element={<Requirements />} />
+          <Route path="/TherapistCreate" element={<TherapistsCreate />} />
+          <Route path="/ThankUTherapist" element={<ThankUTherapist />} />
+          <Route path="/ThankUContact" element={<ThankUContact />} />
+          <Route path="/EditProfile" element={<EditProfile />} />
+          <Route path="/ThankUEdit" element={<ThankUEdit />} />
         </Routes>
       </UserAuthContextProvider>
       <Footer />
