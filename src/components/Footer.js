@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import twitter from '../images/twitter.png';
 import facebook from '../images/facebook.png';
 import gmail from '../images/gmail.png';
@@ -32,34 +33,38 @@ const Footer = () => {
         </div>
         <div className="w-full md:w-1/2 md:text-left mb-6 md:mb-0">
           <nav className="flex justify-center mb-7">
-            <button
-              type="button"
+            <Link
+              to="/"
+              type="Link to=''"
               // href="#"
               className="px-7 py-1 font-light text-2xl rounded-md text-footer-gray"
             >
               Home
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              to="/Blog"
+              type="Link to=''"
               // href="#"
               className="px-7 py-1 font-light text-2xl rounded-md text-footer-gray"
             >
               Blogs
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              to="/About"
+              type="Link to=''"
               // href="#"
               className="px-7 py-1 font-light text-2xl rounded-md text-footer-gray"
             >
               About
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              to="/Contact"
+              type="Link to=''"
               // href="#"
               className="px-7 py-1 font-light text-2xl rounded-md text-footer-gray"
             >
               Contact
-            </button>
+            </Link>
           </nav>
           <div className="flex justify-center">
             <a
