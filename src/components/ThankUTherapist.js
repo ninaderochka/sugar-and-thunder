@@ -4,9 +4,15 @@ import Button from './Button';
 
 export default function ThankUTherapist() {
   return (
-    <div className="flex flex-col pt-12 pl-16">
-      <h1 className="text-[50px] tracking-[-1px]">THANK YOU!</h1>
-      <p className="text-[24px] text-contact-us-gray pt-4 pb-10">
+
+
+    <div className="flex flex-col pt-16 md:pt-12 lg:pt-12 px-4 md:px-4 lg:px-16 justify-center font-poppins ">
+      <h1 className="text-[30px] md:text-[46] lg:text-[50px] tracking-[-1px]">
+        THANK YOU!
+      </h1>
+      <p className="text-[18px] md:text-[20px] lg:text-[24px] text-contact-us-gray pt-4 pb-10 w-[350px] md:w-[600px] lg:w-full">
+
+
         Thank you for your interest in working with Healing, we have recieved
         your application.
         <br />
@@ -15,7 +21,7 @@ export default function ThankUTherapist() {
       </p>
 
       <Link to="/Home">
-        <div className=" text-[24px] pb-64">
+        <div className="text-[16px] md:text-[20px] lg:text-[24px] pb-64 flex justify-center md:justify-start lg:justify-start">
           <Button value="BACK TO HOME" />
         </div>
       </Link>

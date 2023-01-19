@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tickets component renders correctly 1`] = `
+<div
+  className="h-full mb-8 max-h-full uppercase pt-20 w-5/6 mx-auto"
+>
+  <h1
+    className="font-poppins font-normal text-5xl ml-3 mb-2"
+  >
+    Purchase tickets
+  </h1>
+  <p
+    className="ml-3 text-2xl mb-12"
+  >
+    purchase tickets that can be used to book appointments!
+  </p>
+  <div
+    className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+  >
+    <div
+      className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg font-poppins font-normal box-border p-4 border-2 rounded-[20px] flex content-center m-auto aspect-square w-9/12 md:w-box-width md:h-box-height"
+    >
+      <div
+        className="m-auto flex flex-col space-y-4"
+      >
+        <p
+          className="font-poppins font-normal text-5xl text-black text-center"
+        >
+          5 Tickets
+        </p>
+        <p
+          className="font-poppins font-normal text-4xl text-center text-black/50 mb-20"
+        >
+          10$
+        </p>
+        <button
+          className="place-self-center font-poppins font-normal text-black text-2xl uppercase w-fit px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+          onClick={[Function]}
+          type="button"
+        >
+          purchase
+        </button>
+      </div>
+    </div>
+    <div
+      className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg font-poppins font-normal box-border p-4 border-2 rounded-[20px] flex content-center m-auto aspect-square w-9/12 md:w-box-width md:h-box-height"
+    >
+      <div
+        className="m-auto flex flex-col space-y-4"
+      >
+        <p
+          className="font-poppins font-normal text-5xl text-black text-center"
+        >
+          25 Tickets
+        </p>
+        <p
+          className="font-poppins font-normal text-4xl text-center text-black/50 mb-20"
+        >
+          40$
+        </p>
+        <button
+          className="place-self-center font-poppins font-normal text-black text-2xl uppercase w-fit px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+          onClick={[Function]}
+          type="button"
+        >
+          purchase
+        </button>
+      </div>
+    </div>
+    <div
+      className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg font-poppins font-normal box-border p-4 border-2 rounded-[20px] flex content-center m-auto aspect-square w-9/12 md:w-box-width md:h-box-height"
+    >
+      <div
+        className="m-auto flex flex-col space-y-4"
+      >
+        <p
+          className="font-poppins font-normal text-5xl text-black text-center"
+        >
+          50 Tickets
+        </p>
+        <p
+          className="font-poppins font-normal text-4xl text-center text-black/50 mb-20"
+        >
+          70$
+        </p>
+        <button
+          className="place-self-center font-poppins font-normal text-black text-2xl uppercase w-fit px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+          onClick={[Function]}
+          type="button"
+        >
+          purchase
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg font-poppins font-normal box-border border-2 rounded-[20px] flex flex-col space-y-4 p-8 mt-8 w-full content-center m-auto"
+  >
+    <h1
+      className="font-poppins font-normal text-5xl mb-2 text-center"
+    >
+      Are you a counselor?
+    </h1>
+    <p
+      className="font-poppins lowercase text-black/80 text-center w-10/12 mx-auto"
+    >
+      Interested in joining our mental health platform? You decide your schedule and how much you want to work, we’ll take care of the client referrals and billing details!
+    </p>
+    <button
+      className="place-self-center font-poppins font-normal text-black text-2xl uppercase w-fit px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+      onClick={[Function]}
+      type="button"
+    >
+      learn more
+    </button>
+  </div>
+</div>
+`;

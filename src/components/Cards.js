@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import card1 from '../images/card1.png';
 import card2 from '../images/card2.png';
@@ -34,11 +35,11 @@ export default function Cards() {
         </div>
       </div>
 
-      {/* <Link to="/ByTicket"> */}
-      <div className="pt-20 pl-28 text-[12px] pb-8 ">
-        <Button value="ADD NEW CARD+" />
-      </div>
-      {/* </Link> */}
+      <Link to="/AddNewCard">
+        <div className="pt-20 pl-28 text-[12px] pb-8 ">
+          <Button value="ADD NEW CARD+" />
+        </div>
+      </Link>
     </div>
   );
 }
