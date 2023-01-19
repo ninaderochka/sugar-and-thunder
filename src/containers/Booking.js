@@ -33,8 +33,8 @@ function Booking() {
       {currentQuestion !== questions.length - 1 ? (
         <div className="px-16 py-12 font-normal">
           <h1 className="text-[50px] uppercase mb-4">
-            {/* let&apos;s match you with the right therapist */}
-            {question}
+            let&apos;s match you with the right therapist
+            
           </h1>
           <p className="text-[28px] text-black/50">
             Please fill out this short questionnaire to provide some general and
@@ -57,9 +57,9 @@ function Booking() {
 
       <div className="w-full flex flex-col p-2">
         <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded w-full md:mx-auto lg:w-2/4 lg:h-[557px] mb-20">
-          <div className="grid gap-y-4 m-auto">
+          <div className="grid gap-y-4 h-4/5">
             {currentQuestion !== questions.length - 1 && (<h3 className="font-poppins text-3xl font-normal">{question}</h3>)}
-            <div className="grid gap-y-4 pt-10">
+            <div className="pt-10 space-y-4">
               {choices &&
                 choices.map((answer, index) => {
                   
