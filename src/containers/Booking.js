@@ -116,6 +116,7 @@ function Booking() {
 }
 
 export default Booking;
+
 /* {question.map((finalQuestion) => { if (currentQuestion === questions.length - 1) {
 return (
 
