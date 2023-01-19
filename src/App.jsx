@@ -17,6 +17,9 @@ import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
 
+
+import ThankUSignup from './components/ThankUSignup';
+
 import ThankUEdit from './components/ThankUEdit';
 
 
@@ -37,6 +40,7 @@ import ByTicket from './components/ByTicket';
 import TherapistCreate from './components/TherapistCreate';
 import ThankUCard from './components/ThankUCard'
 import ThankUSub from './components/ThankUSub'
+
 
 
 
@@ -67,6 +71,7 @@ function App() {
         <Route path="/ThankUCard" element={<ThankUCard />} />
         <Route path="/ThankUTherapist" element={<ThankUTherapist />} />
           <Route path="/ThankUEdit" element={<ThankUEdit />} />
+          <Route path="/ThankUSignup" element={<ThankUSignup />} />
      </Routes>
 
       <Footer />
