@@ -3,7 +3,7 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
-      colors:{
+      colors: {
         'contact-us-gray': '#00000080',
         'textbox-gray': '#808080',
         'footer-gray': '#718096',
@@ -29,6 +29,7 @@ module.exports = {
       },
       dropShadow: {
         lg: '0px 4px 6px rgba(178, 171, 171, 0.25)',
+        boxshadow: '0px 4px 4px rgba(172, 151, 151, 0.12)',
       },
       gridTemplateColumns: {
         3: 'repeat(3, minmax(350px, 1fr))',

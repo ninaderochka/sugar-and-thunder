@@ -12,7 +12,7 @@ import EditProfile from './components/EditProfile';
 function App() {
   return (
     <div className="App">
-      <EditProfile/>
+      <EditProfile />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
