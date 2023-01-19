@@ -68,7 +68,11 @@ export default function AddNewCard() {
 
           <div className="pt-5">
             <p>Name on Card</p>
-            <input className="text-[12px] border rounded sm:w-[150px] md:w-[250px] lg:w-[310px] h-[40px] pl-2" type="text" placeholder='Enter your card name'/>
+            <input
+              className="text-[12px] border rounded sm:w-[150px] md:w-[250px] lg:w-[310px] h-[40px] pl-2"
+              type="text"
+              placeholder="Enter your card name"
+            />
           </div>
         </div>
 
@@ -119,9 +123,17 @@ export default function AddNewCard() {
         </div>
 
         <div className="">
-          <img className="sm:invisible w-[350px] h-[223.36px] " alt="#" src={card1} />
+          <img
+            className="sm:invisible w-[350px] h-[223.36px] "
+            alt="#"
+            src={card1}
+          />
 
-          <img className="sm:invisible w-[350px] h-[223.36px] " alt="#" src={card2} />
+          <img
+            className="sm:invisible w-[350px] h-[223.36px] "
+            alt="#"
+            src={card2}
+          />
         </div>
       </div>
 
