@@ -124,13 +124,13 @@ export default function AddNewCard() {
 
         <div className="">
           <img
-            className="sm:invisible w-[350px] h-[223.36px] "
+            className="sm:invisible lg:visible w-[350px] h-[223.36px] "
             alt="#"
             src={card1}
           />
 
           <img
-            className="sm:invisible w-[350px] h-[223.36px] "
+            className="sm:invisible lg:visible w-[350px] h-[223.36px] "
             alt="#"
             src={card2}
           />
