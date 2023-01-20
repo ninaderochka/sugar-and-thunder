@@ -61,7 +61,7 @@ const [isOpen, setIsOpen] = useState(false);
         </svg>
       </div>
 
-      <div className={`pr-8 text-xl focus:text-light-yellow underline-offset-2 transition-colors md:block ${isOpen ? 'block' : 'hidden'} flex flex-col`}>
+      <div className={`pr-8 text-xl focus:text-light-yellow underline-offset-2 transition-colors lg:flex lg:flex-row lg:items-center ${isOpen ? 'block' : 'hidden'} flex flex-col`}>
 
         <Link className="p-4" to="/">
           Home
@@ -69,9 +69,40 @@ const [isOpen, setIsOpen] = useState(false);
         <Link className="p-4" to="/Blog">
           Blogs
         </Link>
-        <Link className="p-4" to="/About">
+        <Menu>
+          <div className="relative">
+            
+        <Link className="p-4 px-2" to="/About">
           About
         </Link>
+        <Menu.Button>
+        <svg className="h-5 w-5 inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+      </svg>
+        </Menu.Button>
+              <Menu.Items>
+        <div className="absolute right-0 mt-2 w-44 rounded-md bg-white shadow-lg focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
+                <ul className="py-1 text-sm text-gray-700">
+                  <Menu.Item>
+                    <li>
+                      <Link to="/AboutTeam"><p className="block px-4 py-2 hover:bg-gray-100">
+                        Team
+                      </p></Link>
+                    </li>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <li>
+                      <Link to="/Career"><p className="block px-4 py-2 hover:bg-gray-100">
+                        Career
+                      </p></Link>
+                    </li>
+                  </Menu.Item>
+                </ul>
+            </div>
+              </Menu.Items>
+          </div>
+
+        </Menu>
         <Link className="p-4" to="/Contact">
           Contact us
         </Link>
@@ -90,7 +121,7 @@ const [isOpen, setIsOpen] = useState(false);
             <Menu.Button
               id="dropdownUserAvatarButton"
               data-dropdown-toggle="dropdownAvatar"
-              className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+              className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300"
               type="button"
             >
               <span className="sr-only">Open user menu</span>
@@ -103,17 +134,17 @@ const [isOpen, setIsOpen] = useState(false);
             <div className="absolute -right-px">
               <Menu.Items
                 id="dropdownAvatar"
-                className="z-10 bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600 visible"
+                className="z-10 bg-white divide-y divide-gray-100 rounded shadow w-44"
               >
                 <Menu.Item>
-                  <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                  <div className="px-4 py-3 text-sm text-gray-900">
                     <div>{user.displayName}</div>
                   </div>
                 </Menu.Item>
-                <ul className="py-1 text-sm text-gray-700 dark:text-gray-200">
+                <ul className="py-1 text-sm text-gray-700">
                   <Menu.Item>
                     <li>
-                      <p className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      <p className="block px-4 py-2 hover:bg-gray-100">
                         Edit Profile
                       </p>
                     </li>
@@ -124,7 +155,7 @@ const [isOpen, setIsOpen] = useState(false);
                     <button
                       type="button"
                       onClick={handleLogout}
-                      className="block px-4 py-2 text-sm text-gray-700 w-full text-left hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                      className="block px-4 py-2 text-sm text-gray-700 w-full text-left hover:bg-gray-100"
                     >
                       Sign out
                     </button>

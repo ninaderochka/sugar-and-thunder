@@ -16,7 +16,7 @@ export default function ThankUCard() {
         how to add a new card.
       </p>
 
-      <Link to="/Home">
+      <Link to="/">
         <div className="text-[16px] md:text-[20px] lg:text-[24px] pb-64 ">
           <Button value="BACK TO HOME" />
         </div>

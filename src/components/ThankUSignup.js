@@ -18,7 +18,7 @@ export default function ThankUSignup() {
         account.
       </p>
 
-      <Link to="/Home">
+      <Link to="/">
         <div className="text-[16px] md:text-[20px] lg:text-[24px] pb-64 flex justify-center md:justify-start lg:justify-start">
           <Button className="w-[100px] h-[50px]" value="BACK TO HOME" />
         </div>
