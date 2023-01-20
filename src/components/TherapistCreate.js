@@ -79,7 +79,9 @@ export default function TherapistsCreate() {
                 />
               </label>
               <div className="mb-8 mt-12 flex justify-center items-center max-w-fit">
-                <Link to="/ThankUTherapist"><Button value="Create" onClick={() => {}} /></Link>
+                <Link to="/ThankUTherapist">
+                  <Button value="Create" onClick={() => {}} />
+                </Link>
               </div>
             </div>
           </form>
