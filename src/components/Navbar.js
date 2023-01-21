@@ -7,14 +7,20 @@ import { useUserAuth } from '../AuthContext';
 import { auth } from '../firebase';
 import Logo from '../images/Logo.svg';
 // import triangle from '../images/triangle.svg';
-
-
-
+// const APP_ID = "716217686707524"
+// const APP_SECRET = "7edbd1aa9f0ea77ee1813331abfc3f1d"
+// const CLIENT_TOKEN = `c7a134b962704784f9ec46b62e111192|${APP_ID}`
 
 
 function Navbar() {
-
 const [user] = useAuthState(auth);
+
+
+// eslint-disable-next-line
+console.log(useAuthState(auth))
+
+const provider = user?.providerData[0];
+
 const [isOpen, setIsOpen] = useState(false);
 
 
@@ -94,11 +100,11 @@ const [isOpen, setIsOpen] = useState(false);
               type="button"
             >
               <span className="sr-only">Open user menu</span>
-              { user.photoURL ? (<img
+              { provider.photoURL ? (<img
                 className="w-8 h-8 rounded-full"
-                src={user.photoURL}
+                src={provider.photoURL}
                 alt="user avatar"
-              />) : (<span className='text-white m-auto text-center'>{user.email.charAt(0).toUpperCase()}</span>)}
+              />) : (<span className='text-white m-auto text-center'>{provider?.displayName.charAt(0).toUpperCase()}</span>)}
             </Menu.Button>
             <div className="absolute -right-px">
               <Menu.Items
@@ -107,7 +113,7 @@ const [isOpen, setIsOpen] = useState(false);
               >
                 <Menu.Item>
                   <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                    <div>{user.displayName}</div>
+                    <div>{provider?.displayName}</div>
                   </div>
                 </Menu.Item>
                 <ul className="py-1 text-sm text-gray-700 dark:text-gray-200">
