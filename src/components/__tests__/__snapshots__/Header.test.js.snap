@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders correctly 1`] = `
+<div
+  className="text-black font-normal h-screen w-screen"
+>
+  <img
+    alt="#"
+    className=" absolute bg-center imagee -z-10"
+    src="background.png"
+  />
+  <div
+    className="container flex py-24 md:flex-row flex-col justify-center"
+  >
+    <div
+      className="font-Poppins lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left md:mb-0 items-center"
+    >
+      <p
+        className="text-black ml-36 text-3xl sm:text-3xl uppercase"
+      >
+        We are here to
+      </p>
+      <p
+        className="text-black ml-36 text-9xl "
+      >
+        HELP
+      </p>
+      <div
+        className=" ml-32 py-5 mt-12"
+      >
+        <button
+          className="undefined font-poppins font-normal text-black text-2xl uppercase w-fit px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+          onClick={[Function]}
+          type="button"
+        >
+          BOOK AN APPOINTMENT
+        </button>
+      </div>
+    </div>
+    <div
+      className="lg:max-w-lg lg:w-3/5 md:w-1/2 w-5/6 mr-16 mt-6"
+    >
+      <img
+        alt="#"
+        src="image.png"
+      />
+    </div>
+  </div>
+</div>
+`;
