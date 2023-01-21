@@ -43,15 +43,13 @@ export default function Login() {
     try {
       const result = await signInWithPopup(auth, fbProvider);
       // eslint-disable-next-line
-      console.log(result)
+      console.log(result);
       navigate('/');
       return result;
     } catch (error) {
       return { error: error.message };
     }
   };
-
-  
 
   const handleSubmit = async () => {
     // e.preventDefault();
@@ -60,13 +58,12 @@ export default function Login() {
       const userCred = await logIn(email, password);
       return userCred;
       // eslint-disable-next-line
-      console.log(userCred)
+      console.log(userCred);
       navigate('/');
-    } catch (err)  {
- return { error: err.message };
+    } catch (err) {
+      return { error: err.message };
     }
-    }
-  
+  };
 
   return (
     <div className="h-screen w-screen bg-white mb-8 justify-items-center">
@@ -96,13 +93,13 @@ export default function Login() {
                 />
               </div>
               <div className="flex justify-center gap-6 mt-10 place-content-center mx-auto w-full">
-                  <button
-                    type="button"
-                    onClick={handleSubmit}
-                    className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
-                  >
-                    Log in
-                  </button> 
+                <button
+                  type="button"
+                  onClick={handleSubmit}
+                  className="font-poppins font-normal text-button-blue text-2xl px-10 py-2 w-max whitespace-nowrap outline border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+                >
+                  Log in
+                </button>
                 <Link to="/Signup">
                   <button
                     type="button"

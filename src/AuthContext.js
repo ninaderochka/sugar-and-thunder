@@ -13,7 +13,7 @@ export function UserAuthContextProvider({ children }) {
   const [user, setUser] = useState({});
 
   async function logIn(email, password) {
-   return signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(auth, email, password);
   }
 
   async function signUp(email, password) {

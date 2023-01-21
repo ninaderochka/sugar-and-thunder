@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -11,18 +10,15 @@ import Logo from '../images/Logo.svg';
 // const APP_SECRET = "7edbd1aa9f0ea77ee1813331abfc3f1d"
 // const CLIENT_TOKEN = `c7a134b962704784f9ec46b62e111192|${APP_ID}`
 
-
 function Navbar() {
-const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
+  // eslint-disable-next-line
+  console.log(useAuthState(auth));
 
-// eslint-disable-next-line
-console.log(useAuthState(auth))
+  const provider = user?.providerData[0];
 
-const provider = user?.providerData[0];
-
-const [isOpen, setIsOpen] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false);
 
   const { logOut } = useUserAuth();
 
@@ -36,7 +32,6 @@ const [isOpen, setIsOpen] = useState(false);
       console.log(error.message);
     }
   };
-
 
   return (
     <nav
@@ -67,8 +62,11 @@ const [isOpen, setIsOpen] = useState(false);
         </svg>
       </div>
 
-      <div className={`pr-8 text-xl focus:text-light-yellow underline-offset-2 transition-colors md:block ${isOpen ? 'block' : 'hidden'} flex flex-col`}>
-
+      <div
+        className={`pr-8 text-xl focus:text-light-yellow underline-offset-2 transition-colors md:block ${
+          isOpen ? 'block' : 'hidden'
+        } flex flex-col`}
+      >
         <Link className="p-4" to="/">
           Home
         </Link>
@@ -100,11 +98,17 @@ const [isOpen, setIsOpen] = useState(false);
               type="button"
             >
               <span className="sr-only">Open user menu</span>
-              { provider.photoURL ? (<img
-                className="w-8 h-8 rounded-full"
-                src={provider.photoURL}
-                alt="user avatar"
-              />) : (<span className='text-white m-auto text-center'>{provider?.displayName.charAt(0).toUpperCase()}</span>)}
+              {provider.photoURL ? (
+                <img
+                  className="w-8 h-8 rounded-full"
+                  src={provider.photoURL}
+                  alt="user avatar"
+                />
+              ) : (
+                <span className="text-white m-auto text-center">
+                  {provider?.displayName.charAt(0).toUpperCase()}
+                </span>
+              )}
             </Menu.Button>
             <div className="absolute -right-px">
               <Menu.Items

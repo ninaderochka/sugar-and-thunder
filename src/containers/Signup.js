@@ -21,18 +21,26 @@ function Signup() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    confirmEmail: "",
-    password: "",
-    confirmPassword: "",
-    birthDate: ["", "", ""]
-  })
-// eslint-disable-next-line
-  console.log(userDetails)
-  const {firstName,lastName,email,confirmEmail,password,confirmPassword,birthDate} = userDetails
-  const [Day,Month,Year] = birthDate;
+    firstName: '',
+    lastName: '',
+    email: '',
+    confirmEmail: '',
+    password: '',
+    confirmPassword: '',
+    birthDate: ['', '', ''],
+  });
+  // eslint-disable-next-line
+  console.log(userDetails);
+  const {
+    firstName,
+    lastName,
+    email,
+    confirmEmail,
+    password,
+    confirmPassword,
+    birthDate,
+  } = userDetails;
+  const [Day, Month, Year] = birthDate;
   const googleProvider = new GoogleAuthProvider();
   const fbProvider = new FacebookAuthProvider();
 
@@ -66,7 +74,6 @@ function Signup() {
 
   const auth = getAuth();
 
-
   const googleLogin = async () => {
     try {
       const result = signInWithPopup(auth, googleProvider);
@@ -82,7 +89,7 @@ function Signup() {
       const result = signInWithPopup(auth, fbProvider);
       const token = result.credential.accessToken;
       // eslint-disable-next-line
-      console.log(token)
+      console.log(token);
       navigate('/');
       return result;
     } catch (error) {
@@ -92,10 +99,9 @@ function Signup() {
 
   const { signUp } = useUserAuth();
 
-
   const Register = async () => {
     try {
-      const userCredential = await signUp(email,password);
+      const userCredential = await signUp(email, password);
 
       const { user } = userCredential;
       await addDoc(collection(db, 'users'), {
@@ -103,7 +109,7 @@ function Signup() {
         email: user.email,
         displayName: `${firstName} ${lastName}`,
         birthDate: `${Day}/${Month}/${Year}`,
-        isTherapist:false,
+        isTherapist: false,
       });
       // return true;
     } catch (error) {
@@ -115,25 +121,22 @@ function Signup() {
   };
 
   const handleChange = (event) => {
-    const {name,value} = event.target
-    if(name === "Day"){
-      setUserDetails({...userDetails,birthDate:[value,Month,Year]})
-    }
-    else if(name === "Month"){
-      setUserDetails({...userDetails,birthDate:[Day,value,Year]})
-    }
-    else if(name === "Year"){
-      setUserDetails({...userDetails,birthDate:[Day,Month,value]})
-    }
-    else setUserDetails({...userDetails, [name]: value});
+    const { name, value } = event.target;
+    if (name === 'Day') {
+      setUserDetails({ ...userDetails, birthDate: [value, Month, Year] });
+    } else if (name === 'Month') {
+      setUserDetails({ ...userDetails, birthDate: [Day, value, Year] });
+    } else if (name === 'Year') {
+      setUserDetails({ ...userDetails, birthDate: [Day, Month, value] });
+    } else setUserDetails({ ...userDetails, [name]: value });
   };
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       setError('Passwords does not match');
     } else {
-      await Register()
+      await Register();
       // setUserDetails({firstName: "", lastName: "", email:"", confirmEmail:"", password:"", confirmPassword:"", Day:"", Month:"", Year:""})
       navigate('/');
       // if (res.error) setError(res.error);
@@ -154,10 +157,7 @@ function Signup() {
           </h1>
           <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded min-w-min max-w-xl m-auto lg:w-[555px]">
             {error && <div className="auth__error">{error}</div>}
-            <form
-              className="w-full grid grid-cols-4 gap-2 grid-row-5"
-              
-            >
+            <form className="w-full grid grid-cols-4 gap-2 grid-row-5">
               {/* FIRST NAME AND LAST NAME */}
               <input
                 type="text"
