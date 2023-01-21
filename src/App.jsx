@@ -17,6 +17,8 @@ import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
 
+import AddNewCard from './components/AddNewCard';
+
 import ThankUSignup from './components/ThankUSignup';
 
 import ThankUEdit from './components/ThankUEdit';
@@ -38,9 +40,11 @@ import TherapistCreate from './components/TherapistCreate';
 import ThankUCard from './components/ThankUCard';
 import ThankUSub from './components/ThankUSub';
 
+
 function App() {
   return (
     <div className="App">
+
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -65,6 +69,7 @@ function App() {
         <Route path="/ThankUTherapist" element={<ThankUTherapist />} />
         <Route path="/ThankUEdit" element={<ThankUEdit />} />
         <Route path="/ThankUSignup" element={<ThankUSignup />} />
+        <Route path="/AddNewCard" element={<AddNewCard />} />
       </Routes>
 
       <Footer />
