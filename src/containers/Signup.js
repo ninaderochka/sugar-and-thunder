@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import {
-  getAuth,
-  GoogleAuthProvider,
-  FacebookAuthProvider,
-  signInWithPopup,
-} from '@firebase/auth';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../firebase';
 import SignupImage from '../images/SignupImage.svg';
@@ -14,10 +8,6 @@ import gmail from '../images/Google.svg';
 import { useUserAuth } from '../AuthContext';
 
 function Signup() {
-  // const [email, setEmail] = useState('');
-  // const [confirmEmail, setConfirmEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState({
@@ -41,8 +31,6 @@ function Signup() {
     birthDate,
   } = userDetails;
   const [Day, Month, Year] = birthDate;
-  const googleProvider = new GoogleAuthProvider();
-  const fbProvider = new FacebookAuthProvider();
 
   // const validatePassword = async () => {
   //   let isValid = true;
@@ -72,32 +60,7 @@ function Signup() {
   //   return isValid;
   // };
 
-  const auth = getAuth();
-
-  const googleLogin = async () => {
-    try {
-      const result = signInWithPopup(auth, googleProvider);
-      navigate('/');
-      return result;
-    } catch (error) {
-      return { error: error.message };
-    }
-  };
-
-  const fbLogin = async () => {
-    try {
-      const result = signInWithPopup(auth, fbProvider);
-      const token = result.credential.accessToken;
-      // eslint-disable-next-line
-      console.log(token);
-      navigate('/');
-      return result;
-    } catch (error) {
-      return { error: error.message };
-    }
-  };
-
-  const { signUp } = useUserAuth();
+  const { signUp, googleLogin, fbLogin } = useUserAuth();
 
   const Register = async () => {
     try {

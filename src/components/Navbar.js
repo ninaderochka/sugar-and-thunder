@@ -101,7 +101,7 @@ function Navbar() {
               {provider.photoURL ? (
                 <img
                   className="w-8 h-8 rounded-full"
-                  src={provider.photoURL}
+                  src={user.photoURL}
                   alt="user avatar"
                 />
               ) : (
