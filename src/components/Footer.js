@@ -1,11 +1,27 @@
-import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import firebase from 'firebase/compat/app';
+import { db } from '../firebase';
 import twitter from '../images/twitter.png';
 import facebook from '../images/facebook.png';
 import gmail from '../images/gmail.png';
 import button from '../images/SubmitButton.png';
 
 const Footer = () => {
+  const [input, setEmail] = useState('');
+  const inputHandler = (e) => {
+    setEmail(e.target.value);
+  };
+  const submitHandler = (e) => {
+    e.preventDefault();
+    if(input) {
+      db.collection('emails').set({
+        email: input,
+        time: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+      setEmail('');
+    }
+  };
   return (
     <footer className="bg-light-yellow text-black py-8">
       <div className="container mx-auto flex flex-wrap items-center justify-between font-poppins md:flex md:justify-center">
@@ -15,11 +31,12 @@ const Footer = () => {
             We’ll never spam or share your email
           </p>
           <div className="flex flex-col">
-            <form className="mb-4 flex content-end">
+            <form className="mb-4 flex content-end" onSubmit={submitHandler}>
               <input
                 type="email"
-                id="email"
                 placeholder="Enter your email address"
+                onChange={inputHandler}
+                value={input}
                 className="border-2 w-80 h-14 px-2 rounded-md text-black border-footer-gray rounded-tr-none rounded-br-none"
               />
               <button
