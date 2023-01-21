@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 // import { store } from './app/store';
 import App from './App';
 import './index.css';
-import { UserAuthContextProvider } from './Components/Authentication';
+import { UserAuthContextProvider } from './AuthContext';
 import { BrowserRouter } from 'react-router-dom';
 const container = document.getElementById('root');
 const root = createRoot(container);
