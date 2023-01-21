@@ -8,8 +8,8 @@ import button from '../images/SubmitButton.png';
 const Footer = () => {
   return (
     <footer className="bg-light-yellow text-black py-8">
-      <div className="container mx-auto flex flex-wrap items-center justify-between font-poppins">
-        <div className="w-full md:w-1/2 md:text-left mb-6 md:mb-0">
+      <div className="container mx-auto flex flex-wrap items-center justify-between font-poppins md:flex md:justify-center">
+        <div className="w-full md:w-1/2 mb-6 md:mb-0 ">
           <h4 className="text-4xl mb-2">Subscribe</h4>
           <p className="text-2xl mb-4 text-footer-gray font-light">
             We’ll never spam or share your email
@@ -31,7 +31,7 @@ const Footer = () => {
             </form>
           </div>
         </div>
-        <div className="w-full md:w-1/2 md:text-left mb-6 md:mb-0">
+        <div className="w-full md:w-1/2 mb-6 md:mb-0">
           <nav className="flex justify-center mb-7">
             <Link
               to="/"
