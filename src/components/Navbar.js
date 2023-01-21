@@ -14,7 +14,7 @@ function Navbar() {
   const [user] = useAuthState(auth);
 
   // eslint-disable-next-line
-  console.log(useAuthState(auth));
+  // console.log(useAuthState(auth));
 
   const provider = user?.providerData[0];
 
@@ -98,7 +98,7 @@ function Navbar() {
               type="button"
             >
               <span className="sr-only">Open user menu</span>
-              {provider.photoURL ? (
+              {user.photoURL ? (
                 <img
                   className="w-8 h-8 rounded-full"
                   src={user.photoURL}
