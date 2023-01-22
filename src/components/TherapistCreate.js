@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { doc, setDoc } from "firebase/firestore";
-import { db } from '../firebase';
+import { addDoc, collection } from "firebase/firestore";
+import { updateProfile } from '@firebase/auth';
+import { db, auth } from '../firebase';
 import { useUserAuth }  from '../AuthContext';
 
 function TherapistCreate() {
   const {signUp} = useUserAuth()
+  
   const [inputValues, setInputValue] = useState({
       displayName: "",
       email: "",
@@ -15,6 +17,8 @@ function TherapistCreate() {
       confirmPassword: "",
   });
   
+
+
   const [validation, setValidation] = useState({
       displayName: "",
       email: "",
@@ -28,33 +32,51 @@ function TherapistCreate() {
    
            try {
                const therapist = await signUp(email, password)
-               await setDoc(doc(db, "therapistCreate", `${therapist.user.uid}`), {
-                   userId: `${therapist.user.uid}`,
-                   fullname: " ",
-                   bio: " ",
-                   birthdate: " ",
-                   phonenumber: 0,
-                   email,
-                   isTherapist: true,
-                   photoUrl: "",
-                  displayName,
-                   city,
-                   licensenumber
-               });
+              //   await setDoc(doc(db, "therapistCreate", `${therapist.user.uid}`), {
+              //      userId: `${therapist.user.uid}`,
+              //      fullname: " ",
+              //      bio: " ",
+              //      birthdate: " ",
+              //      phonenumber: 0,
+              //      email,
+              //      isTherapist: true,
+              //      photoUrl: "",
+              //     displayName,
+              //     city,
+              //     licensenumber
+              //  });
+              await updateProfile(auth.currentUser,{displayName})
+          
+              const {user} = therapist;
+               await addDoc(collection(db,'users'),{ 
+               uid: user.uid,
+               fullname: " ",
+               bio: " ",
+               birthdate: " ",
+               phonenumber: 0,
+               email:user.email,
+               isTherapist: true,
+               photoUrl: "",
+               displayName,
+                city,
+                licensenumber,
+              KHALLISNE:true,
+
+               })
                // console.log("Document written with ID: ", docRef.id);
            } catch (e) {
             // eslint-disable-next-line
                console.error("Error adding document: ", e);
-           }
+          }
 
-       }
-
-
+  }
 
 
+
+ 
   // handle submit
   const handleChange = (e) => {
-      setInputValue({ ...inputValues, [e.target.name]: e.target.value });
+      setInputValue(prev =>( { ...prev, [e.target.name]: e.target.value }));
   }
   
   const checkValidation = () => {

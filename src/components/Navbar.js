@@ -1,28 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Menu } from '@headlessui/react';
 import { useUserAuth } from '../AuthContext';
 import { auth } from '../firebase';
 import Logo from '../images/Logo.svg';
-// import triangle from '../images/triangle.svg';
-
-
-function Navbar() {
-  const [user] = useAuthState(auth);
 
 
 
-  const provider = user?.providerData[0];
 
+  
+  function Navbar() {
 
+    const [user] = useAuthState(auth);
 
-function Navbar() {
-  const [user] = useAuthState(auth);
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const { logOut } = useUserAuth();
+  const { logOut,getUserInfo } = useUserAuth();
+
+  useEffect(()=>{
+    const user = auth.currentUser
+    getUserInfo(user);
+  },[user])
 
   const navigate = useNavigate();
   const handleLogout = async () => {
@@ -160,7 +160,7 @@ function Navbar() {
                 />
               ) : (
                 <span className="text-white m-auto text-center">
-                  {provider?.displayName.charAt(0).toUpperCase()}
+                  {user.displayName.charAt(0).toUpperCase()}
                 </span>
               )}
             </Menu.Button>
@@ -172,18 +172,18 @@ function Navbar() {
                 <Menu.Item>
 
                   <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                    <div>{provider?.displayName}</div>
+                    <div>{user.displayName}</div>
 
                   </div>
                 </Menu.Item>
                 <ul className="py-1 text-sm text-gray-700">
-                  <Menu.Item>
+                  <Link to='/EditProfile'><Menu.Item>
                     <li>
                       <p className="block px-4 py-2 hover:bg-gray-100">
                         Edit Profile
                       </p>
                     </li>
-                  </Menu.Item>
+                  </Menu.Item></Link>
                 </ul>
                 <Menu.Item>
                   <div className="py-1">
