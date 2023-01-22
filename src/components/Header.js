@@ -4,10 +4,7 @@ import Button from './Button';
 import background from '../images/background.png';
 import image from '../images/image.png';
 
-
 export default function Header() {
-
-
   return (
     <div className="text-black font-normal h-screen w-screen">
       <img

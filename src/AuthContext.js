@@ -36,10 +36,7 @@ export function UserAuthContextProvider({ children }) {
     };
   }, []);
 
-  const methods = useMemo(
-    () => ({  user, logIn, signUp, logOut }),
-    []
-  );
+  const methods = useMemo(() => ({ user, logIn, signUp, logOut }), []);
   return (
     <userAuthContext.Provider value={methods}>
       {children}
