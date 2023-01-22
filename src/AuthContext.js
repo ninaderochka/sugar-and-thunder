@@ -37,7 +37,7 @@ export function UserAuthContextProvider({ children }) {
   }, []);
 
   const methods = useMemo(
-    () => ({ loggedInUser: user, logIn, signUp, logOut }),
+    () => ({  user, logIn, signUp, logOut }),
     []
   );
   return (

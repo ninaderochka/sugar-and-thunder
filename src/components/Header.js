@@ -4,7 +4,10 @@ import Button from './Button';
 import background from '../images/background.png';
 import image from '../images/image.png';
 
+
 export default function Header() {
+
+
   return (
     <div className="text-black font-normal h-screen w-screen">
       <img
@@ -22,7 +25,9 @@ export default function Header() {
 
           {/* button */}
           <div className=" ml-32 py-5 mt-12">
-            <Link to="/Booking"><Button value="BOOK AN APPOINTMENT" /></Link>
+            <Link to="/Booking">
+              <Button value="BOOK AN APPOINTMENT" />
+            </Link>
           </div>
         </div>
 
