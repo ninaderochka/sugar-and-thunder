@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { TherapistAuth }  from '../AuthContext';
+import { doc, setDoc } from "firebase/firestore";
+import { db } from '../firebase';
+import { useUserAuth }  from '../AuthContext';
 
-function TherapistCreateAccount() {
-
+function TherapistCreate() {
+  const {signUp} = useUserAuth()
   const [inputValues, setInputValue] = useState({
-      username: "",
+      displayName: "",
+      email: "",
+      city: "",
+      licensenumber: "",
+      password: "",
+      confirmPassword: "",
+  });
+  
+  const [validation, setValidation] = useState({
+      displayName: "",
       email: "",
       city: "",
       licensenumber: "",
@@ -13,36 +24,55 @@ function TherapistCreateAccount() {
       confirmPassword: "",
   });
 
-  const [validation, setValidation] = useState({
-      username: "",
-      email: "",
-      city: "",
-      licensenumber: "",
-      password: "",
-      confirmPassword: "",
-  });
+  const createTherapistAccount = async ({email, password, displayName, city, licensenumber}) => {
+   
+           try {
+               const therapist = await signUp(email, password)
+               await setDoc(doc(db, "therapistCreate", `${therapist.user.uid}`), {
+                   userId: `${therapist.user.uid}`,
+                   fullname: " ",
+                   bio: " ",
+                   birthdate: " ",
+                   phonenumber: 0,
+                   email,
+                   isTherapist: true,
+                   photoUrl: "",
+                  displayName,
+                   city,
+                   licensenumber
+               });
+               // console.log("Document written with ID: ", docRef.id);
+           } catch (e) {
+            // eslint-disable-next-line
+               console.error("Error adding document: ", e);
+           }
+
+       }
+
+
+
 
   // handle submit
   const handleChange = (e) => {
       setInputValue({ ...inputValues, [e.target.name]: e.target.value });
   }
-
+  
   const checkValidation = () => {
-
+  
       const errors = JSON.parse(JSON.stringify(validation));
-
+  
       // User validation
-      const usernameCondition = "^[A-Za-z]{4,18}$"
-      if (!inputValues.username.trim()) {
-          errors.username = "Please Write User Name";
-      } else if (inputValues.username.length < 3 || inputValues.username.length > 16) {
-          errors.username = "User Name is between 4-18 characters";
-      } else if (!inputValues.username.match(usernameCondition)) {
-          errors.username = "User Name should be letters";
+      const displayNameCondition = "^[A-Za-z]{4,18}$"
+      if (!inputValues.displayName.trim()) {
+          errors.displayName = "Please Write User Name";
+      } else if (inputValues.displayName.length < 3 || inputValues.displayName.length > 16) {
+          errors.displayName = "User Name is between 4-18 characters";
+      } else if (!inputValues.displayName.match(displayNameCondition)) {
+          errors.displayName = "User Name should be letters";
       } else {
-          errors.username = "";
+          errors.displayName = "";
       }
-
+  
       // City validation
       const cityCondition = "^[A-Za-z]{4,16}$"
       if (!inputValues.city.trim()) {
@@ -52,14 +82,14 @@ function TherapistCreateAccount() {
       } else {
           errors.city = "";
       }
-
+  
       // License Number validation
       if (!inputValues.licensenumber.trim()) {
           errors.licensenumber = "Please write License Number";
       } else {
           errors.licensenumber = "";
       }
-
+  
       // Email validation
       const emailCondition = "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/";
       if (!inputValues.email.trim()) {
@@ -69,7 +99,7 @@ function TherapistCreateAccount() {
       } else {
           errors.email = "";
       }
-
+  
       // Password validation
       const passwordcondition = "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+])[A-Za-z0-9!@#$%^&*()_+]{8,20}$"
       const passwordvalue = inputValues.password;
@@ -80,7 +110,7 @@ function TherapistCreateAccount() {
       } else {
           errors.password = "";
       }
-
+  
       // matchPassword validation
       if (!inputValues.confirmPassword) {
           errors.confirmPassword = "Please write Password confirmation";
@@ -89,31 +119,31 @@ function TherapistCreateAccount() {
       } else {
           errors.confirmPassword = "";
       }
-
+  
       setValidation(errors);
   };
-
+  
   useEffect(() => {
       checkValidation();
   }, [inputValues]);
-
+  
   const [, setError] = useState('');
-  const { createTherapist } = TherapistAuth();
+  
   const navigate = useNavigate();
-
+  
   const handleSubmit = async (e) => {
       e.preventDefault();
       setError('');
-
+  
       try {
-          await createTherapist(inputValues.email, inputValues.password, inputValues.username, inputValues.city, inputValues.licensenumber);
+          await createTherapistAccount(inputValues);
           navigate('/')
       } catch (error) {
           setError(error.message);
       }
   }
-
-return (
+  
+  return (
   <div className=" flex-col mx-auto lg:max-w-7xl px-10 py-10">
     <form onSubmit={handleSubmit}>
       <h2 className="mb-8 font-normal text-3xl text-center sm:text-left sm:text-5xl">
@@ -126,14 +156,14 @@ return (
           </h2>
           <input
             type="text"
-            name="username"
-            value={inputValues.username}
+            name="displayName"
+            value={inputValues.displayName}
             onChange={(e) => handleChange(e)}
             className="border rounded-md p-2 w-full h-12 sm:w-96"
             required
           />
-          {validation.username && <p className='text-[red]'>{validation.username}</p>}
-
+          {validation.displayName && <p className='text-[red]'>{validation.displayName}</p>}
+  
         </div>
         <div className="mb-4">
           <h2 className=" font-normal text-2xl text-gray-500 ml-1 mb-1">
@@ -148,7 +178,7 @@ return (
             required
           />
           {validation.email && <p className='text-[red]'>{validation.email}</p>}
-
+  
         </div>
         <div className="mb-4">
           <h2 className=" font-normal text-2xl text-gray-500 ml-1 mb-1">
@@ -163,7 +193,7 @@ return (
             required
           />
           {validation.city && <p className='text-[red]'>{validation.city}</p>}
-
+  
         </div>
         <div className="mb-4">
           <h2 className=" font-normal text-2xl text-gray-500 ml-1 mb-1">
@@ -178,7 +208,7 @@ return (
             required
           />
           {validation.licensenumber && <p className='text-[red]'>{validation.licensenumber}</p>}
-
+  
         </div>
         <div className="mb-4">
           <h2 className=" font-normal text-2xl text-gray-500 ml-1 mb-1">
@@ -193,7 +223,7 @@ return (
             required
           />
           {validation.password && <p className='text-[red]'>{validation.password}</p>}
-
+  
         </div>
         <div className="mb-4">
           <h2 className=" font-normal text-2xl text-gray-500 ml-1 mb-1">
@@ -208,7 +238,7 @@ return (
             required
           />
           {validation.confirmPassword && <p className='text-[red]'>{validation.confirmPassword}</p>}
-
+  
         </div>
       </div>
       <div>
@@ -220,9 +250,11 @@ return (
         </button>
               </div>
           </form>
-
+  
       </div>
   );
-}
+  }
 
-export default TherapistCreateAccount;
+
+
+export default TherapistCreate;

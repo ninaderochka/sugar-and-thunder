@@ -11,10 +11,14 @@ import Login from './containers/Login';
 import { UserAuthContextProvider } from './AuthContext';
 import Requirements from './components/Requirements';
 import TherapistsCreate from './components/TherapistCreate';
-import ThankUTherapist from './components/ThankUTherapist'
+import ThankUTherapist from './components/ThankUTherapist';
 import ThankUContact from './components/ThankUContact';
-import EditProfile from './components/EditProfile'
-import ThankUEdit from './components/ThankUEdit'
+import EditProfile from './components/EditProfile';
+import ThankUEdit from './components/ThankUEdit';
+import AboutTeam from './components/AboutTeam';
+import Career from './components/Career';
+import ByTicket from './components/ByTicket';
+import ThankUCard from './components/ThankUCard';
 
 function App() {
   return (
@@ -34,6 +38,10 @@ function App() {
           <Route path="/ThankUContact" element={<ThankUContact />} />
           <Route path="/EditProfile" element={<EditProfile />} />
           <Route path="/ThankUEdit" element={<ThankUEdit />} />
+          <Route path="/AboutTeam" element={<AboutTeam />} />
+          <Route path="/Career" element={<Career />} />
+          <Route path="/ByTicket" element={<ByTicket />} />
+          <Route path="/ThankUCard" element={<ThankUCard />} />
         </Routes>
       </UserAuthContextProvider>
       <Footer />
