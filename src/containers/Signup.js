@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../firebase';
+import { updateProfile } from '@firebase/auth';
+import { db, auth } from '../firebase';
 import SignupImage from '../images/SignupImage.svg';
 import facebook from '../images/Facebook.svg';
 import gmail from '../images/Google.svg';
@@ -62,11 +63,13 @@ function Signup() {
 
   const { signUp, googleLogin, fbLogin } = useUserAuth();
 
+
   const Register = async () => {
     try {
       const userCredential = await signUp(email, password);
 
       const { user } = userCredential;
+      await updateProfile(auth.currentUser,{displayName: `${firstName} ${lastName}`})
       await addDoc(collection(db, 'users'), {
         uid: user.uid,
         email: user.email,
