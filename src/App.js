@@ -19,6 +19,9 @@ import AboutTeam from './components/AboutTeam';
 import Career from './components/Career';
 import ByTicket from './components/ByTicket';
 import ThankUCard from './components/ThankUCard';
+import ThankUSignup from './components/ThankUSignup';
+import ThankUSub from './components/ThankUSub';
+import ThankUTicket from './components/ThankUTicket';
 
 function App() {
   return (
@@ -35,13 +38,16 @@ function App() {
           <Route path="/Requirements" element={<Requirements />} />
           <Route path="/TherapistCreate" element={<TherapistsCreate />} />
           <Route path="/ThankUTherapist" element={<ThankUTherapist />} />
+          <Route path="/ThankUSignup" element={<ThankUSignup />} />
           <Route path="/ThankUContact" element={<ThankUContact />} />
-          <Route path="/EditProfile" element={<EditProfile />} />
           <Route path="/ThankUEdit" element={<ThankUEdit />} />
+          <Route path="/ThankUCard" element={<ThankUCard />} />
+          <Route path="/ThankUSub" element={<ThankUSub />} />
+          <Route path="/ThankUTicket" element={<ThankUTicket />} />
+          <Route path="/EditProfile" element={<EditProfile />} />
           <Route path="/AboutTeam" element={<AboutTeam />} />
           <Route path="/Career" element={<Career />} />
           <Route path="/ByTicket" element={<ByTicket />} />
-          <Route path="/ThankUCard" element={<ThankUCard />} />
         </Routes>
       </UserAuthContextProvider>
       <Footer />
