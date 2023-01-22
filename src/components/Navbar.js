@@ -8,12 +8,6 @@ import Logo from '../images/Logo.svg';
 // import triangle from '../images/triangle.svg';
 
 
-function Navbar() {
-  const [user] = useAuthState(auth);
-
-
-
-  const provider = user?.providerData[0];
 
 
 
@@ -160,7 +154,7 @@ function Navbar() {
                 />
               ) : (
                 <span className="text-white m-auto text-center">
-                  {provider?.displayName.charAt(0).toUpperCase()}
+                  {user.displayName.charAt(0).toUpperCase()}
                 </span>
               )}
             </Menu.Button>
@@ -172,7 +166,7 @@ function Navbar() {
                 <Menu.Item>
 
                   <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                    <div>{provider?.displayName}</div>
+                    <div>{user.displayName}</div>
 
                   </div>
                 </Menu.Item>
