@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
+import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import twitter from '../images/twitter.png';
 import facebook from '../images/facebook.png';
@@ -12,10 +14,10 @@ const Footer = () => {
   const inputHandler = (e) => {
     setEmail(e.target.value);
   };
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    if(input) {
-      db.collection('emails').set({
+    if (input) {
+      await addDoc(collection(db, 'emails'), {
         email: input,
         time: firebase.firestore.FieldValue.serverTimestamp(),
       });
