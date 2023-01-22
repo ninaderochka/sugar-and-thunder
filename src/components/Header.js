@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from './Button';
 import background from '../images/background.png';
 import image from '../images/image.png';
@@ -21,7 +22,7 @@ export default function Header() {
 
           {/* button */}
           <div className=" ml-32 py-5 mt-12">
-            <Button value="BOOK AN APPOINTMENT" />
+            <Link to="/Booking"><Button value="BOOK AN APPOINTMENT" /></Link>
           </div>
         </div>
 
