@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Menu } from '@headlessui/react';
 import { useUserAuth } from '../AuthContext';
 import { auth } from '../firebase';
 import Logo from '../images/Logo.svg';
-
-
 
 
   
@@ -17,13 +15,9 @@ import Logo from '../images/Logo.svg';
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const { logOut,getUserInfo } = useUserAuth();
+  const { logOut } = useUserAuth();
 
-  useEffect(()=>{
-    const user = auth.currentUser
-    getUserInfo(user);
-  },[user])
-
+ 
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
@@ -160,7 +154,7 @@ import Logo from '../images/Logo.svg';
                 />
               ) : (
                 <span className="text-white m-auto text-center">
-                  {user.displayName.charAt(0).toUpperCase()}
+                  {/* {user.displayName.charAt(0).toUpperCase()} */}
                 </span>
               )}
             </Menu.Button>
