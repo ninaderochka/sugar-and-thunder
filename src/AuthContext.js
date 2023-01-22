@@ -16,6 +16,7 @@ const userAuthContext = createContext();
 const googleProvider = new GoogleAuthProvider();
 const fbProvider = new FacebookAuthProvider();
 
+
 export function UserAuthContextProvider({ children }) {
   const navigate = useNavigate();
 
@@ -42,6 +43,7 @@ export function UserAuthContextProvider({ children }) {
   const fbLogin = async () => {
     try {
       const result = await signInWithPopup(auth, fbProvider);
+
       // eslint-disable-next-line
       console.log(result);
       const credentials = await FacebookAuthProvider.credentialFromResult(
@@ -49,6 +51,7 @@ export function UserAuthContextProvider({ children }) {
       );
       // eslint-disable-next-line
       console.log(credentials);
+
       const token = credentials.accessToken;
       const photoUrl = `${result.user.photoURL}?&access_token=${token}`;
       await updateProfile(auth.currentUser, { photoURL: photoUrl });

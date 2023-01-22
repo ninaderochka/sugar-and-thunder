@@ -7,8 +7,19 @@ import { auth } from '../firebase';
 import Logo from '../images/Logo.svg';
 // import triangle from '../images/triangle.svg';
 
+
 function Navbar() {
   const [user] = useAuthState(auth);
+
+
+
+  const provider = user?.providerData[0];
+
+
+
+function Navbar() {
+  const [user] = useAuthState(auth);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const { logOut } = useUserAuth();
@@ -54,7 +65,9 @@ function Navbar() {
       </div>
 
       <div
+
         className={`pr-8 text-xl focus:text-light-yellow underline-offset-2 transition-colors lg:flex lg:flex-row lg:items-center ${
+
           isOpen ? 'block' : 'hidden'
         } flex flex-col`}
       >
@@ -133,15 +146,23 @@ function Navbar() {
             <Menu.Button
               id="dropdownUserAvatarButton"
               data-dropdown-toggle="dropdownAvatar"
-              className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300"
+
+              className="flex mx-3 text-sm md:mr-0 focus:ring-4 w-8 h-8  bg-gray-800 rounded-full focus:ring-gray-300 dark:focus:ring-gray-600"
+
               type="button"
             >
               <span className="sr-only">Open user menu</span>
-              <img
-                className="w-8 h-8 rounded-full"
-                src={user.photoURL}
-                alt="user avatar"
-              />
+              {user.photoURL ? (
+                <img
+                  className="w-8 h-8 rounded-full"
+                  src={user.photoURL}
+                  alt="user avatar"
+                />
+              ) : (
+                <span className="text-white m-auto text-center">
+                  {provider?.displayName.charAt(0).toUpperCase()}
+                </span>
+              )}
             </Menu.Button>
             <div className="absolute -right-px">
               <Menu.Items
@@ -149,8 +170,10 @@ function Navbar() {
                 className="z-10 bg-white divide-y divide-gray-100 rounded shadow w-44"
               >
                 <Menu.Item>
-                  <div className="px-4 py-3 text-sm text-gray-900">
-                    <div>{user.displayName}</div>
+
+                  <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                    <div>{provider?.displayName}</div>
+
                   </div>
                 </Menu.Item>
                 <ul className="py-1 text-sm text-gray-700">
