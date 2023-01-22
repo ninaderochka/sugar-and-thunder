@@ -1,11 +1,13 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Box from './Box';
 
 export default function Communicate() {
+  const { t } = useTranslation();
   return (
     <div className="w-5/6  m-auto max-w-full mb-32">
       <h1 className="font-poppins font-normal text-5xl ml-3 mb-20 pt-20 uppercase">
-        We can communicate through
+      {t('communicateHeader')}
       </h1>
       <div className="grid grid-cols-1 gap-6 max-h-full md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
         <Box>
@@ -16,11 +18,10 @@ export default function Communicate() {
               className="w-25 m-auto mb-4"
             />
             <p className="font-poppins font-normal text-5xl text-black text-center mb-4">
-              Voice Call
+            {t('Voice_Call')}
             </p>
             <p className="font-poppins font-light text-center text-black/80 w-11/12 m-auto">
-              Feeling ready to start a conversation? Give your therapist a voice
-              call and talk your heart out!
+            {t('cBoxBody1')}
             </p>
           </div>
         </Box>
@@ -28,10 +29,10 @@ export default function Communicate() {
           <div className="m-auto flex flex-col space-y-4">
             <img src="/chat.svg" alt="chat" className="w-25 m-auto mb-4" />
             <p className="font-poppins font-normal text-5xl text-black text-center mb-4">
-              Chat
+            {t('Chat')}
             </p>
             <p className="font-poppins font-light text-center text-black/80 w-9/12 m-auto">
-              Need to talk to someone? Come have a chat with your therapist!
+            {t('cBoxBody2')}
             </p>
           </div>
         </Box>
@@ -39,11 +40,10 @@ export default function Communicate() {
           <div className="m-auto flex flex-col space-y-4">
             <img src="/video.svg" alt="video" className="w-25 m-auto" />
             <p className="font-poppins font-normal text-5xl text-black text-center mb-4">
-              Video Call
+            {t('Video_Call')}
             </p>
             <p className="font-poppins font-light text-center text-black/80 w-11/12 m-auto">
-              For better experience therapists recommend video calls, but always
-              remember that its a choice!
+            {t('cBoxBody3')}
             </p>
           </div>
         </Box>

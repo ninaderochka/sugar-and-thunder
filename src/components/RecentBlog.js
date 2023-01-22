@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -6,6 +7,7 @@ import Rectangle41 from '../images/Rectangle41.png';
 import Rectangle40 from '../images/Rectangle40.png';
 
 function RecentBlog() {
+  const { t } = useTranslation();
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -29,7 +31,7 @@ function RecentBlog() {
   return (
     <div className="bg-light-blue h-full md:h-screen">
       <h1 className="text-5xl leading-10 uppercase pt-16 pb-24 pl-28 font-poppins">
-        Recent BLOGs
+      {t('Recent_blogs')}
       </h1>
 
       <div className="px-36 my-auto">

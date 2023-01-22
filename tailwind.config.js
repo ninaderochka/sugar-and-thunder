@@ -23,6 +23,7 @@ module.exports = {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
+        arabic: ['Noto Kufi Arabic', 'sans-serif']
       },
       width: {
         'box-width': '350px',
