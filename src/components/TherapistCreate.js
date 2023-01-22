@@ -1,4 +1,5 @@
 import { React } from 'react';
+import { Link } from 'react-router-dom';
 import Button from './Button';
 
 export default function TherapistsCreate() {
@@ -78,7 +79,9 @@ export default function TherapistsCreate() {
                 />
               </label>
               <div className="mb-8 mt-12 flex justify-center items-center max-w-fit">
-                <Button value="Create" onClick={() => {}} />
+                <Link to="/ThankUTherapist">
+                  <Button value="Create" onClick={() => {}} />
+                </Link>
               </div>
             </div>
           </form>

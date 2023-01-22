@@ -3,10 +3,28 @@ import Rectangle45 from '../images/Rectangle45.png';
 import button from '../images/SubmitButton.png';
 import Rectangle41p from '../images/Rectangle41p.png';
 import Rectangle42 from '../images/Rectangle42.png';
+import { collection,  getDocs} from "firebase/firestore";
+import { db } from '../firebase';
+import { useState, useEffect } from "react";
 
-function Blog() {
+function  Blog()   {
+const [posts, setPosts] = useState([]);
+
+useEffect(() => {
+const postsCollectionRef = collection(db, "blog")
+const getPosts = async () => {
+const data = await getDocs(postsCollectionRef);
+setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+}
+getPosts()
+}, [])
+
   return (
     <div>
+    {posts.map((post) => {
+      return (
+      <div>
+
       <div className="flex justify-center	content-center	pt-16 ">
         <img
           src={Rectangle45}
@@ -16,65 +34,33 @@ function Blog() {
       </div>
       <div className=" md:px-24  md:pt-10   sm:px-10 sm:pt-6    2xl:px-52  2xl:pt-20    lg:px-30 ">
         <h1 className="font-normal lg:text-5xl  md:text-2xl sm:text-xl  leading-[75px] uppercase ">
-          Mental Health and Technology
+          {post.headerH1}
         </h1>
 
-        <p className="pt-6  uppercase   lg:text-xl    md:text-base    sm:text-sm leading-8">
-          Technology and mental well-being might seem like profoundly
-          antagonistic terms. However, there are excellent digital tools to help
-          you reach mindfulness and to practice meditation. You can even use
-          smartphone apps, virtual reality solutions and digital devices as a
-          form of relieving stressing and achieving digital detox – as, after a
-          while, you will be able to practice all types of anti-anxiety skills
-          on your own. So, let The Medical Futurist show you how you can enhance
-          your mental and emotional health with the help of technology.
+        <p className="pt-6  uppercase   lg:text-xl    md:text-base    sm:text-sm leading-8" >
+          {post.paragraph}
         </p>
 
         <h4 className="leading-[48px] font-[400] uppercase lg:text-3xl  md:text-2xl sm:text-xl  pt-16">
-          The need for taking care of our emotional health
+          {post.header2}
         </h4>
 
         <p className="pt-4  uppercase   lg:text-xl    md:text-base    sm:text-sm leading-8">
-          “Just as we observe physical hygiene to stay well, we need to
-          cultivate a kind of emotional hygiene too,” wrote the Dalai Lama on
-          his Twitter-feed. There are three crucial points around His Holiness’
-          statement. First and foremost, the popularity of health-enhancing,
-          physically active lifestyle is soaring worldwide. Nevertheless,
-          there’s always room for improvement: the WHO says that globally, 23
-          percent of adults and 81 percent of school-going adolescents are not
-          active enough. According to the organization, adults aged 18-64 should
-          do at least 150 minutes of moderately intense physical activity each
-          week, which is not unaccomplishable. Moreover, the numerically and
-          statistically driven 21st-century mind could take a great inspiration
-          and power from the various fitness trackers and wearables.
+          {post.paragraph2}
         </p>
         <p className="pt-6  uppercase   lg:text-xl    md:text-base    sm:text-sm leading-8">
-          Secondly, emotional hygiene seems to be thrown into the shade
-          nowadays. Somehow, the culture of busyness prevents us from squeezing
-          some time for mental health into our packed schedules. Information is
-          pouring on us from millions of communication channels; we are
-          connecting with hundreds of ‘friends’ on social media, we are obsessed
-          with data due to the fear of missing out and time management slices up
-          our days into meetings and to-do-lists.
+         {post.paragraph3}
         </p>
         <p className="pt-6  uppercase   lg:text-xl    md:text-base    sm:text-sm leading-8">
-          The pressure to perform and the stress to achieve is the air every
-          busy-bee is breathing. However, turbulent lifestyle comes with a
-          price. No wonder so many people have mental health issues. In the US,
-          that means one in five adults – more than 40 million Americans! On the
-          old continent, 27 percent of the population has to cope with mental
-          disorders, which means 83 million struggling Europeans. In Asia, the
-          prevalence of depression is 20 percent in Thailand, 19.9 percent in
-          Taiwan, 19.4 percent in Korea, 17.5 in Malaysia and 16.5 percent in
-          China.
+          {post.paragraph4}
         </p>
 
         <h4 className="font-normal lg:text-[32px] leading-[75px] uppercase     pt-6 md:text-2xl    sm:text-xl">
-          Sign up for The Healing blog
+          {post.header3}
         </h4>
 
         <p className="leading-[30px] font-[400] uppercase lg:text-[20px] md:text-base    sm:text-sm">
-          A weekly, ad-free Blog that helps you stay in the know.
+          {post.paragraph6}
         </p>
 
         <form className="mb-4 flex content-end pt-8 ">
@@ -93,7 +79,7 @@ function Blog() {
         </form>
 
         <h4 className="font-normal lg:text-[32px] leading-[75px] uppercase pt-20  md:text-2xl    sm:text-xl pb-8">
-          Recommended for you
+          {post.header7}
         </h4>
       </div>
 
@@ -103,7 +89,7 @@ function Blog() {
             className="absolute text-white ml-8 mt-44 bg-text-background uppercase text-[32px] 
             bg-opacity-50  text-center align-middle leading-[48px]"
           >
-            Heal from
+           {post.photoP1}
           </div>
 
           <div
@@ -111,7 +97,7 @@ function Blog() {
              font-normal bg-opacity-50 inline-block align-middle leading-[48px]"
           >
             {' '}
-            trauma{' '}
+            {post.photoP2}{' '}
           </div>
           <img src={Rectangle41p} alt="" />
         </div>
@@ -121,13 +107,19 @@ function Blog() {
             className="absolute w-56 ml-4 mt-6  uppercase text-2xl 
             leading-7 "
           >
-            Tell Me All I Need to Know About Anxiety
+            {post.photo2}
           </div>
 
           <img src={Rectangle42} alt="" />
         </div>
       </div>
+      </div>
+      )
+
+})}
+
     </div>
+
   );
 }
 

@@ -15,6 +15,7 @@ module.exports = {
         'text-background': '#154A80',
         'input-grey': '#9DAFBD',
         'input-border': '#D1DBE3',
+        'card-text': '#94AFB6',
         'light-shade-cyan': '#EAF8F9',
         'shade-green': '#6BD24D',
         'meet-color': '#424A4F',
