@@ -24,7 +24,7 @@ export default function EditProfile() {
           <input
             className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4"
             type="text"
-            placeholder='Enter your name'
+            placeholder="Enter your name"
             maxLength={50}
           />
         </div>
@@ -48,13 +48,13 @@ export default function EditProfile() {
         </div>
 
         <div className="flex">
-          <p className=''>Family Size</p>
+          <p className="">Family Size</p>
           <input
             className="border rounded-[10px] border-black/0.12 h-[68px] w-[68px] ml-[206px] px-1"
             type="text"
             maxLength={5}
           />
-          <p className='ml-5 py-2'>Member(s)</p>
+          <p className="ml-5 py-2">Member(s)</p>
         </div>
 
         <div className="flex justify-between space-x-12">
@@ -69,7 +69,6 @@ export default function EditProfile() {
           <p>Birth Date</p>
           <input
             className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4"
-          
             placeholder="MM/ DD/ YY"
           />
         </div>
@@ -78,7 +77,7 @@ export default function EditProfile() {
           <p>Email</p>
           <input
             className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4"
-            placeholder='name@gmail.com'
+            placeholder="name@gmail.com"
             type="email"
           />
         </div>
@@ -97,7 +96,7 @@ export default function EditProfile() {
           <input
             className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4"
             type="file"
-            placeholder='choose file'
+            placeholder="choose file"
           />
         </div>
 
@@ -122,12 +121,11 @@ export default function EditProfile() {
               maxLength={15}
             />
           </div>
-
-          <div className='flex justify-between text-[12px] '>
-            <Button className="w-1/4" value="save Changes" />
-            <Button className="w-1/4" value="DELETE ACCOUNT" />
-            <Button className="w-1/4" value="cancel" />
-          </div>
+        </div>
+        <div className="flex justify-between text-[12px] ">
+          <Button className="w-1/4" value="save Changes" />
+          <Button className="w-1/4" value="DELETE ACCOUNT" />
+          <Button className="w-1/4" value="cancel" />
         </div>
       </div>
     </div>
