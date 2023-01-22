@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { collection,  getDocs} from "firebase/firestore";
+import { db } from '../firebase';
 import Rectangle45 from '../images/Rectangle45.png';
 import button from '../images/SubmitButton.png';
 import Rectangle41p from '../images/Rectangle41p.png';
 import Rectangle42 from '../images/Rectangle42.png';
-import { collection,  getDocs} from "firebase/firestore";
-import { db } from '../firebase';
-import { useState, useEffect } from "react";
+
 
 function  Blog()   {
 const [posts, setPosts] = useState([]);

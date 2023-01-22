@@ -43,13 +43,15 @@ export function UserAuthContextProvider({ children }) {
   const fbLogin = async () => {
     try {
       const result = await signInWithPopup(auth, fbProvider);
-        // eslint-disable-next-line
-      console.log(result)
+
+      // eslint-disable-next-line
+      console.log(result);
       const credentials = await FacebookAuthProvider.credentialFromResult(
         result
       );
-         // eslint-disable-next-line
-         console.log(credentials);
+      // eslint-disable-next-line
+      console.log(credentials);
+
       const token = credentials.accessToken;
       const photoUrl = `${result.user.photoURL}?&access_token=${token}`;
       await updateProfile(auth.currentUser, { photoURL: photoUrl });
@@ -89,3 +91,5 @@ export function UserAuthContextProvider({ children }) {
 export function useUserAuth() {
   return useContext(userAuthContext);
 }
+
+// 
