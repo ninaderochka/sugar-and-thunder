@@ -1,22 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Menu } from '@headlessui/react';
 import { useUserAuth } from '../AuthContext';
 import { auth } from '../firebase';
 import Logo from '../images/Logo.svg';
+<<<<<<< HEAD
 // import triangle from '../images/triangle.svg';
+=======
+
+>>>>>>> a3a3c9733ad651d9dec8177692c1a6df1fcacd0e
 
 
 
+  
+  function Navbar() {
 
+    const [user] = useAuthState(auth);
 
-function Navbar() {
-  const [user] = useAuthState(auth);
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const { logOut } = useUserAuth();
+  const { logOut,getUserInfo } = useUserAuth();
+
+  useEffect(()=>{
+    const user = auth.currentUser
+    getUserInfo(user);
+  },[user])
 
   const navigate = useNavigate();
   const handleLogout = async () => {
@@ -171,13 +181,13 @@ function Navbar() {
                   </div>
                 </Menu.Item>
                 <ul className="py-1 text-sm text-gray-700">
-                  <Menu.Item>
+                  <Link to='/EditProfile'><Menu.Item>
                     <li>
                       <p className="block px-4 py-2 hover:bg-gray-100">
                         Edit Profile
                       </p>
                     </li>
-                  </Menu.Item>
+                  </Menu.Item></Link>
                 </ul>
                 <Menu.Item>
                   <div className="py-1">
