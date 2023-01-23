@@ -65,7 +65,7 @@ export function UserAuthContextProvider({ children }) {
   async function logOut() {
     return signOut(auth);
   }
-// eslint-disable-next-line
+  // eslint-disable-next-line
   console.log(signedInUser);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
