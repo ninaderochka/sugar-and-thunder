@@ -11,43 +11,37 @@ function Booking() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   const { question, choices, type } = questions[currentQuestion];
- 
+
   const [isChecked, setIsChecked] = useState('');
   const [text, setText] = useState('');
-  
-  const currentAnswer = finalAnswers[currentQuestion]
-  
+
+  const currentAnswer = finalAnswers[currentQuestion];
+
   // eslint-disable-next-line
-  console.log(currentAnswer)
- 
+  console.log(currentAnswer);
+
   const setFinal = (currentQuestion, answer) => {
     setFinalAnswers((prev) => {
       return { ...prev, [currentQuestion]: answer };
     });
   };
 
-
-
   function handleCheckedChange(answer) {
     setIsChecked(answer);
   }
 
   const handleNext = () => {
-   
     if (currentQuestion !== questions.length - 1) {
-      setCurrentQuestion((prev) => prev + 1); 
-     
-    } 
+      setCurrentQuestion((prev) => prev + 1);
+    }
     setStep((prev) => prev + 1);
-  }
+  };
   const handlePrev = () => {
     if (currentQuestion !== 0) {
-     
       setCurrentQuestion((prev) => prev - 1);
-      setStep((prev) => prev - 1); 
-
-    } 
-  } 
+      setStep((prev) => prev - 1);
+    }
+  };
   const isLastQuestion = step === questions.length - 1;
   const isFirstQuestion = step === 0;
   return (
@@ -97,11 +91,13 @@ function Booking() {
                       type="button"
                       value={answer}
                       onClick={() => {
-                     
                         setFinal(currentQuestion, answer);
                       }}
                       key={answer}
-                      className={`h-fit mb-2 font-poppins text-base lg:text-2xl border-2 w-full space-y-4 p-4 rounded ${finalAnswers[currentQuestion] === answer && "bg-button-blue text-white"} 
+                      className={`h-fit mb-2 font-poppins text-base lg:text-2xl border-2 w-full space-y-4 p-4 rounded ${
+                        finalAnswers[currentQuestion] === answer &&
+                        'bg-button-blue text-white'
+                      } 
                        `}
                     />
                   );
@@ -120,7 +116,7 @@ function Booking() {
                         checked={isChecked === answer}
                         onChange={() => {
                           handleCheckedChange(answer);
-                        
+
                           setFinal(currentQuestion, answer);
                         }}
                       />
@@ -146,8 +142,7 @@ function Booking() {
           </div>
           <div className="flex gap-6 mt-auto">
             {!isFirstQuestion && (
-              <Button type="button" onClick={() => handlePrev() } 
-                  value="Back" />
+              <Button type="button" onClick={() => handlePrev()} value="Back" />
             )}
             <Button
               type="button"
@@ -170,8 +165,8 @@ function Booking() {
 export default Booking;
 
 const Submit = ({ step, setStep, finalAnswers }) => {
-    // eslint-disable-next-line
-  console.log(finalAnswers)
+  // eslint-disable-next-line
+  console.log(finalAnswers);
   const navigate = useNavigate();
   return (
     <div

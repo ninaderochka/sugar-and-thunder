@@ -61,83 +61,144 @@
 //   );
 // }
 
-import React from 'react'
+import React from 'react';
 
 function EditProfile() {
   return (
-
     <form className="pl-0 mb-4 w-6/12">
-    <div className="mb-6">
-      <label className="flex flex-col font-normal text-xl leading-8 mb-3" htmlFor="full_name">
-        Full Name:
-        <input className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8" type="text"  />
-      </label>
-    </div>
+      <div className="mb-6">
+        <label
+          className="flex flex-col font-normal text-xl leading-8 mb-3"
+          htmlFor="full_name"
+        >
+          Full Name:
+          <input
+            className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8"
+            type="text"
+          />
+        </label>
+      </div>
 
-    <div className="mb-6">
-      <label className="flex flex-col font-normal text-xl leading-8 mb-3" htmlFor="email">
-       Education Level:
-        <input className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8" id="email" type="text"  />
-      </label>
-    </div>
+      <div className="mb-6">
+        <label
+          className="flex flex-col font-normal text-xl leading-8 mb-3"
+          htmlFor="email"
+        >
+          Education Level:
+          <input
+            className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8"
+            id="email"
+            type="text"
+          />
+        </label>
+      </div>
 
-    <div className="mb-6">
-      <label className="flex flex-col font-normal text-xl leading-8 mb-3" htmlFor="details">
-        Hobbies:
-        <input className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8" id="email" type="email"  />
-      </label>
-    </div>
+      <div className="mb-6">
+        <label
+          className="flex flex-col font-normal text-xl leading-8 mb-3"
+          htmlFor="details"
+        >
+          Hobbies:
+          <input
+            className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8"
+            id="email"
+            type="email"
+          />
+        </label>
+      </div>
 
-    <div className="mb-6">
-      <label className="flex flex-col font-normal text-xl leading-8 mb-3" htmlFor="details">
-        Family Size:
-        <input className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8" id="email" type="email"  />
-      </label>
-    </div>
+      <div className="mb-6">
+        <label
+          className="flex flex-col font-normal text-xl leading-8 mb-3"
+          htmlFor="details"
+        >
+          Family Size:
+          <input
+            className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8"
+            id="email"
+            type="email"
+          />
+        </label>
+      </div>
 
-    <div className="mb-6">
-      <label className="flex flex-col font-normal text-xl leading-8 mb-3" htmlFor="details">
-       Gender:
-        <input className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8" id="email" type="email"  />
-      </label>
-    </div>
+      <div className="mb-6">
+        <label
+          className="flex flex-col font-normal text-xl leading-8 mb-3"
+          htmlFor="details"
+        >
+          Gender:
+          <input
+            className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8"
+            id="email"
+            type="email"
+          />
+        </label>
+      </div>
 
-    <div className="mb-6">
-      <label className="flex flex-col font-normal text-xl leading-8 mb-3" htmlFor="details">
-       Birth of Date: :
-        <input className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8" id="email" type="email"  />
-      </label>
-    </div>
+      <div className="mb-6">
+        <label
+          className="flex flex-col font-normal text-xl leading-8 mb-3"
+          htmlFor="details"
+        >
+          Birth of Date: :
+          <input
+            className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8"
+            id="email"
+            type="email"
+          />
+        </label>
+      </div>
 
-    <div className="mb-6">
-      <label className="flex flex-col font-normal text-xl leading-8 mb-3" htmlFor="details">
-       Email:
-        <input className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8" id="email" type="email"  />
-      </label>
-    </div>
+      <div className="mb-6">
+        <label
+          className="flex flex-col font-normal text-xl leading-8 mb-3"
+          htmlFor="details"
+        >
+          Email:
+          <input
+            className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8"
+            id="email"
+            type="email"
+          />
+        </label>
+      </div>
 
-    <div className="mb-6">
-      <label className="flex flex-col font-normal text-xl leading-8 mb-3" htmlFor="details">
-       Phone Number:
-        <input className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8" id="email" type="email"  />
-      </label>
-    </div>
-    <div className="mb-6">
-      <label className="flex flex-col font-normal text-xl leading-8 mb-3" htmlFor="details">
-       Uplod ID:
-        <input className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8" id="email" type="email"  />
-      </label>
-    </div>
+      <div className="mb-6">
+        <label
+          className="flex flex-col font-normal text-xl leading-8 mb-3"
+          htmlFor="details"
+        >
+          Phone Number:
+          <input
+            className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8"
+            id="email"
+            type="email"
+          />
+        </label>
+      </div>
+      <div className="mb-6">
+        <label
+          className="flex flex-col font-normal text-xl leading-8 mb-3"
+          htmlFor="details"
+        >
+          Uplod ID:
+          <input
+            className="h-16 shadow appearance-none border rounded-xl w-full py-2 px-3 text-textbox-gray pl-8"
+            id="email"
+            type="email"
+          />
+        </label>
+      </div>
 
-    {/* BUTTON */}
+      {/* BUTTON */}
 
-    {/* <div className="flex items-center justify-between">
+      {/* <div className="flex items-center justify-between">
       <button className="h-16 w-56 text-2xl font-normal bg-button-blue text-black py-2 px-4 rounded-md" type="button">
         Submit
       </button>
     </div> */}
-  </form>
-  )
+    </form>
+  );
 }
 
-export default EditProfile
+export default EditProfile;

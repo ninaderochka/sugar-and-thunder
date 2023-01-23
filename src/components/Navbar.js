@@ -5,11 +5,6 @@ import { Menu } from '@headlessui/react';
 import { useUserAuth } from '../AuthContext';
 import { auth } from '../firebase';
 import Logo from '../images/Logo.svg';
-<<<<<<< HEAD
-// import triangle from '../images/triangle.svg';
-=======
-
->>>>>>> a3a3c9733ad651d9dec8177692c1a6df1fcacd0e
 
 
 
