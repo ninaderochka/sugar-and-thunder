@@ -34,15 +34,17 @@ function RecentBlog() {
       {t('Recent_blogs')}
       </h1>
 
-      <div className="px-36 my-auto">
+      <div className="px-28 my-auto">
         <Carousel responsive={responsive}>
+          <Link to="/Blog">
           <div className="relative">
             <h1 className="absolute text-white pt-3 pl-6 w-44 uppercase">
               Mental Health and Technology{' '}
             </h1>
             <img src={Rectangle40} alt="" />
           </div>
-          <Link to="/Blog">
+          </Link>
+          <Link to="/BlogNd">
             <div>
               <img src={Rectangle41} alt="" />
               <div
@@ -67,21 +69,23 @@ function RecentBlog() {
               <img src={Rectangle40} alt="" />
             </div>
           </Link>
+          <Link to="/BlogNd">
           <div>
             <img src={Rectangle41} alt="" />
             <div
               className="absolute text-white bottom-12 m-8 bg-text-background uppercase text-2xl 
-        bg-opacity-50 leading-7 text-center align-middle p-2"
+        bg-opacity-50 leading-7 text-center align-middle	"
             >
               Heal from
             </div>
             <div
               className="absolute text-white bottom-4  m-8  bg-text-background uppercase  text-2xl
-         font-normal bg-opacity-50 inline-block align-middle	leading-7 p-2"
+         font-normal bg-opacity-50 inline-block align-middle	leading-7"
             >
               trauma{' '}
             </div>
           </div>
+             </Link>
         </Carousel>
       </div>
     </div>

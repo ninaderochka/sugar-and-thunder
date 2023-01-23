@@ -6,190 +6,140 @@ import Button from './Button';
 
 export default function AddNewCard() {
   return (
-    <div className="flex flex-col pt-12 px-16">
-      <h1 className="text-[50px] tracking-[-1px] ">ADD CARD DETAILS</h1>
-      <p className="text-[24px] text-contact-us-gray ">
+    <div className="flex flex-col sm:pt-5 md:pt-8 lg:pt-8 sm:px-4 md:px-14 lg:px-16 justify-center">
+      <h1 className="text-[28px] md:text-[40px] lg:text-[50px] tracking-[-1px] ">
+        ADD CARD DETAILS
+      </h1>
+      <p className="text-[12px] md:text-[18px] lg:text-[24px] text-contact-us-gray ">
         Please make sure all of the info you enter are the same as your card
         registration info.
       </p>
 
-      <div className="text-card-text flex pt-10 text-[24px] place-content-between">
+      <div className="text-card-text md:flex lg:flex sm:pt-4 md:pt-8 lg:pt-8 text-[12px] md:text-[18px] lg:text-[24px] md:mx-5 lg:place-content-between">
         {/* Left side */}
-        <div className=" pt-6 flex flex-col w-[310px]">
-          <form className="">
+        <div className="pt-4 flex flex-col md:mr-10">
+          <div className="">
             <p>Supported Card types</p>
-
             <button
               type="button"
-              className="border-button-blue text-button-blue border w-[155px] px-4 rounded-l-sm"
+              className="border rounded-l-sm border-button-blue text-button-blue sm:w-[65px] md:w-[125px] lg:w-[155px] hover:bg-button-blue hover:text-white"
             >
               Visa
             </button>
             <button
               type="button"
-              className="border border-button-blue px-4 rounded-r-sm text-button-blue w-[155px]"
+              className="border rounded-r-sm border-button-blue text-button-blue sm:w-[85px] md:w-[125px] lg:w-[155px] hover:bg-button-blue hover:text-white"
             >
               Mastercard
             </button>
+          </div>
 
-            <p className=" mt-6">Card Number</p>
+          <div className="pt-5">
+            <p className="">Card Number</p>
             <input
-              className="border px-2  py-1"
+              className="text-[12px] border rounded px-2 sm:w-[150px] md:w-[250px] lg:w-[310px] h-[40px] pl-2"
               type="tel"
-              pattern="\d*"
               maxLength={19}
+              placeholder="Enter your card number"
             />
+          </div>
 
-            <div className="flex ">
-              <p className="text-sm text-cards mt-6">Expiry Date</p>
-              <p className="text-sm text-cards ml-2 sm:ml-5 mt-6">CVV Code</p>
+          <div className="pt-5 ">
+            <div className="flex">
+              <p>Expiry Date</p>
+              <p>CVV Code</p>
             </div>
 
             <div className="flex ">
               <input
-                className="text-sm border px-2 w-2/6 py-1"
-                name="credit-expires"
+                className="text-[12px] border rounded sm:w-[70px] md:w-[120px] lg:w-[151px] pl-2"
                 type="tel"
-                pattern="\d*"
-                maxLength={7}
+                maxLength={10}
                 placeholder="MM / YY"
               />
               <input
-                className="text-sm border px-2 w-2/6 ml-2 sm:ml-2 py-1"
-                name="credit-cvc"
+                className="text-[12px] border rounded px-2 sm:w-[70px] md:w-[120px] lg:w-[151px] h-[40px] ml-2"
                 type="password"
-                minLength="4"
+                minLength={5}
                 placeholder="***"
               />
             </div>
+          </div>
 
-            <p className="text-cards mt-6">Name on Card</p>
+          <div className="pt-5">
+            <p>Name on Card</p>
             <input
-              className="border px-2 w-auto py-1"
+              className="text-[12px] border rounded sm:w-[150px] md:w-[250px] lg:w-[310px] h-[40px] pl-2"
               type="text"
-              placeholder="Card Name"
-              name="card name"
+              placeholder="Enter your card name"
             />
-          </form>
+          </div>
         </div>
 
         {/* 2nddd */}
-        <div className=" max-w-sm  bg-white">
-          <form action="/action_page.php" className="flex flex-col">
-            <p className="text-sm text-cards mt-6">Country</p>
+        <div className="pt-4 flex flex-col">
+          <div>
+            <p>Country</p>
             <select
-              className="text-sm border px-2 w-auto py-1"
-              type="tel"
-              pattern="\d*"
-              maxLength={19}
-              placeholder="Card Number"
-              name="card num"
+              className="text-[12px] border rounded sm:w-[150px] md:w-[250px] lg:w-[310px] h-[40px] pl-2"
+              type="option"
             >
-              <option value="volvo">United State</option>
-              <option value="saab">Saab</option>
-              <option value="fiat">Fiat</option>
-              <option value="audi">Audi</option>
+              <option value="1">United State</option>
+              <option value="2">Iraq</option>
+              <option value="3">Lebanon</option>
             </select>
+          </div>
 
-            <p className="text-sm text-cards mt-6">ZIP Code</p>
+          <div className="pt-5">
+            <p>ZIP Code</p>
             <input
-              className="text-sm border px-2 w-auto py-1"
+              className="text-[12px] border rounded sm:w-[150px] md:w-[250px] lg:w-[310px] h-[40px] pl-2"
               type="text"
-              maxLength={19}
-              placeholder="your ZIP Code"
-              name="card num"
+              maxLength={15}
+              placeholder="Enter your ZIP Code"
             />
+          </div>
 
-            <p className="text-sm text-cards mt-6">City</p>
+          <div className="pt-5">
+            <p>City</p>
             <select
-              className="text-sm border px-2 w-3/4 py-1"
-              type="tel"
-              pattern="\d*"
-              maxLength={19}
-              placeholder="Card Number"
-              name="card num"
+              className="text-[12px] border rounded sm:w-[150px] md:w-[250px] lg:w-[215px] h-[40px] pl-2"
+              type="option"
             >
-              <option value="volvo">San-FranciscoUnited State</option>
-              <option value="saab">Saab</option>
-              <option value="fiat">Fiat</option>
-              <option value="audi">Audi</option>
+              <option value="1">San-Francisco</option>
+              <option value="2">Erbil</option>
+              <option value="3">Slemany</option>
             </select>
+          </div>
 
-            <p className="text-cards mt-6">Address</p>
+          <div className="pt-5">
+            <p>Address</p>
             <input
-              className="border px-2 w-auto py-1"
+              className="text-[12px] border rounded px-2 sm:w-[150px] md:w-[250px] lg:w-[310px] h-[40px] pl-2"
               type="text"
-              placeholder="your Address"
-              name="card name"
+              placeholder="Enter your Address"
             />
-          </form>
+          </div>
         </div>
 
-        {/* <div className='pt-6 flex flex-col'>
-                
-              <label htmlFor="Full Name" >
-                 Supported Card types
-                <input type='input' />
-              </label>
-
-              <label htmlFor="Full Name" >
-                 Supported Card types
-                <input type='input' />
-              </label>
-
-              <label htmlFor="Full Name" >
-                 Supported Card types
-                <input type='input' />
-              </label>
-
-              <label htmlFor="Full Name" >
-                 Supported Card types
-                <input type='input' />
-              </label>
-            </div>
-            
-
-
-            <div className='pt-6 flex flex-col'>
-
-            <label htmlFor="Full Name" >
-                 Country
-                 <select className="text-sm border px-2 w-auto py-1" type="tel" pattern="\d*" maxLength={19} placeholder="Card Number" name="card num" >
-  <option value="volvo">United State</option>
-  <option value="saab">Saab</option>
-  <option value="fiat">Fiat</option>
-  <option value="audi">Audi</option>
-</select>
-            </label>
-
-            <label htmlFor="Full Name" >
-                 Country
-                <input type='input' />
-            </label>
-
-            <label htmlFor="Full Name" >
-                 Country
-                <input type='input' />
-            </label>
-
-            <label htmlFor="Full Name" >
-                 Country
-                <input type='input' />
-            </label>
-
-            </div> */}
-
-        {/* right side */}
         <div className="">
-          <img className=" w-[350px] h-[223.36px] " alt="#" src={card1} />
+          <img
+            className="sm:invisible lg:visible w-[350px] h-[223.36px] "
+            alt="#"
+            src={card1}
+          />
 
-          <img className=" w-[350px] h-[223.36px] " alt="#" src={card2} />
+          <img
+            className="sm:invisible lg:visible w-[350px] h-[223.36px] "
+            alt="#"
+            src={card2}
+          />
         </div>
       </div>
 
       <Link to="/ThankUCard">
-        <div className=" text-[24px] pb-64">
-          <Button value="ADD CARD" />
+        <div className=" pt-8 pb-64 ">
+          <Button className=" text-[14px]" value="ADD CARD" />
         </div>
       </Link>
     </div>

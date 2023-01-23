@@ -1,28 +1,37 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import {
-  getAuth,
-  GoogleAuthProvider,
-  FacebookAuthProvider,
-  signInWithPopup,
-} from '@firebase/auth';
 import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../firebase';
+import { updateProfile } from '@firebase/auth';
+import { db, auth } from '../firebase';
 import SignupImage from '../images/SignupImage.svg';
 import facebook from '../images/Facebook.svg';
 import gmail from '../images/Google.svg';
 import { useUserAuth } from '../AuthContext';
 
 function Signup() {
-  const [email, setEmail] = useState('');
-  const [confirmEmail, setConfirmEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const [userDetails, setUserDetails] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    confirmEmail: '',
+    password: '',
+    confirmPassword: '',
+    birthDate: ['', '', ''],
+  });
+  // eslint-disable-next-line
 
-  const googleProvider = new GoogleAuthProvider();
-  const fbProvider = new FacebookAuthProvider();
+  const {
+    firstName,
+    lastName,
+    email,
+    confirmEmail,
+    password,
+    confirmPassword,
+    birthDate,
+  } = userDetails;
+  const [Day, Month, Year] = birthDate;
 
   // const validatePassword = async () => {
   //   let isValid = true;
@@ -52,38 +61,27 @@ function Signup() {
   //   return isValid;
   // };
 
-  const auth = getAuth();
-  // changed all /home to /
-  const googleLogin = async () => {
-    try {
-      const result = signInWithPopup(auth, googleProvider);
-      navigate('/');
-      return result;
-    } catch (error) {
-      return { error: error.message };
-    }
-  };
-
-  const fbLogin = async () => {
-    try {
-      const result = signInWithPopup(auth, fbProvider);
-      navigate('/');
-      return result;
-    } catch (error) {
-      return { error: error.message };
-    }
-  };
-
-  const { signUp } = useUserAuth();
+  const { signUp, googleLogin, fbLogin } = useUserAuth();
 
   const Register = async () => {
     try {
       const userCredential = await signUp(email, password);
 
       const { user } = userCredential;
+      await updateProfile(auth.currentUser, {
+        displayName: `${firstName} ${lastName}`,
+      });
       await addDoc(collection(db, 'users'), {
         uid: user.uid,
         email: user.email,
+        displayName: `${firstName} ${lastName}`,
+        birthDate: `${Day}/${Month}/${Year}`,
+        isTherapist: false,
+        educationLevel: '',
+        hobbies: '',
+        familySize: '',
+        gender: '',
+        uploadId: '',
       });
       // return true;
     } catch (error) {
@@ -94,18 +92,26 @@ function Signup() {
     }
   };
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    if (name === 'Day') {
+      setUserDetails({ ...userDetails, birthDate: [value, Month, Year] });
+    } else if (name === 'Month') {
+      setUserDetails({ ...userDetails, birthDate: [Day, value, Year] });
+    } else if (name === 'Year') {
+      setUserDetails({ ...userDetails, birthDate: [Day, Month, value] });
+    } else setUserDetails({ ...userDetails, [name]: value });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       setError('Passwords does not match');
     } else {
-      setEmail('');
-      setConfirmEmail('');
-      setPassword('');
-      setConfirmPassword('');
-      const res = await signUp(email, password);
+      await Register();
+      // setUserDetails({firstName: "", lastName: "", email:"", confirmEmail:"", password:"", confirmPassword:"", Day:"", Month:"", Year:""})
       navigate('/');
-      if (res.error) setError(res.error);
+      // if (res.error) setError(res.error);
     }
   };
 
@@ -123,54 +129,61 @@ function Signup() {
           </h1>
           <div className="bg-white border-border-grey shadow-shadow-grey drop-shadow-lg box-border p-8 border-2 rounded min-w-min max-w-xl m-auto lg:w-[555px]">
             {error && <div className="auth__error">{error}</div>}
-            <form
-              className="w-full grid grid-cols-4 gap-2 grid-row-5"
-              onSubmit={handleSubmit}
-            >
+            <form className="w-full grid grid-cols-4 gap-2 grid-row-5">
               {/* FIRST NAME AND LAST NAME */}
               <input
                 type="text"
                 placeholder="First Name"
+                name="firstName"
+                value={firstName}
+                onChange={handleChange}
                 className="border border-input-border box-border rounded-md text-sm p-3 col-span-2"
               />
               <input
                 type="text"
                 placeholder="Last Name"
+                name="lastName"
+                value={lastName}
+                onChange={handleChange}
                 className="border border-input-border box-border rounded-md text-sm p-3 col-span-2"
               />
               {/* EMAIL AND CONFIRM EMAIL */}
               <input
                 type="email"
+                name="email"
                 value={email}
                 placeholder="Your Email"
                 required
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleChange}
                 className="border border-input-border box-border rounded-md text-sm p-3 w-full col-span-full"
               />
 
               <input
                 type="email"
+                name="confirmEmail"
                 value={confirmEmail}
                 placeholder="Confirm Email"
                 required
-                onChange={(e) => setConfirmEmail(e.target.value)}
+                onChange={handleChange}
                 className="border border-input-border box-border rounded-md text-sm p-3 w-full col-span-full"
               />
               {/* PASSWORD AND CONFIRM PASS */}
               <input
                 type="password"
+                name="password"
                 value={password}
                 placeholder="Password"
                 required
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handleChange}
                 className="border border-input-border box-border rounded-md text-sm py-4 px-3.5 p-3  w-full  lg:mb-0 lg:mr-1 col-span-2"
               />
               <input
                 type="password"
+                name="confirmPassword"
                 value={confirmPassword}
                 placeholder="Confirm Password"
                 required
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                onChange={handleChange}
                 className="border border-input-border box-border rounded-md text-sm p-3 col-span-2"
               />
 
@@ -180,23 +193,32 @@ function Signup() {
                   Birthdate
                 </p>
                 <input
-                  type="text"
+                  type="number"
+                  name="Day"
+                  value={Day}
                   placeholder="DD"
-                  className="border border-input-border rounded-md text-sm p-3 aspect-square h-12 w-12 py-4 px-3.5 "
+                  onChange={handleChange}
+                  className="border border-input-border rounded-md text-sm aspect-square h-12 w-12 px-3.5 placeholder:text-center"
                 />
               </div>
 
               {/* MM YYYY */}
               <div className="flex col-span-2 w-full justify-between items-center">
                 <input
-                  type="text"
+                  type="number"
+                  name="Month"
+                  value={Month}
                   placeholder="MM"
-                  className="border border-input-border rounded-md text-sm p-3 aspect square h-12 w-12"
+                  onChange={handleChange}
+                  className="border border-input-border rounded-md text-sm aspect square h-12 w-12 px-2 placeholder:text-center"
                 />
                 <input
-                  type="text"
+                  type="number"
+                  name="Year"
+                  value={Year}
                   placeholder="YYYY"
-                  className="border border-input-border rounded-md text-sm p-3 h-12 w-2/3 "
+                  onChange={handleChange}
+                  className="border border-input-border rounded-md text-sm h-12 w-2/3 px-3 placeholder:px-2"
                 />
               </div>
 
@@ -211,11 +233,9 @@ function Signup() {
                   </button>
                 </Link>
                 <button
-                  type="submit"
+                  type="button"
                   className="font-poppins font-normal text-button-blue px-10 py-2 w-max outline whitespace-nowrap border-button-blue leading-tight rounded shadow-md focus:bg-button-blue focus:shadow-lg focus:ring-0 focus:text-black focus:outline-none active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
-                  onClick={() => {
-                    Register();
-                  }}
+                  onClick={handleSubmit}
                 >
                   Sign up
                 </button>
