@@ -110,6 +110,7 @@ export function UserAuthContextProvider({ children }) {
     try {
       await updateProfile(auth.currentUser, pass);
     } catch (err) {
+      // eslint-disable-next-line 
       console.log(err);
     }
   };
@@ -121,6 +122,7 @@ export function UserAuthContextProvider({ children }) {
       setUserInfo();
       navigate('/');
     } catch (err) {
+      // eslint-disable-next-line 
       console.log(err);
     }
   };

@@ -37,6 +37,7 @@ export default function EditProfile() {
 
   const setPassword = async (pass) => {
     if (newPass !== confirmPass) {
+      // eslint-disable-next-line
       alert('Passwords dont match!');
     } else {
       await updatePassword(pass);
