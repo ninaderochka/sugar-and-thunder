@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import icone1 from '../images/icone1.png';
 import icone2 from '../images/icone2.png';
@@ -7,9 +7,9 @@ import { useUserAuth } from '../AuthContext';
 
 export default function EditProfile() {
   const navigate = useNavigate();
-  const {userData,updateUser,updatePassword,deleteAccount} = useUserAuth()
+  const { userData, updateUser, updatePassword, deleteAccount } = useUserAuth();
   const [selectedImage, setSelectedImage] = useState(null);
-  const [changes,setChanges] = useState({
+  const [changes, setChanges] = useState({
     email: '',
     displayName: '',
     birthDate: '',
@@ -21,8 +21,8 @@ export default function EditProfile() {
     uploadId: '',
   });
 
-  const [newPass,setNewPass] = useState()
-  const [confirmPass,setConfirmPass] = useState()
+  const [newPass, setNewPass] = useState();
+  const [confirmPass, setConfirmPass] = useState();
 
   const {
     displayName,
@@ -33,18 +33,16 @@ export default function EditProfile() {
     familySize,
     gender,
     phoneNumber,
-   
   } = changes;
-  
+
   const setPassword = async (pass) => {
-    if(newPass !== confirmPass){
-      alert("Passwords dont match!")
+    if (newPass !== confirmPass) {
+      alert('Passwords dont match!');
+    } else {
+      await updatePassword(pass);
     }
-    else{
-      await updatePassword(pass)
-    }
-  }
-  
+  };
+
   function handleChange(e) {
     setSelectedImage(URL.createObjectURL(e.target.files[0]));
   }
@@ -55,18 +53,17 @@ export default function EditProfile() {
 
   const handleSubmit = async () => {
     await updateUser(changes);
-    if(newPass){
-      setPassword(newPass)
+    if (newPass) {
+      setPassword(newPass);
     }
-    navigate("/")
+    navigate('/');
     // eslint-disable-next-line
     console.log('user UPDATED');
   };
-  
- const revert = () => {
-  setChanges(userData);
-  }
-  
+
+  const revert = () => {
+    setChanges(userData);
+  };
 
   useEffect(() => {
     if (userData) {
@@ -80,12 +77,19 @@ export default function EditProfile() {
         <div className="relative flex justify-center">
           <div className="absolute -bottom-2 lg:-bottom-4 bg-white z-0 rounded-full border-2 border-black  w-12 h-12 md:w-16 md:h-16 flex justify-center items-center">
             <label htmlFor="img">
-          <input name="img" type='file'  src={icone2} onChange={handleChange} className="invisible hidden" id='img'/>
-            <img
-              className="w-8 h-8 md:h-12 md:w-12"
-              src={icone2}
-              alt="icone2"
-            />
+              <input
+                name="img"
+                type="file"
+                src={icone2}
+                onChange={handleChange}
+                className="invisible hidden"
+                id="img"
+              />
+              <img
+                className="w-8 h-8 md:h-12 md:w-12"
+                src={icone2}
+                alt="icone2"
+              />
             </label>
           </div>
           <img
@@ -102,20 +106,26 @@ export default function EditProfile() {
 
         <div className="flex justify-between space-x-12">
           <p>Full Name</p>
-          <input name="displayName"
+          <input
+            name="displayName"
             className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4"
             type="text"
             placeholder="Enter your name"
             maxLength={50}
-            value = {displayName}
-            onChange = {handleInputChange}
+            value={displayName}
+            onChange={handleInputChange}
           />
         </div>
 
         <div className="flex justify-between space-x-12">
           <p>Education Level</p>
 
-          <select className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4" name="educationLevel" onChange = {handleInputChange}  value ={educationLevel}>
+          <select
+            className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4"
+            name="educationLevel"
+            onChange={handleInputChange}
+            value={educationLevel}
+          >
             <option value="1">Under Graduate</option>
             <option value="2">Graduated</option>
           </select>
@@ -123,30 +133,36 @@ export default function EditProfile() {
 
         <div className="flex justify-between space-x-12">
           <p>Hobbies</p>
-          <input name="hobbies"
+          <input
+            name="hobbies"
             className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4"
             type="text"
             maxLength={50}
-            onChange = {handleInputChange}
-            value = {hobbies}
+            onChange={handleInputChange}
+            value={hobbies}
           />
         </div>
 
         <div className="flex">
           <p className="">Family Size</p>
-          <input name="familySize"
+          <input
+            name="familySize"
             className="border rounded-[10px] border-black/0.12 h-[68px] w-[68px] ml-[206px] px-1"
             type="text"
             maxLength={5}
-            onChange = {handleInputChange}
-            value = {familySize}
+            onChange={handleInputChange}
+            value={familySize}
           />
           <p className="ml-5 py-2">Member(s)</p>
         </div>
 
         <div className="flex justify-between space-x-12">
           <p>Gender</p>
-          <select className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4"   value={gender} onChange={handleInputChange}>
+          <select
+            className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4"
+            value={gender}
+            onChange={handleInputChange}
+          >
             <option value="1">Male</option>
             <option value="2">Female</option>
           </select>
@@ -154,39 +170,43 @@ export default function EditProfile() {
 
         <div className="flex justify-between space-x-12">
           <p>Birth Date</p>
-          <input name="birthDate"
+          <input
+            name="birthDate"
             className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4"
             placeholder="MM/ DD/ YY"
-            onChange = {handleInputChange}
+            onChange={handleInputChange}
             value={birthDate}
           />
         </div>
 
         <div className="flex justify-between space-x-12">
           <p>Email</p>
-          <input name="email"
+          <input
+            name="email"
             className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4"
             placeholder="name@gmail.com"
             type="email"
             value={email}
-            onChange = {handleInputChange}
+            onChange={handleInputChange}
           />
         </div>
 
         <div className="flex justify-between space-x-12">
           <p>Phone Number</p>
-          <input name="phoneNumber"
+          <input
+            name="phoneNumber"
             className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4"
             type="tel"
             maxLength={15}
-            onChange = {handleInputChange}
-            value = {phoneNumber}
+            onChange={handleInputChange}
+            value={phoneNumber}
           />
         </div>
 
         <div className="flex justify-between space-x-12">
           <p>Upload ID</p>
-          <input name="uploadId"
+          <input
+            name="uploadId"
             className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4 placeholder:center"
             type="file"
             onChange={(event) => {
@@ -202,29 +222,49 @@ export default function EditProfile() {
 
           <div className="flex justify-between space-x-12">
             <p>Password</p>
-            <input name="password"
+            <input
+              name="password"
               className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4"
               type="password"
-              value = {newPass}
-              onChange = {(e)=>setNewPass(e.target.value)}
+              value={newPass}
+              onChange={(e) => setNewPass(e.target.value)}
             />
           </div>
 
           <div className="flex justify-between space-x-12">
             <p>Confirm Password</p>
-            <input name="confirmPassword"
+            <input
+              name="confirmPassword"
               className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4"
               type="password"
               maxLength={15}
-              value = {confirmPass}
-              onChange = {(e)=>setConfirmPass(e.target.value)}
+              value={confirmPass}
+              onChange={(e) => setConfirmPass(e.target.value)}
             />
           </div>
         </div>
         <div className="flex justify-between text-[12px] pt-7">
-          <Button className="w-1/4" value="save Changes" onClick={()=>{handleSubmit(changes)}}/>
-          <Button className="w-1/4" value="DELETE ACCOUNT" onClick={()=>{deleteAccount()}}/>
-          <Button className="w-1/4" value="cancel" onClick={()=>{revert()}}/>
+          <Button
+            className="w-1/4"
+            value="save Changes"
+            onClick={() => {
+              handleSubmit(changes);
+            }}
+          />
+          <Button
+            className="w-1/4"
+            value="DELETE ACCOUNT"
+            onClick={() => {
+              deleteAccount();
+            }}
+          />
+          <Button
+            className="w-1/4"
+            value="cancel"
+            onClick={() => {
+              revert();
+            }}
+          />
         </div>
       </div>
     </div>

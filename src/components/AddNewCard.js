@@ -15,7 +15,6 @@ export default function AddNewCard() {
         registration info.
       </p>
 
-
       <div className="text-card-text md:flex lg:flex sm:pt-4 md:pt-8 lg:pt-8 text-[12px] md:text-[18px] lg:text-[24px] md:mx-5 lg:place-content-between">
         {/* Left side */}
         <div className="pt-4 flex flex-col md:mr-10">
@@ -24,19 +23,16 @@ export default function AddNewCard() {
             <button
               type="button"
               className="border rounded-l-sm border-button-blue text-button-blue sm:w-[65px] md:w-[125px] lg:w-[155px] hover:bg-button-blue hover:text-white"
-
             >
               Visa
             </button>
             <button
               type="button"
-
               className="border rounded-r-sm border-button-blue text-button-blue sm:w-[85px] md:w-[125px] lg:w-[155px] hover:bg-button-blue hover:text-white"
             >
               Mastercard
             </button>
           </div>
-
 
           <div className="pt-5">
             <p className="">Card Number</p>

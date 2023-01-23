@@ -6,19 +6,15 @@ import { useUserAuth } from '../AuthContext';
 import { auth } from '../firebase';
 import Logo from '../images/Logo.svg';
 
-
-  
-  function Navbar() {
-
-    const [user] = useAuthState(auth);
-
+function Navbar() {
+  const [user] = useAuthState(auth);
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const { logOut,userData } = useUserAuth();
-  
-  const isTherapist = userData?.isTherapist
- 
+  const { logOut, userData } = useUserAuth();
+
+  const isTherapist = userData?.isTherapist;
+
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
@@ -60,9 +56,7 @@ import Logo from '../images/Logo.svg';
       </div>
 
       <div
-
         className={`pr-8 text-xl focus:text-light-yellow underline-offset-2 transition-colors lg:flex lg:flex-row lg:items-center ${
-
           isOpen ? 'block' : 'hidden'
         } flex flex-col`}
       >
@@ -141,9 +135,7 @@ import Logo from '../images/Logo.svg';
             <Menu.Button
               id="dropdownUserAvatarButton"
               data-dropdown-toggle="dropdownAvatar"
-
               className="flex mx-3 text-sm md:mr-0 focus:ring-4 w-8 h-8  bg-gray-800 rounded-full focus:ring-gray-300 dark:focus:ring-gray-600"
-
               type="button"
             >
               <span className="sr-only">Open user menu</span>
@@ -155,7 +147,7 @@ import Logo from '../images/Logo.svg';
                 />
               ) : (
                 <span className="text-white m-auto text-center">
-                  {user.displayName.charAt(0).toUpperCase()}
+                  {user.displayName && user.displayName.charAt(0).toUpperCase()}
                 </span>
               )}
             </Menu.Button>
@@ -165,22 +157,20 @@ import Logo from '../images/Logo.svg';
                 className="z-10 bg-white divide-y divide-gray-100 rounded shadow w-44"
               >
                 <Menu.Item>
-
                   <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
                     <div>{user.displayName}</div>
-
                   </div>
                 </Menu.Item>
                 <ul className="py-1 text-sm text-gray-700">
-                <Link to={isTherapist ? 'TherapistProfile' : '/EditProfile'}>
-                  <Menu.Item>
+                  <Link to={isTherapist ? 'TherapistProfile' : '/EditProfile'}>
+                    <Menu.Item>
                       <li>
                         <p className="block px-4 py-2 hover:bg-gray-100">
                           Edit Profile
                         </p>
                       </li>
-                  </Menu.Item>
-                </Link>
+                    </Menu.Item>
+                  </Link>
                 </ul>
                 <Menu.Item>
                   <div className="py-1">

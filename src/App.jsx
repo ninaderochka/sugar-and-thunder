@@ -40,11 +40,9 @@ import TherapistCreate from './components/TherapistCreate';
 import ThankUCard from './components/ThankUCard';
 import ThankUSub from './components/ThankUSub';
 
-
 function App() {
   return (
     <div className="App">
-
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

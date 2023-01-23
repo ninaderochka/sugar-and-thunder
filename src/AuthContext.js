@@ -2,7 +2,6 @@ import { createContext, useContext, useMemo, useState, useEffect } from 'react';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-
   GoogleAuthProvider,
   FacebookAuthProvider,
   signInWithPopup,
@@ -10,23 +9,26 @@ import {
 } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { updateProfile, onAuthStateChanged, deleteUser } from '@firebase/auth';
-import { getDocs, doc, updateDoc, collection, where, query, deleteDoc } from 'firebase/firestore';
-import {  db, auth } from './firebase';
+import {
+  getDocs,
+  doc,
+  updateDoc,
+  collection,
+  where,
+  query,
+  deleteDoc,
+} from 'firebase/firestore';
+import { db, auth } from './firebase';
 
 const userAuthContext = createContext();
 const googleProvider = new GoogleAuthProvider();
 const fbProvider = new FacebookAuthProvider();
 
 export function UserAuthContextProvider({ children }) {
-  
-  
- 
   const navigate = useNavigate();
-  
-  const [user,setUser] = useState({});
-  const [userInfo,setUserInfo] = useState();
 
-  
+  const [user, setUser] = useState({});
+  const [userInfo, setUserInfo] = useState();
 
   async function logIn(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
@@ -49,11 +51,11 @@ export function UserAuthContextProvider({ children }) {
   const fbLogin = async () => {
     try {
       const result = await signInWithPopup(auth, fbProvider);
-      
+
       const credentials = await FacebookAuthProvider.credentialFromResult(
         result
       );
-      
+
       const token = credentials.accessToken;
       const photoUrl = `${result.user.photoURL}?&access_token=${token}`;
       await updateProfile(auth.currentUser, { photoURL: photoUrl });
@@ -68,10 +70,8 @@ export function UserAuthContextProvider({ children }) {
     return signOut(auth);
   }
 
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
-      
       setUser(currentuser);
     });
 
@@ -80,7 +80,6 @@ export function UserAuthContextProvider({ children }) {
     };
   }, []);
 
-  
   const getUserInfo = async (user) => {
     if (user.uid) {
       const id = user.uid;
@@ -92,8 +91,7 @@ export function UserAuthContextProvider({ children }) {
     }
   };
 
-  const updateUser = async ( changesObj) => {
-    
+  const updateUser = async (changesObj) => {
     const { docId } = userInfo;
     const { displayName, email } = changesObj;
 
@@ -109,35 +107,43 @@ export function UserAuthContextProvider({ children }) {
   };
 
   const updatePassword = async (pass) => {
-    try{
-      await updateProfile(auth.currentUser, pass)
+    try {
+      await updateProfile(auth.currentUser, pass);
+    } catch (err) {
+      console.log(err);
     }
-    catch(err){
-      console.log(err)
-    } 
-  }
+  };
 
-  const deleteAccount = async() => {
-    try{
-      await deleteUser(auth.currentUser)
-      await deleteDoc(doc(db, "users", userInfo.docId));
+  const deleteAccount = async () => {
+    try {
+      await deleteUser(auth.currentUser);
+      await deleteDoc(doc(db, 'users', userInfo.docId));
       setUserInfo();
-      navigate("/")
+      navigate('/');
+    } catch (err) {
+      console.log(err);
     }
-    catch(err){
-      console.log(err)
-    }
-  }
-    
-    useEffect(()=>{
-      if(auth.currentUser){
-        getUserInfo(auth.currentUser)
-      }
+  };
 
-    },[auth.currentUser])
-    
+  useEffect(() => {
+    if (auth.currentUser) {
+      getUserInfo(auth.currentUser);
+    }
+  }, [auth.currentUser]);
+
   const methods = useMemo(
-    () => ({ loggedInUser: user,userData:userInfo, updatePassword, deleteAccount, logIn, signUp, logOut, googleLogin, fbLogin,updateUser}),
+    () => ({
+      loggedInUser: user,
+      userData: userInfo,
+      updatePassword,
+      deleteAccount,
+      logIn,
+      signUp,
+      logOut,
+      googleLogin,
+      fbLogin,
+      updateUser,
+    }),
     [userInfo]
   );
 
@@ -152,4 +158,4 @@ export function useUserAuth() {
   return useContext(userAuthContext);
 }
 
-// 
+//

@@ -12,5 +12,3 @@ test('renders the component', () => {
   const heading = getByText(/WE ARE HEALING, NICE TO MEET YOU!/i);
   expect(heading).toBeDefined();
 });
-
-

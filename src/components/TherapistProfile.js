@@ -1,9 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useUserAuth } from '../AuthContext';
 import ProfileBig from '../images/ProfileBig.png';
 import SmallProfile from '../images/SmallProfile.png';
+import Button from './Button';
+
 
 function TherapistProfile() {
+const {userData,updateUser,deleteAccount} = useUserAuth()
+const navigate = useNavigate()
+
+const [changes,setChanges] = useState({
+  displayName: "",
+  email: "",
+  phoneNumber: "",
+  bio: "",
+  birthDate: "",
+});
+
+const { displayName, email, phoneNumber, bio, birthDate} = changes
+
+const handleInputChange = (e) => {
+  setChanges((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+};
+
+const handleSubmit = async () => {
+  await updateUser(changes);
+  
+  navigate("/")
+  // eslint-disable-next-line
+  console.log('user UPDATED');
+};
+
+const revert = () => {
+setChanges(userData);
+}
+
+
+useEffect(() => {
+  if (userData) {
+    setChanges(userData);
+  }
+}, [userData]);
+
   return (
+  <div className='grid justify-center'>
     <div className="flex flex-col items-center lg:flex-row lg:items-start lg:mt-20 lg:mb-16  md:flex-row md:items-start sm:flex-row sm:items-start  md:mt-10 md:ml-4">
       <div className="w-2/5">
         <div className="relative flex justify-center">
@@ -30,7 +71,7 @@ function TherapistProfile() {
           <div className="flex w-[200px] xl:w-1/4 items-center">
             <p className="xl:text-2xl md:text-xl font-normal">Full Name</p>
           </div>
-          <input className="border border-[#0000001F] rounded-lg shadow-ts h-8 md:h-12 w-[480px]" />
+          <input value={displayName} onChange = {handleInputChange} name="displayName" className="border border-[#0000001F] rounded-lg shadow-ts h-8 md:h-12 w-[480px]" />
         </div>
 
         <div className="flex mb-4">
@@ -38,32 +79,38 @@ function TherapistProfile() {
             <p className="xl:text-2xl md:text-xl items-center font-normal">
               Bio
             </p>
-          </div>
-          <input className="border border-[#0000001F] rounded-lg shadow-ts h-64 w-[480px] " />
+          </div> 
+          <input value={bio} onChange = {handleInputChange} name="bio" className="border border-[#0000001F] rounded-lg shadow-ts h-64 w-[480px] " />
         </div>
 
         <div className="flex mb-4">
           <div className="flex w-[200px] xl:w-1/4   items-center">
             <p className="xl:text-2xl md:text-xl">Birth Date</p>
           </div>
-          <input className="border border-[#0000001F] rounded-lg shadow-ts h-8 md:h-12 w-[480px]" />
+          <input value={birthDate} onChange = {handleInputChange} name="birthDay" className="border border-[#0000001F] rounded-lg shadow-ts h-8 md:h-12 w-[480px]" />
         </div>
 
         <div className="flex mb-4">
           <div className="flex w-[200px] xl:w-1/4   items-center">
             <p className="xl:text-2xl md:text-xl">Email</p>
           </div>
-          <input className="border border-[#0000001F] rounded-lg shadow-ts h-8 md:h-12 w-[480px]" />
+          <input value={email} onChange = {handleInputChange} name="email" className="border border-[#0000001F] rounded-lg shadow-ts h-8 md:h-12 w-[480px]" />
         </div>
 
         <div className="flex mb-4">
           <div className="flex w-[200px] xl:w-1/4  items-center">
             <p className="text-md md:text-2xl">Phone Number</p>
           </div>
-          <input className="border border-[#0000001F] rounded-lg shadow-ts h-8 md:h-12 w-[480px]" />
+          <input value={phoneNumber} onChange = {handleInputChange} name="phoneNumber" className="border border-[#0000001F] rounded-lg shadow-ts h-8 md:h-12 w-[480px]" />
         </div>
       </div>
     </div>
+    <div className="flex text-[12px] pt-7 gap-6 mb-20 ">
+        <Button className="w-1/4" value="save Changes" onClick={()=>{handleSubmit(changes)}}/>
+        <Button className="w-1/4" value="DELETE ACCOUNT" onClick={()=>{deleteAccount()}}/>
+        <Button className="w-1/4" value="cancel" onClick={()=>{revert()}}/>
+    </div>
+  </div>
   );
 }
 

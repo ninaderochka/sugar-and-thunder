@@ -63,24 +63,25 @@ function Signup() {
 
   const { signUp, googleLogin, fbLogin } = useUserAuth();
 
-
   const Register = async () => {
     try {
       const userCredential = await signUp(email, password);
 
       const { user } = userCredential;
-      await updateProfile(auth.currentUser,{displayName: `${firstName} ${lastName}`})
+      await updateProfile(auth.currentUser, {
+        displayName: `${firstName} ${lastName}`,
+      });
       await addDoc(collection(db, 'users'), {
         uid: user.uid,
         email: user.email,
         displayName: `${firstName} ${lastName}`,
         birthDate: `${Day}/${Month}/${Year}`,
         isTherapist: false,
-        educationLevel: "",
-        hobbies: "",
-        familySize: "",
-        gender: "",
-        uploadId: "",
+        educationLevel: '',
+        hobbies: '',
+        familySize: '',
+        gender: '',
+        uploadId: '',
       });
       // return true;
     } catch (error) {
