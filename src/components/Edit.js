@@ -93,9 +93,8 @@ export default function EditProfile() {
 
           <div className="flex justify-between ">
             <p>Birth Date</p>
-            <div className="flex border border-black/0.12 rounded-md shadow-lg shadow-shadowbox bg-white w-[20rem] h-[2.5rem]">
-              <input className="" type="date" placeholder="" />
-              {/* <HiOutlineCalendar /> */}
+            <div className="flex py-2 pr-4 border border-black/0.12 rounded-md shadow-lg shadow-shadowbox bg-white w-[20rem] h-[2.5rem]">
+              <input type="date" />
             </div>
           </div>
 
@@ -118,9 +117,9 @@ export default function EditProfile() {
 
           <div className="flex justify-between">
             <p>Upload ID</p>
-            <div className="flex border border-black/0.12 rounded-md shadow-lg shadow-shadowbox bg-white w-[20rem] h-[2.5rem]">
-              <input className="" type="file" />
-              <HiPlus />
+            <div className="flex relative items-center justify-end py-2 pr-4 border border-black/0.12 rounded-md shadow-lg shadow-shadowbox bg-white w-[20rem] h-[2.5rem]">
+              <input className="w-full hidden" type="file" />
+              <HiPlus aria-hidden="true" className="absolute" />
             </div>
           </div>
 
@@ -133,16 +132,16 @@ export default function EditProfile() {
 
           <div className="flex justify-between">
             <p>Password</p>
-            <div className="flex border border-black/0.12 rounded-md shadow-lg shadow-shadowbox bg-white w-[20rem] h-[2.5rem]">
-              <input className="" type="password" maxLength={15} />
+            <div className="flex justify-between py-2 pr-4  border border-black/0.12 rounded-md shadow-lg shadow-shadowbox bg-white w-[20rem] h-[2.5rem]">
+              <input type="password" maxLength={15} />
               <HiOutlineLockClosed />
             </div>
           </div>
 
           <div className="flex justify-between">
             <p>Confirm Password</p>
-            <div className="flex border border-black/0.12 rounded-md shadow-lg shadow-shadowbox bg-white w-[20rem] h-[2.5rem]">
-              <input className="" type="password" maxLength={15} />
+            <div className="flex justify-between py-2 pr-4 border border-black/0.12 rounded-md shadow-lg shadow-shadowbox bg-white w-[20rem] h-[2.5rem]">
+              <input type="password" maxLength={15} />
               <HiOutlineLockClosed />
             </div>
           </div>
