@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../firebase';
+import { updateProfile } from '@firebase/auth';
+import { db, auth } from '../firebase';
 import SignupImage from '../images/SignupImage.svg';
 import facebook from '../images/Facebook.svg';
 import gmail from '../images/Google.svg';
@@ -20,7 +21,7 @@ function Signup() {
     birthDate: ['', '', ''],
   });
   // eslint-disable-next-line
-  console.log(userDetails);
+
   const {
     firstName,
     lastName,
@@ -67,12 +68,20 @@ function Signup() {
       const userCredential = await signUp(email, password);
 
       const { user } = userCredential;
+      await updateProfile(auth.currentUser, {
+        displayName: `${firstName} ${lastName}`,
+      });
       await addDoc(collection(db, 'users'), {
         uid: user.uid,
         email: user.email,
         displayName: `${firstName} ${lastName}`,
         birthDate: `${Day}/${Month}/${Year}`,
         isTherapist: false,
+        educationLevel: '',
+        hobbies: '',
+        familySize: '',
+        gender: '',
+        uploadId: '',
       });
       // return true;
     } catch (error) {

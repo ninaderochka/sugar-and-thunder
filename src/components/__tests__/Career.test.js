@@ -20,4 +20,3 @@ test('renders Career component', () => {
   const jobListingElement = getByText(/SEE OUR OPEN LIST/i);
   expect(jobListingElement).toBeTruthy();
 });
-

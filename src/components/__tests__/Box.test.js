@@ -11,5 +11,3 @@ test('Box component renders correctly', () => {
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
-
-
