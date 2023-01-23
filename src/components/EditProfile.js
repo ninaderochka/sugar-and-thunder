@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import icone1 from '../images/icone1.png';
 import icone2 from '../images/icone2.png';
 import Button from './Button';
 
 export default function EditProfile() {
+
+  const [selectedImage, setSelectedImage] = useState(null);
+
+
+  function handleChange(e) {
+ 
+    setSelectedImage(URL.createObjectURL(e.target.files[0]));
+}
+  
+
   return (
-    <div className="flex md:pl-2 md:pt-4 lg:pl-24 lg:pt-12 font-poppins">
+    <div className="flex md:pl-2 md:pt-4 lg:pl-24 lg:pt-12 font-poppins mb-20">
       <div className="">
         <div className="relative flex justify-center">
           <div className="absolute -bottom-2 lg:-bottom-4 bg-white z-0 rounded-full border-2 border-black  w-12 h-12 md:w-16 md:h-16 flex justify-center items-center">
-            <img className="w-8 h-8 md:h-12 md:w-12" alt="" src={icone2} />
+            <button type="button" aria-label="add image" onClick={handleChange}><img className="w-8 h-8 md:h-12 md:w-12" alt="" src={icone2} /></button>
           </div>
-          <img className="h-44 w-40 md:h-64 md:w-60" alt="" src={icone1} />
+          <img className="h-44 w-40 md:h-64 md:w-60" alt="" src={(!selectedImage ? icone1 : selectedImage)} />
         </div>
       </div>
 
@@ -94,9 +104,12 @@ export default function EditProfile() {
         <div className="flex justify-between space-x-12">
           <p>Upload ID</p>
           <input
-            className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4"
+            className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4 placeholder:center"
             type="file"
-            placeholder="choose file"
+            onChange={(event) => {
+              setSelectedImage(event.target.files[0]);
+            }}
+            placeholder={selectedImage ? "Choose file" : "Upload Image"}
           />
         </div>
 
@@ -122,7 +135,7 @@ export default function EditProfile() {
             />
           </div>
         </div>
-        <div className="flex justify-between text-[12px] ">
+        <div className="flex justify-between text-[12px] pt-7">
           <Button className="w-1/4" value="save Changes" />
           <Button className="w-1/4" value="DELETE ACCOUNT" />
           <Button className="w-1/4" value="cancel" />
