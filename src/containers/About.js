@@ -10,29 +10,31 @@ export default function About() {
         <div className="py-[2rem]">
           <h1 className="text-xl sm:text-2xl md:text-5xl"> {t('Healing')}</h1>
           <h5 className="text-shadow-grey text-sm md:text-2xl sm:text-xl font-light">
-          {t('healingSub')}
+            {t('healingSub')}
           </h5>
         </div>
         <p className="font-normal text-xs md:text-xl sm:text-xl text-poppins mt-4 w-4/5">
-        {t('healingBody')}
+          {t('healingBody')}
         </p>
       </div>
 
       <div className="bg-light-blue text-poppins p-16">
-        <div className='w-4/5 flex m-auto space-x-12 center'>
+        <div className="w-4/5 flex m-auto space-x-12 center">
+          <div className="w-full">
+            <img src={imagee} alt="#" className="w-full rounded scale-125" />
+          </div>
 
-        <div className="w-full">
-          <img src={imagee} alt="#" className="w-full rounded scale-125" />
-        </div>
-
-        <div className="m-auto">
-          <h2 className="text-xl sm:text-5xl font-normal mb-2"> {t('founding')}</h2>
-          <p className="font-normal text-xs sm:text-xl  w-fit">
-          {t('foundingBody')}
-          </p>
+          <div className="m-auto">
+            <h2 className="text-xl sm:text-5xl font-normal mb-2">
+              {' '}
+              {t('founding')}
+            </h2>
+            <p className="font-normal text-xs sm:text-xl  w-fit">
+              {t('foundingBody')}
+            </p>
+          </div>
         </div>
       </div>
-        </div>
     </div>
   );
 }

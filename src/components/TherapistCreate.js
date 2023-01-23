@@ -35,22 +35,8 @@ function TherapistCreate() {
   }) => {
     try {
       const therapist = await signUp(email, password);
-      //   await setDoc(doc(db, "therapistCreate", `${therapist.user.uid}`), {
-      //      userId: `${therapist.user.uid}`,
-      //      fullname: " ",
-      //      bio: " ",
-      //      birthdate: " ",
-      //      phonenumber: 0,
-      //      email,
-      //      isTherapist: true,
-      //      photoUrl: "",
-      //     displayName,
-      //     city,
-      //     licensenumber
-      //  });
-      await updateProfile(auth.currentUser, { displayName });
-
       const { user } = therapist;
+      await updateProfile(auth.currentUser, { displayName });
       await addDoc(collection(db, 'users'), {
         uid: user.uid,
         fullname: ' ',
@@ -64,7 +50,7 @@ function TherapistCreate() {
         city,
         licensenumber,
       });
-      // console.log("Document written with ID: ", docRef.id);
+      
     } catch (e) {
       // eslint-disable-next-line
       console.error('Error adding document: ', e);

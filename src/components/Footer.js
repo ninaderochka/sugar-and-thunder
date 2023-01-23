@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="w-full md:w-1/2 md:text-left mb-6 md:mb-0">
           <h4 className="text-4xl mb-2">{t('Subscribe')}</h4>
           <p className="text-2xl mb-4 text-footer-gray font-light">
-          {t('subscribeSub')}
+            {t('subscribeSub')}
           </p>
           <div className="flex flex-col">
             <form className="mb-4 flex content-end">
@@ -41,7 +41,7 @@ const Footer = () => {
               // href="#"
               className="px-7 py-1 font-light text-2xl rounded-md text-footer-gray"
             >
-               {t('Home')}
+              {t('Home')}
             </Link>
             <Link
               to="/Blog"
@@ -49,7 +49,7 @@ const Footer = () => {
               // href="#"
               className="px-7 py-1 font-light text-2xl rounded-md text-footer-gray"
             >
-               {t('Blogs')}
+              {t('Blogs')}
             </Link>
             <Link
               to="/About"

@@ -31,18 +31,18 @@ function RecentBlog() {
   return (
     <div className="bg-light-blue h-full md:h-screen">
       <h1 className="text-5xl leading-10 uppercase pt-16 pb-24 pl-28 font-poppins">
-      {t('Recent_blogs')}
+        {t('Recent_blogs')}
       </h1>
 
       <div className="px-28 my-auto">
         <Carousel responsive={responsive}>
           <Link to="/Blog">
-          <div className="relative">
-            <h1 className="absolute text-white pt-3 pl-6 w-44 uppercase">
-              Mental Health and Technology{' '}
-            </h1>
-            <img src={Rectangle40} alt="" />
-          </div>
+            <div className="relative">
+              <h1 className="absolute text-white pt-3 pl-6 w-44 uppercase">
+                Mental Health and Technology{' '}
+              </h1>
+              <img src={Rectangle40} alt="" />
+            </div>
           </Link>
           <Link to="/BlogNd">
             <div>
@@ -70,22 +70,22 @@ function RecentBlog() {
             </div>
           </Link>
           <Link to="/BlogNd">
-          <div>
-            <img src={Rectangle41} alt="" />
-            <div
-              className="absolute text-white bottom-12 m-8 bg-text-background uppercase text-2xl 
+            <div>
+              <img src={Rectangle41} alt="" />
+              <div
+                className="absolute text-white bottom-12 m-8 bg-text-background uppercase text-2xl 
         bg-opacity-50 leading-7 text-center align-middle	"
-            >
-              Heal from
-            </div>
-            <div
-              className="absolute text-white bottom-4  m-8  bg-text-background uppercase  text-2xl
+              >
+                Heal from
+              </div>
+              <div
+                className="absolute text-white bottom-4  m-8  bg-text-background uppercase  text-2xl
          font-normal bg-opacity-50 inline-block align-middle	leading-7"
-            >
-              trauma{' '}
+              >
+                trauma{' '}
+              </div>
             </div>
-          </div>
-             </Link>
+          </Link>
         </Carousel>
       </div>
     </div>

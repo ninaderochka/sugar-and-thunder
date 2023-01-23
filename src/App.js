@@ -20,6 +20,7 @@ import AboutTeam from './components/AboutTeam';
 import Career from './components/Career';
 import ByTicket from './components/ByTicket';
 import ThankUCard from './components/ThankUCard';
+import Booking from './containers/Booking';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/ByTicket" element={<ByTicket />} />
           <Route path="/ThankUCard" element={<ThankUCard />} />
           <Route path="/TherapistProfile" element={<TherapistProfile />} />
+          <Route path="/Booking" element={<Booking />} />
         </Routes>
       </UserAuthContextProvider>
       <Footer />
