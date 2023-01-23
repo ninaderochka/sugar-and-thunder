@@ -1,8 +1,9 @@
  
  
- import React, { useState } from 'react';
+ import React, { useState, useEffect } from 'react';
  import { Link, useNavigate } from 'react-router-dom';
  import { useAuthState } from 'react-firebase-hooks/auth';
+import i18next from 'i18next';
  import { Menu } from '@headlessui/react';
  import { useUserAuth } from '../AuthContext';
  import { auth } from '../firebase';
@@ -29,8 +30,25 @@
        console.log(error.message);
      }
    };
- 
 
+
+ const languages = [
+  { value: 'en', text: 'EN' },
+  { value: 'ar', text: 'AR' },
+  { value: 'ckb', text: 'CKB' },
+  { value: 'tr', text: 'TR' },
+];
+
+ const [lang, setLang] = useState('en');
+
+ useEffect(() => {
+    i18next.changeLanguage(lang);
+  }, [lang]);
+
+  const handleChange = (e) => {
+    setLang(e.target.value);
+  };
+ 
  return (
     <>
       <nav
@@ -223,9 +241,18 @@
               </div>
             </Menu>
           )}
+          <select className="rounded-lg text-center inline-flex items-center ml-5" value={lang} onChange={handleChange}>
+          {languages.map((item) => {
+            return (
+              <option key={item.value} value={item.value}>
+                {item.text}
+              </option>
+            );
+          })}
+        </select>
         </div>
         )}
-      </nav>
+ </nav>
       {isOpen ? (
         <div>
           <div
