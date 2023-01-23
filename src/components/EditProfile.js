@@ -4,24 +4,31 @@ import icone2 from '../images/icone2.png';
 import Button from './Button';
 
 export default function EditProfile() {
-
   const [selectedImage, setSelectedImage] = useState(null);
 
-
   function handleChange(e) {
- 
     setSelectedImage(URL.createObjectURL(e.target.files[0]));
-}
-  
+  }
 
   return (
     <div className="flex md:pl-2 md:pt-4 lg:pl-24 lg:pt-12 font-poppins mb-20">
       <div className="">
         <div className="relative flex justify-center">
           <div className="absolute -bottom-2 lg:-bottom-4 bg-white z-0 rounded-full border-2 border-black  w-12 h-12 md:w-16 md:h-16 flex justify-center items-center">
-            <button type="button" aria-label="add image" onClick={handleChange}><img className="w-8 h-8 md:h-12 md:w-12" alt="" src={icone2} /></button>
+            <label htmlFor="img">
+          <input type='file'  src={icone2} onChange={handleChange} className="invisible hidden" id='img'/>
+            <img
+              className="w-8 h-8 md:h-12 md:w-12"
+              src={icone2}
+              alt="icone2"
+            />
+            </label>
           </div>
-          <img className="h-44 w-40 md:h-64 md:w-60" alt="" src={(!selectedImage ? icone1 : selectedImage)} />
+          <img
+            className="h-44 w-40 md:h-64 md:w-60 rounded-full"
+            alt=""
+            src={!selectedImage ? icone1 : selectedImage}
+          />
         </div>
       </div>
 
@@ -109,7 +116,7 @@ export default function EditProfile() {
             onChange={(event) => {
               setSelectedImage(event.target.files[0]);
             }}
-            placeholder={selectedImage ? "Choose file" : "Upload Image"}
+            placeholder={selectedImage ? 'Choose file' : 'Upload Image'}
           />
         </div>
 
