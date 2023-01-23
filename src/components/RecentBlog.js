@@ -32,15 +32,17 @@ function RecentBlog() {
         Recent BLOGs
       </h1>
 
-      <div className="px-36 my-auto">
+      <div className="px-28 my-auto">
         <Carousel responsive={responsive}>
+          <Link to="/Blog">
           <div className="relative">
             <h1 className="absolute text-white pt-3 pl-6 w-44 uppercase">
               Mental Health and Technology{' '}
             </h1>
             <img src={Rectangle40} alt="" />
           </div>
-          <Link to="/Blog">
+          </Link>
+          <Link to="/BlogNd">
             <div>
               <img src={Rectangle41} alt="" />
               <div
@@ -65,6 +67,7 @@ function RecentBlog() {
               <img src={Rectangle40} alt="" />
             </div>
           </Link>
+          <Link to="/BlogNd">
           <div>
             <img src={Rectangle41} alt="" />
             <div
@@ -80,6 +83,7 @@ function RecentBlog() {
               trauma{' '}
             </div>
           </div>
+             </Link>
         </Carousel>
       </div>
     </div>
