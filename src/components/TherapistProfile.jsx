@@ -1,24 +1,39 @@
-import React from 'react';
+import React,{useState} from 'react';
 import ProfileBig from '../images/ProfileBig.png';
 import SmallProfile from '../images/SmallProfile.png';
 
+
 function TherapistProfile() {
+  const [file, setFile] = useState();
+  function handleChange(e) {
+      console.log(e.target.files);
+      setFile(URL.createObjectURL(e.target.files[0]));
+  }
+
+
   return (
     <div className="flex flex-col items-center lg:flex-row lg:items-start lg:mt-20 lg:mb-16  md:flex-row md:items-start sm:flex-row sm:items-start  md:mt-10 md:ml-4">
       <div className="w-2/5">
         <div className="relative flex justify-center">
           <div className="absolute -bottom-2 lg:-bottom-4 bg-white z-0 rounded-full border-2 border-black  w-12 h-12 md:w-16 md:h-16 flex justify-center items-center">
+            <input type='file'  src={SmallProfile} onChange={handleChange} className="invisible hidden" id='img'/>
+            <label htmlFor="img">
             <img
               className="w-8 h-8 md:h-12 md:w-12"
               src={SmallProfile}
               alt="profilesmall"
             />
+            </label>
           </div>
-          <img
-            className="h-44 w-40 md:h-64 md:w-60"
-            src={ProfileBig}
+
+          <img 
+            className="h-44 w-40 md:h-64 md:w-60 rounded-full"
+            src={!file ? ProfileBig : file}
             alt="profilebig"
           />
+
+        
+          
         </div>
       </div>
       <div className="w-4/5 sm:w-3/5 mr-0 sm:mr-8 xl:mr-0 ">
