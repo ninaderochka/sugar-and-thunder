@@ -14,7 +14,7 @@ test('renders the component', () => {
   expect(title).toBeDefined();
 
   const labels = ['Full Name', 'Bio', 'Birth Date', 'Email', 'Phone Number'];
-  labels.forEach(label => {
+  labels.forEach((label) => {
     const element = getByText(label);
     expect(element).toBeDefined();
   });

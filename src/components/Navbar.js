@@ -8,7 +8,6 @@ import Logo from '../images/Logo.svg';
 
 
 
-
   
   function Navbar() {
 

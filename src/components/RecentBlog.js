@@ -66,20 +66,20 @@ function RecentBlog() {
             </div>
           </Link>
           <div>
-              <img src={Rectangle41} alt="" />
-              <div
-                className="absolute text-white bottom-12 m-8 bg-text-background uppercase text-2xl 
+            <img src={Rectangle41} alt="" />
+            <div
+              className="absolute text-white bottom-12 m-8 bg-text-background uppercase text-2xl 
         bg-opacity-50 leading-7 text-center align-middle	"
-              >
-                Heal from
-              </div>
-              <div
-                className="absolute text-white bottom-4  m-8  bg-text-background uppercase  text-2xl
-         font-normal bg-opacity-50 inline-block align-middle	leading-7"
-              >
-                trauma{' '}
-              </div>
+            >
+              Heal from
             </div>
+            <div
+              className="absolute text-white bottom-4  m-8  bg-text-background uppercase  text-2xl
+         font-normal bg-opacity-50 inline-block align-middle	leading-7"
+            >
+              trauma{' '}
+            </div>
+          </div>
         </Carousel>
       </div>
     </div>

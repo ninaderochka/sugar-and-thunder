@@ -9,6 +9,7 @@ import Contact from './containers/Contact';
 import Signup from './containers/Signup';
 import Login from './containers/Login';
 import { UserAuthContextProvider } from './AuthContext';
+import Booking from './containers/Booking';
 import Requirements from './components/Requirements';
 import TherapistsCreate from './components/TherapistCreate';
 import ThankUTherapist from './components/ThankUTherapist';
@@ -22,7 +23,7 @@ import ThankUCard from './components/ThankUCard';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App min-h-screen flex flex-col">
       <UserAuthContextProvider>
         <Navbar />
         <Routes>
@@ -32,6 +33,7 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/Booking" element={<Booking />} />
           <Route path="/Requirements" element={<Requirements />} />
           <Route path="/TherapistCreate" element={<TherapistsCreate />} />
           <Route path="/ThankUTherapist" element={<ThankUTherapist />} />

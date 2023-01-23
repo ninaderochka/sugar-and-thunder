@@ -2,7 +2,6 @@ import { createContext, useContext, useMemo, useState, useEffect } from 'react';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-
   GoogleAuthProvider,
   FacebookAuthProvider,
   signInWithPopup,
@@ -10,20 +9,18 @@ import {
 } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import { updateProfile, onAuthStateChanged  } from '@firebase/auth';
-import {doc, getDoc } from 'firebase/firestore';
-import {  db, auth } from './firebase';
-
+import { updateProfile, onAuthStateChanged } from '@firebase/auth';
+import { doc, getDoc } from 'firebase/firestore';
+import { db, auth } from './firebase';
 
 const userAuthContext = createContext();
 const googleProvider = new GoogleAuthProvider();
 const fbProvider = new FacebookAuthProvider();
 
 export function UserAuthContextProvider({ children }) {
- 
   const navigate = useNavigate();
-  
-  const [user,setUser] = useState({});
+
+  const [user, setUser] = useState({});
 
   const [signedInUser] = useAuthState(auth);
 
@@ -68,12 +65,10 @@ export function UserAuthContextProvider({ children }) {
   async function logOut() {
     return signOut(auth);
   }
-
-  console.log(signedInUser)
+// eslint-disable-next-line
+  console.log(signedInUser);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
-      // eslint-disable-next-line
-      //   console.log("Auth", currentuser);
       setUser(currentuser);
     });
 
@@ -81,36 +76,39 @@ export function UserAuthContextProvider({ children }) {
       unsubscribe();
     };
   }, []);
-  
-  const getUserInfo = async(user) => {
 
-    const id = user.uid
-    const docRef = await doc(db, "users", id);
-    const docSnap = await getDoc(docRef)
+  const getUserInfo = async (user) => {
+    const id = user.uid;
+    const docRef = await doc(db, 'users', id);
+    const docSnap = await getDoc(docRef);
 
-      if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
-      } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-      }
-    
-  }
-   
-    // const usersCollectionRef = collection(db, "user")
-    // const getUsers = async () => {
-    // const data = await getDoc(usersCollectionRef);
-    // setUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-    // }
-    // getUsers()
-   
+    if (docSnap.exists()) {
+      // eslint-disable-next-line
+      console.log('Document data:', docSnap.data());
+    } else {
+      // doc.data() will be undefined in this case
+      // eslint-disable-next-line
+      console.log('No such document!');
+    }
+  };
 
-   
-
-
+  // const usersCollectionRef = collection(db, "user")
+  // const getUsers = async () => {
+  // const data = await getDoc(usersCollectionRef);
+  // setUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+  // }
+  // getUsers()
 
   const methods = useMemo(
-    () => ({ loggedInUser: user, logIn, signUp, logOut, googleLogin, fbLogin,getUserInfo }),
+    () => ({
+      loggedInUser: user,
+      logIn,
+      signUp,
+      logOut,
+      googleLogin,
+      fbLogin,
+      getUserInfo,
+    }),
     []
   );
   return (
@@ -124,4 +122,4 @@ export function useUserAuth() {
   return useContext(userAuthContext);
 }
 
-// 
+//
