@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <div className="text-black font-normal h-screen w-screen">
       <img
-        className=" absolute bg-center imagee -z-10"
+        className="absolute bg-center imagee -z-10 w-full"
         alt="#"
         src={background}
       />

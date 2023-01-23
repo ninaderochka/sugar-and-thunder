@@ -63,7 +63,6 @@ function TherapistCreate() {
         displayName,
         city,
         licensenumber,
-        KHALLISNE: true,
       });
       // console.log("Document written with ID: ", docRef.id);
     } catch (e) {

@@ -4,15 +4,14 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Home from './containers/Home';
 import Blog from './containers/Blog';
-import BlogNd from './containers/BlogNd';
 import About from './containers/About';
 import Contact from './containers/Contact';
 import Signup from './containers/Signup';
 import Login from './containers/Login';
 import { UserAuthContextProvider } from './AuthContext';
-import Booking from './containers/Booking';
 import Requirements from './components/Requirements';
 import TherapistsCreate from './components/TherapistCreate';
+import TherapistProfile from './components/TherapistProfile';
 import ThankUTherapist from './components/ThankUTherapist';
 import ThankUContact from './components/ThankUContact';
 import EditProfile from './components/EditProfile';
@@ -21,22 +20,19 @@ import AboutTeam from './components/AboutTeam';
 import Career from './components/Career';
 import ByTicket from './components/ByTicket';
 import ThankUCard from './components/ThankUCard';
-import TherapistProfile from './components/TherapistProfile';
 
 function App() {
   return (
-    <div className="App min-h-screen flex flex-col">
+    <div className="Ap">
       <UserAuthContextProvider>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Blog" element={<Blog />} />
-          <Route path="/BlogNd" element={<BlogNd />} />
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/Login" element={<Login />} />
-          <Route path="/Booking" element={<Booking />} />
           <Route path="/Requirements" element={<Requirements />} />
           <Route path="/TherapistCreate" element={<TherapistsCreate />} />
           <Route path="/ThankUTherapist" element={<ThankUTherapist />} />
