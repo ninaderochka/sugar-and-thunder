@@ -43,7 +43,7 @@ function App() {
           <Route path="/Career" element={<Career />} />
           <Route path="/ByTicket" element={<ByTicket />} />
           <Route path="/ThankUCard" element={<ThankUCard />} />
-          <Route path="/TherapistProfile" element={<TherapistProfile/>} />
+          <Route path="/TherapistProfile" element={<TherapistProfile />} />
         </Routes>
       </UserAuthContextProvider>
       <Footer />
