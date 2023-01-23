@@ -8,12 +8,10 @@ import {
   signInWithPopup,
   signOut,
 } from 'firebase/auth';
-// import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import { updateProfile, onAuthStateChanged  } from '@firebase/auth';
-import { getDocs, doc, updateDoc, collection, where, query } from 'firebase/firestore';
+import { updateProfile, onAuthStateChanged, deleteUser } from '@firebase/auth';
+import { getDocs, doc, updateDoc, collection, where, query, deleteDoc } from 'firebase/firestore';
 import {  db, auth } from './firebase';
-
 
 const userAuthContext = createContext();
 const googleProvider = new GoogleAuthProvider();
@@ -86,7 +84,6 @@ export function UserAuthContextProvider({ children }) {
   const getUserInfo = async (user) => {
     if (user.uid) {
       const id = user.uid;
-
       const q = query(collection(db, 'users'), where('uid', '==', id));
       const querySnapShot = await getDocs(q);
       querySnapShot.forEach((doc) => {
@@ -95,7 +92,7 @@ export function UserAuthContextProvider({ children }) {
     }
   };
 
-  const updateUser = async (userInfo, changesObj) => {
+  const updateUser = async ( changesObj) => {
     
     const { docId } = userInfo;
     const { displayName, email } = changesObj;
@@ -111,7 +108,26 @@ export function UserAuthContextProvider({ children }) {
     }
   };
 
-  
+  const updatePassword = async (pass) => {
+    try{
+      await updateProfile(auth.currentUser, pass)
+    }
+    catch(err){
+      console.log(err)
+    } 
+  }
+
+  const deleteAccount = async() => {
+    try{
+      await deleteUser(auth.currentUser)
+      await deleteDoc(doc(db, "users", userInfo.docId));
+      setUserInfo();
+      navigate("/")
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
     
     useEffect(()=>{
       if(auth.currentUser){
@@ -121,7 +137,7 @@ export function UserAuthContextProvider({ children }) {
     },[auth.currentUser])
     
   const methods = useMemo(
-    () => ({ loggedInUser: user,userData:userInfo, logIn, signUp, logOut, googleLogin, fbLogin,updateUser}),
+    () => ({ loggedInUser: user,userData:userInfo, updatePassword, deleteAccount, logIn, signUp, logOut, googleLogin, fbLogin,updateUser}),
     [userInfo]
   );
 
