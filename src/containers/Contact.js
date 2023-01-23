@@ -112,11 +112,7 @@ function Contact() {
             </label>
           </div>
           <div className="flex items-center justify-between">
-<<<<<<< HEAD
-            <Link to="/ThankUContact">
-=======
             <Link to="/ThankUContacy">
->>>>>>> main
               <button
                 className="h-16 w-56 text-2xl font-normal bg-button-blue text-black py-2 px-4 rounded-md"
                 type="button"

@@ -179,82 +179,6 @@ function TherapistCreate() {
             <h2 className=" font-normal text-2xl text-gray-500 ml-1 mb-1">
               User Name
             </h2>
-<<<<<<< HEAD
-            <div className="grid grid-col space-y-2 mb-20">
-              <label
-                htmlFor="username"
-                className="text-black opacity-50 text-lg font-normal flex flex-col"
-              >
-                User Name
-                <input
-                  type="text"
-                  id="username"
-                  className="mb-2 focus:outline-none border border-black/20 h-10 rounded-sm px-3 max-w-md"
-                />
-              </label>
-              <label
-                htmlFor="email"
-                className="text-black opacity-50 text-lg font-normal flex flex-col"
-              >
-                Email
-                <input
-                  type="text"
-                  id="email"
-                  className="mb-2 focus:outline-none border border-black/20 h-10 rounded-sm px-3 max-w-md"
-                />
-              </label>
-              <label
-                htmlFor="city"
-                className="text-black opacity-50 text-lg font-normal flex flex-col"
-              >
-                City
-                <input
-                  type="text"
-                  id="city"
-                  className="mb-2 focus:outline-none border border-black/20 h-10 rounded-sm px-3 max-w-md"
-                />
-              </label>
-              <label
-                htmlFor="licencenumber"
-                className="text-black opacity-50 text-lg font-normal flex flex-col"
-              >
-                License Number
-                <input
-                  type="text"
-                  id="licencenumber"
-                  className="mb-2 focus:outline-none border border-black/20 h-10 rounded-sm px-3 max-w-md"
-                />
-              </label>
-              <label
-                htmlFor="createpassword"
-                className="text-black opacity-50 text-lg font-normal flex flex-col"
-              >
-                Create Password
-                <input
-                  type="text"
-                  id="createpassword"
-                  className="mb-2 focus:outline-none border border-black/20 h-10 rounded-sm px-3 max-w-md"
-                />
-              </label>
-              <label
-                htmlFor="confirmpassword"
-                className="text-black opacity-50 text-lg font-normal flex flex-col"
-              >
-                Confirm Password
-                <input
-                  type="text"
-                  id="confirmpassword"
-                  className="mb-2 focus:outline-none border border-black/20 h-10 rounded-sm px-3 max-w-md"
-                />
-              </label>
-              <div className="mb-8 mt-12 flex justify-center items-center max-w-fit">
-                <Link to="/ThankUTherapist">
-                  <Button value="Create" onClick={() => {}} />
-                </Link>
-              </div>
-            </div>
-          </form>
-=======
             <input
               type="text"
               name="displayName"
@@ -345,7 +269,6 @@ function TherapistCreate() {
               <p className="text-[red]">{validation.confirmPassword}</p>
             )}
           </div>
->>>>>>> main
         </div>
         <div>
           <button

@@ -26,7 +26,7 @@ export default function Header() {
           {/* button */}
           <div className=" ml-32 py-5 mt-12">
             <Link to="/Booking">
-              <Button value="BOOK AN APPOINTMENT" />
+              <Button value={t('headerButton')} />
             </Link>
           </div>
         </div>

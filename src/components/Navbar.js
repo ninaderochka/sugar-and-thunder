@@ -45,7 +45,9 @@ import i18next from 'i18next';
     i18next.changeLanguage(lang);
   }, [lang]);
 
- 
+  const handleChange = (e) => {
+    setLang(e.target.value);
+  };
  
  return (
     <>
@@ -239,9 +241,7 @@ import i18next from 'i18next';
               </div>
             </Menu>
           )}
-        </div>
-        )}
-<select className="ml-5" value={lang} onChange={handleChange}>
+          <select className="rounded-lg text-center inline-flex items-center ml-5" value={lang} onChange={handleChange}>
           {languages.map((item) => {
             return (
               <option key={item.value} value={item.value}>
@@ -250,8 +250,9 @@ import i18next from 'i18next';
             );
           })}
         </select>
-
-      </nav>
+        </div>
+        )}
+ </nav>
       {isOpen ? (
         <div>
           <div
