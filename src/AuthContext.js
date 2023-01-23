@@ -7,10 +7,17 @@ import {
   signInWithPopup,
   signOut,
 } from 'firebase/auth';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import { updateProfile, onAuthStateChanged } from '@firebase/auth';
-import { doc, getDoc } from 'firebase/firestore';
+import { updateProfile, onAuthStateChanged, deleteUser } from '@firebase/auth';
+import {
+  getDocs,
+  doc,
+  updateDoc,
+  collection,
+  where,
+  query,
+  deleteDoc,
+} from 'firebase/firestore';
 import { db, auth } from './firebase';
 
 const userAuthContext = createContext();
@@ -21,8 +28,7 @@ export function UserAuthContextProvider({ children }) {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({});
-
-  const [signedInUser] = useAuthState(auth);
+  const [userInfo, setUserInfo] = useState();
 
   async function logIn(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
@@ -45,13 +51,11 @@ export function UserAuthContextProvider({ children }) {
   const fbLogin = async () => {
     try {
       const result = await signInWithPopup(auth, fbProvider);
-      // eslint-disable-next-line
-      console.log(result);
+
       const credentials = await FacebookAuthProvider.credentialFromResult(
         result
       );
-      // eslint-disable-next-line
-      console.log(credentials);
+
       const token = credentials.accessToken;
       const photoUrl = `${result.user.photoURL}?&access_token=${token}`;
       await updateProfile(auth.currentUser, { photoURL: photoUrl });
@@ -65,8 +69,6 @@ export function UserAuthContextProvider({ children }) {
   async function logOut() {
     return signOut(auth);
   }
-  // eslint-disable-next-line
-  console.log(signedInUser);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
       setUser(currentuser);
@@ -78,39 +80,74 @@ export function UserAuthContextProvider({ children }) {
   }, []);
 
   const getUserInfo = async (user) => {
-    const id = user.uid;
-    const docRef = await doc(db, 'users', id);
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      // eslint-disable-next-line
-      console.log('Document data:', docSnap.data());
-    } else {
-      // doc.data() will be undefined in this case
-      // eslint-disable-next-line
-      console.log('No such document!');
+    if (user.uid) {
+      const id = user.uid;
+      const q = query(collection(db, 'users'), where('uid', '==', id));
+      const querySnapShot = await getDocs(q);
+      querySnapShot.forEach((doc) => {
+        setUserInfo({ ...doc.data(), docId: doc.id });
+      });
     }
   };
 
-  // const usersCollectionRef = collection(db, "user")
-  // const getUsers = async () => {
-  // const data = await getDoc(usersCollectionRef);
-  // setUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-  // }
-  // getUsers()
+  const updateUser = async (changesObj) => {
+    const { docId } = userInfo;
+    const { displayName, email } = changesObj;
+
+    try {
+      const docRef = await doc(db, 'users', docId);
+      await updateDoc(docRef, changesObj);
+      await updateProfile(auth.currentUser, { displayName, email });
+      await getUserInfo(auth.currentUser);
+    } catch (error) {
+      // eslint-disable-next-line
+      console.log(error);
+    }
+  };
+
+  const updatePassword = async (pass) => {
+    try {
+      await updateProfile(auth.currentUser, pass);
+    } catch (err) {
+      // eslint-disable-next-line
+      console.log(err);
+    }
+  };
+
+  const deleteAccount = async () => {
+    try {
+      await deleteUser(auth.currentUser);
+      await deleteDoc(doc(db, 'users', userInfo.docId));
+      setUserInfo();
+      navigate('/');
+    } catch (err) {
+      // eslint-disable-next-line
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    if (auth.currentUser) {
+      getUserInfo(auth.currentUser);
+    }
+  }, [auth.currentUser]);
 
   const methods = useMemo(
     () => ({
       loggedInUser: user,
+      userData: userInfo,
+      updatePassword,
+      deleteAccount,
       logIn,
       signUp,
       logOut,
       googleLogin,
       fbLogin,
-      getUserInfo,
+      updateUser,
     }),
-    []
+    [userInfo]
   );
+
   return (
     <userAuthContext.Provider value={methods}>
       {children}

@@ -21,7 +21,7 @@ function Signup() {
     birthDate: ['', '', ''],
   });
   // eslint-disable-next-line
-  console.log(userDetails);
+
   const {
     firstName,
     lastName,
@@ -77,6 +77,11 @@ function Signup() {
         displayName: `${firstName} ${lastName}`,
         birthDate: `${Day}/${Month}/${Year}`,
         isTherapist: false,
+        educationLevel: '',
+        hobbies: '',
+        familySize: '',
+        gender: '',
+        uploadId: '',
       });
       // return true;
     } catch (error) {
