@@ -1,0 +1,325 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Career should match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="w-screen"
+  >
+    <div
+      class="font-poppins"
+    >
+      <div
+        class="flex flex-col justify-center items-center py-[2rem]"
+      >
+        <div
+          class="w-3/4 py-[2rem]"
+        >
+          <h1
+            class="text-xl sm:text-2xl md:text-5xl"
+          >
+            CAREERS AT HEALING!
+          </h1>
+          <h5
+            class="text-shadow-grey text-sm md:text-2xl sm:text-xl font-light"
+          >
+            Be a part of making people feel better.
+          </h5>
+        </div>
+        <p
+          class="font-normal text-xs md:text-xl sm:text-xl text-second-font w-3/4 my-28"
+        >
+          Our SEO software cuts through mountains of data to surface critical insights.We build and maintain
+          <br />
+          systems that process massive amounts of data (we're talking 36 trillion records per day and multiple
+          <br />
+          petabytes of storage.) We model transparent and empathetic marketing for the world. We educate
+          <br />
+          our community, making every effort to help them improve their skill. And we do it all by fostering a
+          <br />
+          culture that encourages accountability, empathy, and transparency
+          <br />
+        </p>
+        <p
+          class="font-normal text-xs md:text-xl sm:text-xl text-second-font w-3/4"
+        >
+          What role will you play?
+        </p>
+        <div
+          class="w-3/4 px-4 py-6"
+        >
+          <button
+            class="undefined font-poppins font-normal text-black text-2xl uppercase w-fit px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+            type="button"
+          >
+            SEE OUR OPEN LIST
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="bg-light-yellow w-screen flex flex-col items-center py-4 text-dark-gray"
+    >
+      <h1
+        class="md:text-4xl text-2xl w-3/4"
+      >
+        OUR HIRING PHILOSOPHY
+      </h1>
+      <p
+        class="w-3/4 md:text-xl text-sm"
+      >
+        To build the very best SEO tools, we need a workforce that reflects the diversity of our communities and
+        <br />
+         customers. We want Online Therapy to be a place where everyone feels welcome and engaged, bar
+        <br />
+         none. It's our mission and promise to interview a diverse and representative slate of candidates before
+        <br />
+         making an offer for our open roles.
+      </p>
+    </div>
+    <section
+      class="flex justify-center flex-col items-center"
+    >
+      <div
+        class="w-4/5 mt-10"
+      >
+        <h1
+          class="md:text-4xl text-2xl text-dark-gray"
+        >
+          CURRENT OPEN POSITIONS
+        </h1>
+        <p
+          class="text-secondary text-shadow-grey"
+        >
+          Please send us an email with the application title as the subject with an attached CV in PDF format!
+        </p>
+      </div>
+      <div
+        class="w-4/5 my-10"
+      >
+        <div
+          class="md:flex justify-between border-b  border-black my-3 "
+        >
+          <div
+            class="w-4/5 md:my-0 my-3 md:mb-2"
+          >
+            <h1
+              class="text-blue-500 md:text-2xl text-xl"
+            >
+              Senior Software Developer | Backend | Remote in the USA
+            </h1>
+            <p
+              class="text-dark-gray md:text-xl text-sm"
+            >
+              Moz is looking for a Senior Software Developer to join our Application Development team.
+            </p>
+          </div>
+          <div
+            class="w-1/6 md:my-0 my-3 md:mb-2"
+          >
+            <h1
+              class="text-blue-500 md:text-2xl text-xl"
+            >
+              Engineering
+            </h1>
+            <p
+              class="text-dark-gray md:text-xl text-sm"
+            >
+              Application Development
+            </p>
+          </div>
+        </div>
+        <div
+          class="md:flex justify-between border-b  border-black my-3 "
+        >
+          <div
+            class="w-4/5 md:my-0 my-3 md:mb-2"
+          >
+            <h1
+              class="text-blue-500 md:text-2xl text-xl"
+            >
+              Senior Software Developer | Rapid Prototyping | Remote in
+            </h1>
+            <p
+              class="text-dark-gray md:text-xl text-sm"
+            >
+              Moz is looking for a Senior Software Developer to join our Rapid Prototyping Team (RPT). This team is responsible for working closely with product managers to take ideas for new features and quickly validate their technical and business feasibility.
+            </p>
+          </div>
+          <div
+            class="w-1/6 md:my-0 my-3 md:mb-2"
+          >
+            <h1
+              class="text-blue-500 md:text-2xl text-xl"
+            >
+              Engineering
+            </h1>
+            <p
+              class="text-dark-gray md:text-xl text-sm"
+            >
+              Rapid Prototyping
+            </p>
+          </div>
+        </div>
+        <div
+          class="md:flex justify-between border-b  border-black my-3 "
+        >
+          <div
+            class="w-4/5 md:my-0 my-3 md:mb-2"
+          >
+            <h1
+              class="text-blue-500 md:text-2xl text-xl"
+            >
+              Senior Product Analyst | Remote in Canada
+            </h1>
+            <p
+              class="text-dark-gray md:text-xl text-sm"
+            >
+              Moz is looking for a Product Analyst to define our suite of product metrics.
+            </p>
+          </div>
+          <div
+            class="w-1/6 md:my-0 my-3 md:mb-2"
+          >
+            <h1
+              class="text-blue-500 md:text-2xl text-xl"
+            >
+              Engineering
+            </h1>
+            <p
+              class="text-dark-gray md:text-xl text-sm"
+            >
+              Business Intelligence
+            </p>
+          </div>
+        </div>
+        <div
+          class="md:flex justify-between border-b  border-black my-3 "
+        >
+          <div
+            class="w-4/5 md:my-0 my-3 md:mb-2"
+          >
+            <h1
+              class="text-blue-500 md:text-2xl text-xl"
+            >
+              Business Intelligence Manager | Remote in Canada
+            </h1>
+            <p
+              class="text-dark-gray md:text-xl text-sm"
+            >
+              Moz is hiring a Manager of Business Intelligence to lead our analytics and data warehousing efforts in a new phase of development.
+            </p>
+          </div>
+          <div
+            class="w-1/6 md:my-0 my-3 md:mb-2"
+          >
+            <h1
+              class="text-blue-500 md:text-2xl text-xl"
+            >
+              Engineering
+            </h1>
+            <p
+              class="text-dark-gray md:text-xl text-sm"
+            >
+              Business Intelligence
+            </p>
+          </div>
+        </div>
+        <div
+          class="md:flex justify-between border-b  border-black my-3 "
+        >
+          <div
+            class="w-4/5 md:my-0 my-3 md:mb-2"
+          >
+            <h1
+              class="text-blue-500 md:text-2xl text-xl"
+            >
+              Engineering Manager | Remote in Canada
+            </h1>
+            <p
+              class="text-dark-gray md:text-xl text-sm"
+            >
+              Moz is seeking an Engineering Manager within our Application Development team.
+            </p>
+          </div>
+          <div
+            class="w-1/6 md:my-0 my-3 md:mb-2"
+          >
+            <h1
+              class="text-blue-500 md:text-2xl text-xl"
+            >
+              Engineering
+            </h1>
+            <p
+              class="text-dark-gray md:text-xl text-sm"
+            />
+          </div>
+        </div>
+        <div
+          class="md:flex justify-between border-b  border-black my-3 "
+        >
+          <div
+            class="w-4/5 md:my-0 my-3 md:mb-2"
+          >
+            <h1
+              class="text-blue-500 md:text-2xl text-xl"
+            >
+              Sr. Data Engineer | Remote in Canada
+            </h1>
+            <p
+              class="text-dark-gray md:text-xl text-sm"
+            >
+              Moz is looking for a talented Senior Software Developer to join our Data Collection team.
+            </p>
+          </div>
+          <div
+            class="w-1/6 md:my-0 my-3 md:mb-2"
+          >
+            <h1
+              class="text-blue-500 md:text-2xl text-xl"
+            >
+              Engineering
+            </h1>
+            <p
+              class="text-dark-gray md:text-xl text-sm"
+            >
+              Data Collection
+            </p>
+          </div>
+        </div>
+        <div
+          class="md:flex justify-between border-b  border-black my-3 "
+        >
+          <div
+            class="w-4/5 md:my-0 my-3 md:mb-2"
+          >
+            <h1
+              class="text-blue-500 md:text-2xl text-xl"
+            >
+              Sr. Data Engineer | Remote in Canada
+            </h1>
+            <p
+              class="text-dark-gray md:text-xl text-sm"
+            >
+              Moz is looking for a talented Senior Software Developer to join our Data Collection team.
+            </p>
+          </div>
+          <div
+            class="w-1/6 md:my-0 my-3 md:mb-2"
+          >
+            <h1
+              class="text-blue-500 md:text-2xl text-xl"
+            >
+              Engineering
+            </h1>
+            <p
+              class="text-dark-gray md:text-xl text-sm"
+            >
+              Data Collection
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</DocumentFragment>
+`;

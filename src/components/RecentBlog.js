@@ -27,12 +27,12 @@ function RecentBlog() {
   };
 
   return (
-    <div className="bg-light-blue h-screen md:h-screen">
-      <h1 className="text-5xl leading-10 uppercase pt-16 pb-24 pl-40 font-poppins">
+    <div className="bg-light-blue h-full md:h-screen">
+      <h1 className="text-5xl leading-10 uppercase pt-16 pb-24 pl-28 font-poppins">
         Recent BLOGs
       </h1>
 
-      <div className="px-36 ">
+      <div className="px-36 my-auto">
         <Carousel responsive={responsive}>
           <div className="relative">
             <h1 className="absolute text-white pt-3 pl-6 w-44 uppercase">
@@ -69,13 +69,13 @@ function RecentBlog() {
             <img src={Rectangle41} alt="" />
             <div
               className="absolute text-white bottom-12 m-8 bg-text-background uppercase text-2xl 
-        bg-opacity-50 leading-7 text-center align-middle p-2"
+        bg-opacity-50 leading-7 text-center align-middle	"
             >
               Heal from
             </div>
             <div
               className="absolute text-white bottom-4  m-8  bg-text-background uppercase  text-2xl
-         font-normal bg-opacity-50 inline-block align-middle	leading-7 p-2"
+         font-normal bg-opacity-50 inline-block align-middle	leading-7"
             >
               trauma{' '}
             </div>
