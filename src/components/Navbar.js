@@ -15,8 +15,9 @@ import Logo from '../images/Logo.svg';
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const { logOut } = useUserAuth();
-
+  const { logOut,userData } = useUserAuth();
+  
+  const isTherapist = userData?.isTherapist
  
   const navigate = useNavigate();
   const handleLogout = async () => {
@@ -154,7 +155,7 @@ import Logo from '../images/Logo.svg';
                 />
               ) : (
                 <span className="text-white m-auto text-center">
-                  {/* {user.displayName.charAt(0).toUpperCase()} */}
+                  {user.displayName.charAt(0).toUpperCase()}
                 </span>
               )}
             </Menu.Button>
@@ -171,13 +172,15 @@ import Logo from '../images/Logo.svg';
                   </div>
                 </Menu.Item>
                 <ul className="py-1 text-sm text-gray-700">
-                  <Link to='/EditProfile'><Menu.Item>
-                    <li>
-                      <p className="block px-4 py-2 hover:bg-gray-100">
-                        Edit Profile
-                      </p>
-                    </li>
-                  </Menu.Item></Link>
+                <Link to={isTherapist ? 'TherapistProfile' : '/EditProfile'}>
+                  <Menu.Item>
+                      <li>
+                        <p className="block px-4 py-2 hover:bg-gray-100">
+                          Edit Profile
+                        </p>
+                      </li>
+                  </Menu.Item>
+                </Link>
                 </ul>
                 <Menu.Item>
                   <div className="py-1">

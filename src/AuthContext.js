@@ -11,7 +11,7 @@ import {
 // import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { updateProfile, onAuthStateChanged  } from '@firebase/auth';
-import {doc, getDoc } from 'firebase/firestore';
+import { getDocs, doc, updateDoc, collection, where, query } from 'firebase/firestore';
 import {  db, auth } from './firebase';
 
 
@@ -26,6 +26,7 @@ export function UserAuthContextProvider({ children }) {
   const navigate = useNavigate();
   
   const [user,setUser] = useState({});
+  const [userInfo,setUserInfo] = useState();
 
   
 
@@ -50,13 +51,11 @@ export function UserAuthContextProvider({ children }) {
   const fbLogin = async () => {
     try {
       const result = await signInWithPopup(auth, fbProvider);
-      // eslint-disable-next-line
-      console.log(result);
+      
       const credentials = await FacebookAuthProvider.credentialFromResult(
         result
       );
-      // eslint-disable-next-line
-      console.log(credentials);
+      
       const token = credentials.accessToken;
       const photoUrl = `${result.user.photoURL}?&access_token=${token}`;
       await updateProfile(auth.currentUser, { photoURL: photoUrl });
@@ -74,8 +73,7 @@ export function UserAuthContextProvider({ children }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
-      // eslint-disable-next-line
-      //   console.log("Auth", currentuser);
+      
       setUser(currentuser);
     });
 
@@ -83,53 +81,50 @@ export function UserAuthContextProvider({ children }) {
       unsubscribe();
     };
   }, []);
-  
-  const getUserInfo = async(user) => {
-    if(user.uid){
-      const id = user.uid
-      console.log(id)
-      const docRef = await doc(db, "users", "ypAffIRfAFaq8aRXgcwC");
-      const docSnap = await getDoc(docRef)
-  
-        if (docSnap.exists()) {
-          console.log("Document data:", docSnap.data());
-        } else {
-          // doc.data() will be undefined in this case
-          console.log("No such document!");
-        }
-      return docSnap.data();
-    }
-   return console.log("")
 
+  
+  const getUserInfo = async (user) => {
+    if (user.uid) {
+      const id = user.uid;
+
+      const q = query(collection(db, 'users'), where('uid', '==', id));
+      const querySnapShot = await getDocs(q);
+      querySnapShot.forEach((doc) => {
+        setUserInfo({ ...doc.data(), docId: doc.id });
+      });
+    }
+  };
+
+  const updateUser = async (userInfo, changesObj) => {
     
-  }
-  // const [signedInUser] = useAuthState(auth);
+    const { docId } = userInfo;
+    const { displayName, email } = changesObj;
+
+    try {
+      const docRef = await doc(db, 'users', docId);
+      await updateDoc(docRef, changesObj);
+      await updateProfile(auth.currentUser, { displayName, email });
+      await getUserInfo(auth.currentUser);
+    } catch (error) {
+      // eslint-disable-next-line
+      console.log(error);
+    }
+  };
+
+  
     
     useEffect(()=>{
-      
       if(auth.currentUser){
-        // console.log(signedInUser)
-        console.log(auth.currentUser)
         getUserInfo(auth.currentUser)
       }
 
     },[auth.currentUser])
-    // const usersCollectionRef = collection(db, "user")
-    // const getUsers = async () => {
-    // const data = await getDoc(usersCollectionRef);
-    // setUser(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-    // }
-    // getUsers()
-   
-
-   
-
-
-
+    
   const methods = useMemo(
-    () => ({ loggedInUser: user, logIn, signUp, logOut, googleLogin, fbLogin }),
-    []
+    () => ({ loggedInUser: user,userData:userInfo, logIn, signUp, logOut, googleLogin, fbLogin,updateUser}),
+    [userInfo]
   );
+
   return (
     <userAuthContext.Provider value={methods}>
       {children}
