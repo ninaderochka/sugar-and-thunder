@@ -182,7 +182,7 @@
                   alt="user avatar"
                 />
               ) : (
-                <span className="text-white m-auto text-center">
+                <span className="text-white m-auto text-center rounded-full">
                   {user.displayName && user.displayName.charAt(0).toUpperCase()}
                 </span>
               )}
