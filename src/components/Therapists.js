@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import Button from './Button';
 
 
@@ -24,7 +25,7 @@ const Therapists = () => {
         {t('therapistBody')}
         </p>
         <div className="top-2">
-          <Button value={t('headerButton')} onClick={handleClick()} />
+          <Link to="/Booking"><Button value={t('headerButton')} onClick={handleClick()} /></Link>
         </div>
       </div>
     </div>

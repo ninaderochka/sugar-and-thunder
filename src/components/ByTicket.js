@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import card1 from '../images/card1.png';
@@ -7,6 +7,11 @@ import card3 from '../images/card3.png';
 import Button from './Button';
 
 export default function ByTicket() {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    setIsActive(current => !current);
+  }
   return (
     <div className="font-poppins flex flex-col">
       <div className="pl-28 pt-10 ">
@@ -21,11 +26,20 @@ export default function ByTicket() {
           <IoIosArrowBack />
         </div>
 
-        <img className=" w-[350px] h-[223.36px] " alt="#" src={card1} />
+        <button
+        onClick={handleClick}
+        type="button"
+      ><img className={isActive ? "w-[350px] h-[223.36px] ring ring-button-blue ring-offset-4 rounded" : "w-[350px] h-[223.36px]"} alt="#" src={card1} /></button>
 
-        <img className=" w-[350px] h-[223.36px] " alt="#" src={card2} />
+<button
+        onClick={handleClick}
+        type="button"
+      ><img className={isActive ? "w-[350px] h-[223.36px] ring ring-button-blue ring-offset-4 rounded" : "w-[350px] h-[223.36px]"} alt="#" src={card2} /></button>
 
-        <img className=" w-[350px] h-[223.36px] " alt="#" src={card3} />
+<button
+        onClick={handleClick}
+        type="button"
+      ><img className={isActive ? "w-[350px] h-[223.36px] ring ring-button-blue ring-offset-4 rounded" : "w-[350px] h-[223.36px]"} alt="#" src={card3} /></button>
 
         <div
           className="pt-20 cursor-pointer justify-center "
@@ -49,3 +63,4 @@ export default function ByTicket() {
     </div>
   );
 }
+

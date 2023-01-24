@@ -1,10 +1,9 @@
 import React from 'react';
-import Team1 from '../images/Team1.png';
-import Team2 from '../images/Team2.png';
-import Team3 from '../images/Team3.png';
-import Team4 from '../images/Team4.png';
-import Team5 from '../images/Team5.png';
-import Team6 from '../images/Team6.png';
+import Team1 from '../images/Mohammed.jpg';
+import Team2 from '../images/Zeynab.jpeg';
+import Team3 from '../images/Marshall.jpg';
+import Team4 from '../images/Fadi.jpg';
+import Team5 from '../images/Nina.jpg';
 
 function AboutTeam() {
   return (
@@ -19,12 +18,12 @@ function AboutTeam() {
 
       <div className="grid 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4   md:grid-cols-3   sm:grid-cols-2 justify-center mb-10  text-xl ">
         <div className="w-[176.41px]  mx-auto">
-          <img src={Team1} alt="" />
+          <img className="object-contain" src={Team1} alt="" />
           <div className="h-1 bg-shade-green   object-left	m-0 p-0"> </div>
           <div className="bg-light-shade-cyan text-center rounded-b-3xl ">
-            <h1 className="pt-4 pb-6 font-normal">Allan Saleh</h1>
+            <h1 className="pt-4 pb-6 font-normal">Mohammed Diary</h1>
             <p className="pb-14 text-meet-color text-base">
-              Lead Engineer <br />& Web Developer
+            FE Developer{' '}
             </p>
           </div>
         </div>
@@ -33,9 +32,9 @@ function AboutTeam() {
           <img src={Team2} alt="" />
           <div className="h-1 bg-shade-green   object-left	m-0 p-0"> </div>
           <div className="bg-light-shade-cyan text-center rounded-b-3xl ">
-            <h1 className="pt-4 pb-6 ">Payam Abubakr</h1>
+            <h1 className="pt-4 pb-6 ">Zeynab Hamad</h1>
             <p className="pb-14 text-meet-color text-base">
-              Junior Designer <br />& FE Developer{' '}
+              FE Developer{' '}
             </p>
           </div>
         </div>
@@ -44,9 +43,9 @@ function AboutTeam() {
           <img src={Team3} alt="" />
           <div className="h-1 bg-shade-green m-0 p-0"> </div>
           <div className="bg-light-shade-cyan text-center rounded-b-3xl px-6">
-            <h1 className="pb-4">Ahmed Mohammed</h1>
+            <h1 className="pt-4 pb-6">Mohammad Marshall</h1>
             <p className="pb-14 text-meet-color text-base">
-              Junior Designer <br />& FE Developer{' '}
+              FE Developer{' '}
             </p>
           </div>
         </div>
@@ -55,9 +54,9 @@ function AboutTeam() {
           <img src={Team4} alt="" />
           <div className="h-1 bg-shade-green   object-left	m-0 p-0"> </div>
           <div className="bg-light-shade-cyan text-center rounded-b-3xl px-6">
-            <h1 className="pb-4">Abdulmajeed Jaafer</h1>
+            <h1 className="pt-4 pb-6">Fadi Moayad</h1>
             <p className="pb-14 text-meet-color text-base">
-              Junior Designer <br />& FE Developer{' '}
+              FE Developer{' '}
             </p>
           </div>
         </div>
@@ -66,20 +65,9 @@ function AboutTeam() {
           <img src={Team5} alt="" />
           <div className="h-1 bg-shade-green   object-left	m-0 p-0"> </div>
           <div className="bg-light-shade-cyan text-center rounded-b-3xl px-6">
-            <h1 className="pt-4 pb-6">Snoor Madih</h1>
+            <h1 className="pt-4 pb-6">Nina Hawari</h1>
             <p className="pb-14 text-meet-color text-base">
-              Junior Designer <br />& FE Developer{' '}
-            </p>
-          </div>
-        </div>
-
-        <div className="w-[176.41px] mx-auto">
-          <img src={Team6} alt="" />
-          <div className="h-1 bg-shade-green   object-left	m-0 p-0"> </div>
-          <div className="bg-light-shade-cyan text-center rounded-b-3xl px-6">
-            <h1 className="pt-4 pb-6">Avraz Zebary</h1>
-            <p className="pb-14 text-meet-color  text-base">
-              Junior Designer <br />& FE Developer{' '}
+             FE Developer{' '}
             </p>
           </div>
         </div>

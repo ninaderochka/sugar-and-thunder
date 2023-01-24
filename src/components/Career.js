@@ -136,7 +136,7 @@ function Joblisting() {
           return (
             <div className="md:flex justify-between border-b  border-black my-3 ">
               <div className="w-4/5 md:my-0 my-3 md:mb-2">
-                <h1 className="text-blue-500 md:text-2xl text-xl">
+                <h1 className="text-button-blue md:text-2xl text-xl">
                   {vacancy.title}
                 </h1>
                 <p className="text-dark-gray md:text-xl text-sm">
@@ -144,7 +144,7 @@ function Joblisting() {
                 </p>
               </div>
               <div className="w-1/6 md:my-0 my-3 md:mb-2">
-                <h1 className="text-blue-500 md:text-2xl text-xl">
+                <h1 className="text-button-blue md:text-2xl text-xl">
                   {vacancy.major}
                 </h1>
                 <p className="text-dark-gray md:text-xl text-sm">

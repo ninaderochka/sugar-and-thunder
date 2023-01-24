@@ -21,6 +21,15 @@ import Career from './components/Career';
 import ByTicket from './components/ByTicket';
 import ThankUCard from './components/ThankUCard';
 import Booking from './containers/Booking';
+import Edit from './components/Edit'
+import Cards from "./components/Cards"
+import AddNewCard from "./components/AddNewCard"
+import ThankUSignup from './components/ThankUSignup';
+import ThankUSub from './components/ThankUSub';
+import ThankUTicket from './components/ThankUTicket';
+import BlogNd from './containers/BlogNd';
+
+
 
 function App() {
   return (
@@ -46,6 +55,13 @@ function App() {
           <Route path="/ThankUCard" element={<ThankUCard />} />
           <Route path="/TherapistProfile" element={<TherapistProfile />} />
           <Route path="/Booking" element={<Booking />} />
+          <Route path="/Edit" element={<Edit />} />
+          <Route path="/Cards" element={<Cards/>} />
+          <Route path="/AddNewCard" element={<AddNewCard/>} />
+          <Route path="/ThankUSub" element={<ThankUSub />} />
+          <Route path="/ThankUTicket" element={<ThankUTicket />} />
+          <Route path="/ThankUSignup" element={<ThankUSignup />} />
+          <Route path="/BlogNd" element={<BlogNd />} />
         </Routes>
       </UserAuthContextProvider>
       <Footer />

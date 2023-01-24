@@ -33,34 +33,6 @@ function Signup() {
   } = userDetails;
   const [Day, Month, Year] = birthDate;
 
-  // const validatePassword = async () => {
-  //   let isValid = true;
-  //   if (password !== '' && confirmPassword !== '') {
-  //     if (password !== confirmPassword) {
-  //       isValid = false;
-  //       setError('Passwords does not match');
-  //     } else {
-  //       setEmail(''),
-  //       setConfirmEmail(''),
-  //       setPassword(''),
-  //       setConfirmPassword('')
-  //       const res = await signUp (email, password)
-  //     }
-  //   }
-  //   return isValid;
-  // };
-
-  // const validateEmail = () => {
-  //   let isValid = true;
-  //   if (email !== '' && confirmEmail !== '') {
-  //     if (email !== confirmEmail) {
-  //       isValid = false;
-  //       setError('emails does not match');
-  //     }
-  //   }
-  //   return isValid;
-  // };
-
   const { signUp, googleLogin, fbLogin } = useUserAuth();
 
   const Register = async () => {
@@ -110,7 +82,7 @@ function Signup() {
     } else {
       await Register();
       // setUserDetails({firstName: "", lastName: "", email:"", confirmEmail:"", password:"", confirmPassword:"", Day:"", Month:"", Year:""})
-      navigate('/');
+      navigate('/ThankUSignup');
       // if (res.error) setError(res.error);
     }
   };
