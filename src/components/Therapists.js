@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Button from './Button';
 
-
 const Therapists = () => {
   const { t } = useTranslation();
   const handleClick = () => {
@@ -14,7 +13,7 @@ const Therapists = () => {
     <div className="bg-light-yellow h-full w-screen max-h-full pb-10">
       <div className="w-5/6 flex flex-col space-y-12 m-auto">
         <h1 className="font-poppins font-normal text-5xl pt-20 uppercase w-9/12">
-        {t('therapistHeader')}
+          {t('therapistHeader')}
         </h1>
         <img
           src="./therapists.png"
@@ -22,10 +21,12 @@ const Therapists = () => {
           className="w-full lg:w-2/4"
         />
         <p className="font-poppins text-black/80 w-10/12">
-        {t('therapistBody')}
+          {t('therapistBody')}
         </p>
         <div className="top-2">
-          <Link to="/Booking"><Button value={t('headerButton')} onClick={handleClick()} /></Link>
+          <Link to="/Booking">
+            <Button value={t('headerButton')} onClick={handleClick()} />
+          </Link>
         </div>
       </div>
     </div>

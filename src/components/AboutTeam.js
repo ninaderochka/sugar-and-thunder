@@ -22,9 +22,7 @@ function AboutTeam() {
           <div className="h-1 bg-shade-green   object-left	m-0 p-0"> </div>
           <div className="bg-light-shade-cyan text-center rounded-b-3xl ">
             <h1 className="pt-4 pb-6 font-normal">Mohammed Diary</h1>
-            <p className="pb-14 text-meet-color text-base">
-            FE Developer{' '}
-            </p>
+            <p className="pb-14 text-meet-color text-base">FE Developer </p>
           </div>
         </div>
 
@@ -33,9 +31,7 @@ function AboutTeam() {
           <div className="h-1 bg-shade-green   object-left	m-0 p-0"> </div>
           <div className="bg-light-shade-cyan text-center rounded-b-3xl ">
             <h1 className="pt-4 pb-6 ">Zeynab Hamad</h1>
-            <p className="pb-14 text-meet-color text-base">
-              FE Developer{' '}
-            </p>
+            <p className="pb-14 text-meet-color text-base">FE Developer </p>
           </div>
         </div>
 
@@ -44,9 +40,7 @@ function AboutTeam() {
           <div className="h-1 bg-shade-green m-0 p-0"> </div>
           <div className="bg-light-shade-cyan text-center rounded-b-3xl px-6">
             <h1 className="pt-4 pb-6">Mohammad Marshall</h1>
-            <p className="pb-14 text-meet-color text-base">
-              FE Developer{' '}
-            </p>
+            <p className="pb-14 text-meet-color text-base">FE Developer </p>
           </div>
         </div>
 
@@ -55,9 +49,7 @@ function AboutTeam() {
           <div className="h-1 bg-shade-green   object-left	m-0 p-0"> </div>
           <div className="bg-light-shade-cyan text-center rounded-b-3xl px-6">
             <h1 className="pt-4 pb-6">Fadi Moayad</h1>
-            <p className="pb-14 text-meet-color text-base">
-              FE Developer{' '}
-            </p>
+            <p className="pb-14 text-meet-color text-base">FE Developer </p>
           </div>
         </div>
 
@@ -66,9 +58,7 @@ function AboutTeam() {
           <div className="h-1 bg-shade-green   object-left	m-0 p-0"> </div>
           <div className="bg-light-shade-cyan text-center rounded-b-3xl px-6">
             <h1 className="pt-4 pb-6">Nina Hawari</h1>
-            <p className="pb-14 text-meet-color text-base">
-             FE Developer{' '}
-            </p>
+            <p className="pb-14 text-meet-color text-base">FE Developer </p>
           </div>
         </div>
       </div>

@@ -19,6 +19,6 @@ i18next
     supportedLngs: ['en', 'ar', 'tr', 'ckb'],
 
     backend: {
-      loadPath
+      loadPath,
     },
   });

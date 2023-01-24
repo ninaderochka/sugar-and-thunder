@@ -10,8 +10,8 @@ export default function ByTicket() {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
-    setIsActive(current => !current);
-  }
+    setIsActive((current) => !current);
+  };
   return (
     <div className="font-poppins flex flex-col">
       <div className="pl-28 pt-10 ">
@@ -26,20 +26,41 @@ export default function ByTicket() {
           <IoIosArrowBack />
         </div>
 
-        <button
-        onClick={handleClick}
-        type="button"
-      ><img className={isActive ? "w-[350px] h-[223.36px] ring ring-button-blue ring-offset-4 rounded" : "w-[350px] h-[223.36px]"} alt="#" src={card1} /></button>
+        <button onClick={handleClick} type="button">
+          <img
+            className={
+              isActive
+                ? 'w-[350px] h-[223.36px] ring ring-button-blue ring-offset-4 rounded'
+                : 'w-[350px] h-[223.36px]'
+            }
+            alt="#"
+            src={card1}
+          />
+        </button>
 
-<button
-        onClick={handleClick}
-        type="button"
-      ><img className={isActive ? "w-[350px] h-[223.36px] ring ring-button-blue ring-offset-4 rounded" : "w-[350px] h-[223.36px]"} alt="#" src={card2} /></button>
+        <button onClick={handleClick} type="button">
+          <img
+            className={
+              isActive
+                ? 'w-[350px] h-[223.36px] ring ring-button-blue ring-offset-4 rounded'
+                : 'w-[350px] h-[223.36px]'
+            }
+            alt="#"
+            src={card2}
+          />
+        </button>
 
-<button
-        onClick={handleClick}
-        type="button"
-      ><img className={isActive ? "w-[350px] h-[223.36px] ring ring-button-blue ring-offset-4 rounded" : "w-[350px] h-[223.36px]"} alt="#" src={card3} /></button>
+        <button onClick={handleClick} type="button">
+          <img
+            className={
+              isActive
+                ? 'w-[350px] h-[223.36px] ring ring-button-blue ring-offset-4 rounded'
+                : 'w-[350px] h-[223.36px]'
+            }
+            alt="#"
+            src={card3}
+          />
+        </button>
 
         <div
           className="pt-20 cursor-pointer justify-center "
@@ -63,4 +84,3 @@ export default function ByTicket() {
     </div>
   );
 }
-

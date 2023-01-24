@@ -72,7 +72,7 @@ export default function EditProfile() {
     }
   }, [userData]);
   return (
-    <div className='font-poppins'>
+    <div className="font-poppins">
       <p className="flex justify-center text-red-500 lg:mt-3 lg:text-xl md:text-base sm:text-sm">
         Please fill all the fields with correct and valid details to complete
         your profile.
@@ -82,27 +82,27 @@ export default function EditProfile() {
         <div className="w-2/5">
           <div className="relative flex  justify-center invisible lg:visible mt-5">
             <div className="absolute -bottom-2 lg:-bottom-4 bg-white z-0 rounded-full border-2 border-black w-12 h-12 md:w-16 md:h-16 flex justify-center items-center">
-            <label htmlFor="img">
-              <input
-                name="img"
-                type="file"
-                src={icone2}
-                onChange={handleChange}
-                className="invisible hidden"
-                id="img"
-              />
-              <img
-                className="w-8 h-8 md:h-12 md:w-12"
-                src={icone2}
-                alt="icone2"
-              />
-            </label>
-          </div>
-          <img
-            className="h-44 w-44 md:h-64 md:w-60 rounded-full"
-            alt=""
-            src={!selectedImage ? icone1 : selectedImage}
-          />
+              <label htmlFor="img">
+                <input
+                  name="img"
+                  type="file"
+                  src={icone2}
+                  onChange={handleChange}
+                  className="invisible hidden"
+                  id="img"
+                />
+                <img
+                  className="w-8 h-8 md:h-12 md:w-12"
+                  src={icone2}
+                  alt="icone2"
+                />
+              </label>
+            </div>
+            <img
+              className="h-44 w-44 md:h-64 md:w-60 rounded-full"
+              alt=""
+              src={!selectedImage ? icone1 : selectedImage}
+            />
           </div>
         </div>
 
@@ -113,12 +113,13 @@ export default function EditProfile() {
             PROFILE INFO
           </h1>
           <div className="flex justify-between space-x-12 font-poppins justify-items-center">
-            <p className='h-fit'>Full Name</p>
-            <input name="displayName" value={displayName} onChange={handleInputChange}
+            <p className="h-fit">Full Name</p>
+            <input
+              name="displayName"
+              value={displayName}
+              onChange={handleInputChange}
               className="border rounded-[10px] border-black/0.12 h-[68px] w-8/12 px-4 drop-shadow-lg"
               type="text"
-              
-
               maxLength={50}
             />
           </div>
@@ -126,10 +127,15 @@ export default function EditProfile() {
           <div className="flex justify-between font-poppins">
             <p>Education Level</p>
 
-            <select className="border rounded-[10px] border-black/0.12 h-[68px] w-8/12 px-4 drop-shadow-lg" name="educationLevel"
-            onChange={handleInputChange}
-            value={educationLevel}>
-              <option value="" disabled selected hidden> </option>
+            <select
+              className="border rounded-[10px] border-black/0.12 h-[68px] w-8/12 px-4 drop-shadow-lg"
+              name="educationLevel"
+              onChange={handleInputChange}
+              value={educationLevel}
+            >
+              <option value="" disabled selected hidden>
+                {' '}
+              </option>
               <option value="1">Under Graduate</option>
               <option value="2">Graduated</option>
             </select>
@@ -137,7 +143,10 @@ export default function EditProfile() {
 
           <div className="flex justify-between font-poppins">
             <p>Hobbies</p>
-            <input name="hobbies" value={hobbies} onChange={handleInputChange}
+            <input
+              name="hobbies"
+              value={hobbies}
+              onChange={handleInputChange}
               className="border rounded-[10px] border-black/0.12 h-[68px] w-8/12 px-4 drop-shadow-lg"
               type="text"
               maxLength={50}
@@ -148,7 +157,7 @@ export default function EditProfile() {
             <p>Family Size</p>
             <div className="flex w-8/12 ">
               <input
-              name="familySize"
+                name="familySize"
                 className="border rounded-[10px] border-black/0.12 h-[68px] aspect-square px-4 drop-shadow-lg"
                 type="text"
                 maxLength={5}
@@ -160,9 +169,14 @@ export default function EditProfile() {
           </div>
 
           <div className="flex justify-between font-poppins">
-            <p className='h-fit my-auto'>Gender</p>
+            <p className="h-fit my-auto">Gender</p>
 
-            <select name="gender" value={gender} onChange={handleInputChange} className="border rounded-[10px] border-black/0.12 h-[68px] w-8/12 px-4 drop-shadow-lg">
+            <select
+              name="gender"
+              value={gender}
+              onChange={handleInputChange}
+              className="border rounded-[10px] border-black/0.12 h-[68px] w-8/12 px-4 drop-shadow-lg"
+            >
               <option value="" disabled selected hidden>
                 {' '}
               </option>
@@ -173,24 +187,35 @@ export default function EditProfile() {
           </div>
 
           <div className="flex justify-between font-poppins">
-            <p className='h-fit my-auto'>Birth Date</p>
+            <p className="h-fit my-auto">Birth Date</p>
             <div className="">
-              <input  className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4 drop-shadow-lg appearance-none" name="birthDate" value={birthDate} onChange={handleInputChange} type="date" />
-              
+              <input
+                className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4 drop-shadow-lg appearance-none"
+                name="birthDate"
+                value={birthDate}
+                onChange={handleInputChange}
+                type="date"
+              />
             </div>
           </div>
 
           <div className="flex justify-between font-poppins">
-            <p className='h-fit my-auto'>Email</p>
-            <input name="email" value={email} onChange={handleInputChange}
+            <p className="h-fit my-auto">Email</p>
+            <input
+              name="email"
+              value={email}
+              onChange={handleInputChange}
               className="border rounded-[10px] border-black/0.12 h-[68px] w-8/12 px-4 drop-shadow-lg"
               type="email"
             />
           </div>
 
           <div className="flex justify-between font-poppins">
-            <p className='h-fit my-auto'>Phone Number</p>
-            <input name="phoneNumber" value={phoneNumber} onChange={handleInputChange}
+            <p className="h-fit my-auto">Phone Number</p>
+            <input
+              name="phoneNumber"
+              value={phoneNumber}
+              onChange={handleInputChange}
               className="border rounded-[10px] border-black/0.12 h-[68px] w-8/12 px-4 drop-shadow-lg"
               type="tel"
               maxLength={15}
@@ -198,15 +223,16 @@ export default function EditProfile() {
           </div>
 
           <div className="flex justify-between font-poppins">
-            <p className='h-fit my-auto'>Upload ID</p>
-            <div className='border rounded-[10px] border-black/0.12 h-[68px] w-8/12 px-4 drop-shadow-lg'>
+            <p className="h-fit my-auto">Upload ID</p>
+            <div className="border rounded-[10px] border-black/0.12 h-[68px] w-8/12 px-4 drop-shadow-lg">
+              <div className="h-[68px] w-8/12">
+                <input className="ml-20 w-full opacity-0" type="file" />
 
-            <div className="h-[68px] w-8/12">
-              <input className="ml-20 w-full opacity-0" type="file"/>
-              
-            <HiPlus aria-hidden="true" className='absolute cursor-pointer top-1/2 transform -translate-y-1/2'/>
-              
-            </div>
+                <HiPlus
+                  aria-hidden="true"
+                  className="absolute cursor-pointer top-1/2 transform -translate-y-1/2"
+                />
+              </div>
             </div>
           </div>
 
@@ -220,36 +246,36 @@ export default function EditProfile() {
           <div className="flex justify-between font-poppins">
             <p>Password</p>
             <div className="flex justify-between">
-            <input
-              name="password"
-              className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4 drop-shadow-lg relative"
-              type="password"
-              value={newPass}
-              onChange={(e) => setNewPass(e.target.value)}
-              maxLength={15}
-            />
-              <HiOutlineLockClosed className='absolute mt-6'/>
+              <input
+                name="password"
+                className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4 drop-shadow-lg relative"
+                type="password"
+                value={newPass}
+                onChange={(e) => setNewPass(e.target.value)}
+                maxLength={15}
+              />
+              <HiOutlineLockClosed className="absolute mt-6" />
             </div>
           </div>
 
           <div className="flex justify-between font-poppins">
             <p>Confirm Password</p>
             <div className="flex justify-between">
-            <input
-              name="confirmPassword"
-              className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4 drop-shadow-lg relative"
-              type="password"
-              maxLength={15}
-              value={confirmPass}
-              onChange={(e) => setConfirmPass(e.target.value)}
+              <input
+                name="confirmPassword"
+                className="border rounded-[10px] border-black/0.12 h-[68px] w-[475px] px-4 drop-shadow-lg relative"
+                type="password"
+                maxLength={15}
+                value={confirmPass}
+                onChange={(e) => setConfirmPass(e.target.value)}
               />
-              <HiOutlineLockClosed className='absolute mt-6'/>
+              <HiOutlineLockClosed className="absolute mt-6" />
             </div>
           </div>
 
           <div className="flex flex-col justify-between lg:flex-row gap-2">
             <button
-               className="w-2/3 h-[3rem] font-poppins font-normal text-black text-xl uppercase px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+              className="w-2/3 h-[3rem] font-poppins font-normal text-black text-xl uppercase px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
               type="submit"
               onClick={handleSubmit}
             >
@@ -259,13 +285,15 @@ export default function EditProfile() {
             <button
               className="w-2/3 h-[3rem] font-poppins font-normal text-black text-xl uppercase px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
               type="button"
-              onClick={()=>{deleteAccount()}}
+              onClick={() => {
+                deleteAccount();
+              }}
             >
-           DELETE ACCOUNT
+              DELETE ACCOUNT
             </button>
 
             <button
-               className="w-2/3 h-[3rem] font-poppins font-normal text-black text-xl uppercase px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+              className="w-2/3 h-[3rem] font-poppins font-normal text-black text-xl uppercase px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
               type="button"
               onClick={() => {
                 revert();
@@ -285,8 +313,8 @@ export default function EditProfile() {
                 <p>3 Cards Added</p>
                 <Link to="/Cards">
                   <button
-                  // h-[3rem] w-[10rem]
-                  className="h-[3rem] w-[10rem] whitespace-nowrap font-poppins font-normal text-black text-lg uppercase px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+                    // h-[3rem] w-[10rem]
+                    className="h-[3rem] w-[10rem] whitespace-nowrap font-poppins font-normal text-black text-lg uppercase px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
                     type="button"
                   >
                     SHOW CARDS
@@ -298,7 +326,7 @@ export default function EditProfile() {
                 <p>10 Tickets Remaining</p>
                 <Link to="/ByTicket">
                   <button
-                   className="h-[3rem] w-[10rem] whitespace-nowrap font-poppins font-normal text-black text-lg uppercase px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
+                    className="h-[3rem] w-[10rem] whitespace-nowrap font-poppins font-normal text-black text-lg uppercase px-6 py-2.5 bg-button-blue leading-tight rounded shadow-md hover:bg-button-blue/90 hover:shadow-lg focus:bg-button-blue/90 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-button-blue/90 active:shadow-lg transition duration-150 ease-in-out"
                     type="button"
                   >
                     BUY TICKETS

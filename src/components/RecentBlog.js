@@ -31,7 +31,7 @@ function RecentBlog() {
   return (
     <div className="bg-light-blue h-full md:h-screen">
       <h1 className="text-5xl leading-10 uppercase pt-16 pb-24 pl-28 font-poppins">
-      {t('Recent_blogs')}
+        {t('Recent_blogs')}
       </h1>
 
       <div className="px-28 my-auto">

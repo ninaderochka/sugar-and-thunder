@@ -1,5 +1,3 @@
- 
- 
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -214,9 +212,7 @@ function Navbar() {
                       </div>
                     </Menu.Item>
                     <ul className="py-1 text-sm text-gray-700">
-                      <Link
-                        to={isTherapist ? 'TherapistProfile' : '/Edit'}
-                      >
+                      <Link to={isTherapist ? 'TherapistProfile' : '/Edit'}>
                         <Menu.Item>
                           <li>
                             <p className="block px-4 py-2 hover:bg-gray-100">

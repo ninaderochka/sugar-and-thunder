@@ -5,7 +5,6 @@ import Button from './Button';
 import background from '../images/background.png';
 import image from '../images/image.png';
 
-
 export default function Header() {
   const { t } = useTranslation();
   return (
