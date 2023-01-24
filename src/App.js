@@ -20,7 +20,7 @@ import AboutTeam from './components/AboutTeam';
 import Career from './components/Career';
 import ByTicket from './components/ByTicket';
 import ThankUCard from './components/ThankUCard';
-import Booking from "./containers/Booking"
+import Booking from './containers/Booking';
 
 function App() {
   return (
